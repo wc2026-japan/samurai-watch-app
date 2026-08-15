@@ -1,12 +1,12 @@
 {
-  "asOf": "2026-05-27",
-  "note": "所属クラブはW杯2026メンバー発表時点(2026年5月27日)の情報です。その後の移籍については「移籍」タブでご確認ください。",
+  "asOf": "2026-06-12",
+  "note": "所属クラブ・メンバーはW杯2026本大会時点の情報です。遠藤航は大会中の負傷離脱・代表引退(2026年6月12日)を反映しています。三笘薫は負傷によりW杯メンバー外でしたが、海外組の主力として一覧に追加しています。その後の移籍については「移籍」タブでご確認ください。",
   "positions": [
     {
       "code": "GK",
       "label": "GK",
       "players": [
-        { "number": 1, "name": "鈴木 彩艶", "club": "パルマ・カルチョ", "country": "🇮🇹" },
+        { "number": 1, "name": "鈴木 彩艶", "club": "パルマ・カルチョ", "country": "🇮🇹", "keyman": true },
         { "number": 12, "name": "大迫 敬介", "club": "サンフレッチェ広島", "country": "🇯🇵" },
         { "number": 23, "name": "早川 友基", "club": "鹿島アントラーズ", "country": "🇯🇵" }
       ]
@@ -17,12 +17,12 @@
       "players": [
         { "number": 2, "name": "菅原 由勢", "club": "ヴェルダー・ブレーメン", "country": "🇩🇪" },
         { "number": 3, "name": "谷口 彰悟", "club": "シント=トロイデンVV", "country": "🇧🇪" },
-        { "number": 4, "name": "板倉 滉", "club": "アヤックス", "country": "🇳🇱" },
+        { "number": 4, "name": "板倉 滉", "club": "アヤックス", "country": "🇳🇱", "keyman": true },
         { "number": 5, "name": "長友 佑都", "club": "FC東京", "country": "🇯🇵" },
         { "number": 16, "name": "渡辺 剛", "club": "フェイエノールト", "country": "🇳🇱" },
         { "number": 20, "name": "瀬古 歩夢", "club": "ル・アーヴルAC", "country": "🇫🇷" },
         { "number": 21, "name": "伊藤 洋輝", "club": "バイエルン・ミュンヘン", "country": "🇩🇪" },
-        { "number": 22, "name": "冨安 健洋", "club": "アヤックス", "country": "🇳🇱" },
+        { "number": 22, "name": "冨安 健洋", "club": "アヤックス", "country": "🇳🇱", "keyman": true },
         { "number": 25, "name": "鈴木 淳之介", "club": "FCコペンハーゲン", "country": "🇩🇰" }
       ]
     },
@@ -30,9 +30,9 @@
       "code": "MF",
       "label": "MF",
       "players": [
-        { "number": 6, "name": "遠藤 航", "club": "リバプールFC", "country": "🏴" },
+        { "number": 6, "name": "遠藤 航", "club": "リバプールFC", "country": "🏴", "status": "代表引退(6/12)" },
         { "number": 7, "name": "田中 碧", "club": "リーズ・ユナイテッド", "country": "🏴" },
-        { "number": 8, "name": "久保 建英", "club": "レアル・ソシエダード", "country": "🇪🇸" },
+        { "number": 8, "name": "久保 建英", "club": "レアル・ソシエダード", "country": "🇪🇸", "keyman": true },
         { "number": 10, "name": "堂安 律", "club": "アイントラハト・フランクフルト", "country": "🇩🇪" },
         { "number": 13, "name": "中村 敬斗", "club": "スタッド・ランス", "country": "🇫🇷" },
         { "number": 14, "name": "伊東 純也", "club": "KRCゲンク", "country": "🇧🇪" },
@@ -45,11 +45,13 @@
       "code": "FW",
       "label": "FW",
       "players": [
+        { "number": 6, "name": "町野 修斗", "club": "ボルシアMG", "country": "🇩🇪", "status": "遠藤航の離脱に伴う追加招集" },
         { "number": 9, "name": "後藤 啓介", "club": "SCフライブルク", "country": "🇩🇪" },
         { "number": 11, "name": "前田 大然", "club": "セルティック", "country": "🏴" },
         { "number": 18, "name": "上田 綺世", "club": "フェイエノールト", "country": "🇳🇱" },
         { "number": 19, "name": "小川 航基", "club": "NECナイメヘン", "country": "🇳🇱" },
-        { "number": 26, "name": "塩貝 健人", "club": "VfLヴォルフスブルク", "country": "🇩🇪" }
+        { "number": 26, "name": "塩貝 健人", "club": "VfLヴォルフスブルク", "country": "🇩🇪" },
+        { "number": 22, "name": "三笘 薫", "club": "ブライトン", "country": "🏴", "status": "左ハムストリング負傷でW杯メンバー外(復帰は9〜10月頃見込み)" }
       ]
     }
   ]
