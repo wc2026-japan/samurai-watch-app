@@ -18,6 +18,7 @@ const SCORE_MAX_AGE_DAYS = 3;
 const TRANSFER_MAX_AGE_DAYS = 7;
 const SCORE_WHEN = "3d";
 const TRANSFER_WHEN = "7d";
+const ARTICLES_LIMIT = 20;
 
 // Roundup / evergreen / explainer articles rank well for generic queries
 // but aren't the individual match/transfer news this app is meant to show.
@@ -32,6 +33,10 @@ function readConfig() {
 function googleNewsUrl(query, when) {
   const params = new URLSearchParams({ q: `${query} when:${when}`, hl: "ja", gl: "JP", ceid: "JP:ja" });
   return `https://news.google.com/rss/search?${params.toString()}`;
+}
+
+function noteRssUrl(user) {
+  return `https://note.com/${encodeURIComponent(user)}/rss`;
 }
 
 function extractTag(xml, tag) {
@@ -97,6 +102,22 @@ async function fetchFeed(query, when, maxAgeDays, limit = 15) {
     .slice(0, limit);
 }
 
+async function fetchNoteArticles(user, limit = ARTICLES_LIMIT) {
+  if (!user) return [];
+  const url = noteRssUrl(user);
+  const res = await fetch(url, {
+    headers: { "User-Agent": "Mozilla/5.0 (compatible; SamuraiWatchBot/1.0)" },
+  });
+  if (!res.ok) {
+    throw new Error(`Failed to fetch note.com feed for "${user}": HTTP ${res.status}`);
+  }
+  const text = await res.text();
+  return parseRssItems(text)
+    .filter((item) => item.title && item.link)
+    .map((item) => ({ ...item, source: item.source === "Google News" ? "note.com" : item.source }))
+    .slice(0, limit);
+}
+
 function readExisting(fileName) {
   try {
     const raw = fs.readFileSync(path.join(dataDir, fileName), "utf-8");
@@ -106,41 +127,35 @@ function readExisting(fileName) {
   }
 }
 
+function writeWithFailsafe(fileName, freshItems, now) {
+  const existing = readExisting(fileName);
+  const out = freshItems.length > 0
+    ? { updatedAt: now, items: freshItems }
+    : (existing || { updatedAt: now, items: [] });
+  fs.writeFileSync(path.join(dataDir, fileName), JSON.stringify(out, null, 2) + "\n");
+  return out;
+}
+
 async function main() {
   const config = readConfig();
   const now = new Date().toISOString();
 
-  const [scores, transfers] = await Promise.all([
+  const [scores, transfers, articles] = await Promise.all([
     fetchFeed(config.scoreQuery, SCORE_WHEN, SCORE_MAX_AGE_DAYS),
     fetchFeed(config.transferQuery, TRANSFER_WHEN, TRANSFER_MAX_AGE_DAYS),
+    fetchNoteArticles(config.noteUser),
   ]);
 
   // Failsafe: if a fetch genuinely comes back empty (e.g. a quiet news day,
-  // or Google News hiccups), don't overwrite good existing data with an
-  // empty list — keep what was there and just leave updatedAt as-is for
-  // that feed.
-  const existingScores = readExisting("scores.json");
-  const existingTransfers = readExisting("transfers.json");
-
-  const scoresOut = scores.length > 0
-    ? { updatedAt: now, items: scores }
-    : (existingScores || { updatedAt: now, items: [] });
-
-  const transfersOut = transfers.length > 0
-    ? { updatedAt: now, items: transfers }
-    : (existingTransfers || { updatedAt: now, items: [] });
-
-  fs.writeFileSync(
-    path.join(dataDir, "scores.json"),
-    JSON.stringify(scoresOut, null, 2) + "\n"
-  );
-  fs.writeFileSync(
-    path.join(dataDir, "transfers.json"),
-    JSON.stringify(transfersOut, null, 2) + "\n"
-  );
+  // or a feed hiccup), don't overwrite good existing data with an empty
+  // list — keep what was there.
+  const scoresOut = writeWithFailsafe("scores.json", scores, now);
+  const transfersOut = writeWithFailsafe("transfers.json", transfers, now);
+  const articlesOut = writeWithFailsafe("articles.json", articles, now);
 
   console.log(`scores: ${scores.length} fresh item(s) fetched (kept ${scoresOut.items.length})`);
   console.log(`transfers: ${transfers.length} fresh item(s) fetched (kept ${transfersOut.items.length})`);
+  console.log(`articles: ${articles.length} fresh item(s) fetched (kept ${articlesOut.items.length})`);
 }
 
 main().catch((err) => {
