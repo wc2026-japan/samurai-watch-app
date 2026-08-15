@@ -14,9 +14,9 @@ const dataDir = path.join(rootDir, "data");
 
 // Scores/match reports go stale fast, so they're kept tight. Transfer news
 // stays meaningfully "current" for longer, so it gets a wider window.
-const SCORE_MAX_AGE_DAYS = 3;
+const SCORE_MAX_AGE_DAYS = 5;
 const TRANSFER_MAX_AGE_DAYS = 30;
-const SCORE_WHEN = "3d";
+const SCORE_WHEN = "5d";
 const TRANSFER_WHEN = "30d";
 const ARTICLES_LIMIT = 20;
 
