@@ -25,6 +25,12 @@ const ARTICLES_LIMIT = 20;
 // Titles matching these are filtered out.
 const SUMMARY_TITLE_PATTERN = /まとめ|一覧|総括|振り返り|完全ガイド|特集|決定した移籍は|相次ぐ.*ニュース/;
 
+// This app is specifically about 海外組 (Japanese players based overseas).
+// Domestic J-League match reports sometimes slip through the broad search
+// query, so they're filtered out here as a safety net regardless of what
+// the query itself returns.
+const DOMESTIC_LEAGUE_PATTERN = /J1リーグ|J2リーグ|J3リーグ|Ｊ1リーグ|Ｊ2リーグ|Ｊ3リーグ|Jリーグ|Ｊリーグ|天皇杯|ルヴァンカップ/;
+
 function readConfig() {
   const raw = fs.readFileSync(path.join(dataDir, "config.json"), "utf-8");
   return JSON.parse(raw);
@@ -98,6 +104,7 @@ async function fetchFeed(query, when, maxAgeDays, limit = 15) {
   return parseRssItems(text)
     .filter((item) => item.title && item.link)
     .filter((item) => !SUMMARY_TITLE_PATTERN.test(item.title))
+    .filter((item) => !DOMESTIC_LEAGUE_PATTERN.test(item.title))
     .filter((item) => isFresh(item.pubDate, maxAgeDays))
     .slice(0, limit);
 }
