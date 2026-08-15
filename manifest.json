@@ -1,0 +1,10 @@
+{
+  "name": "SAMURAI WATCH",
+  "short_name": "SamuraiWatch",
+  "description": "海外組フォローアプリ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0c0c0f",
+  "theme_color": "#0c0c0f",
+  "icons": []
+}
