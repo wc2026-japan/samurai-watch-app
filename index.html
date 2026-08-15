@@ -375,7 +375,13 @@
     border: 1px solid var(--border);
     background: var(--card);
     padding: 12px 13px;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+    cursor: pointer;
+    color: inherit;
   }
+  .player-card:hover { border-color: var(--border-hover); }
   .player-top {
     display: flex;
     align-items: baseline;
@@ -389,12 +395,134 @@
     color: var(--text-fainter);
   }
   .player-name { font-size: 13.5px; font-weight: 700; color: var(--text); }
+  .player-keyman { color: var(--green); font-size: 11px; margin-right: 1px; }
   .player-club {
     font-size: 11.5px;
     color: var(--text-muted);
     display: flex;
     align-items: center;
     gap: 4px;
+  }
+  .player-status {
+    font-size: 10.5px;
+    color: #d98a6a;
+    margin-top: 2px;
+  }
+  .player-card.is-inactive { opacity: 0.55; }
+
+  /* ---- player detail modal ---- */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .modal-sheet {
+    width: 100%;
+    max-width: 512px;
+    max-height: 82vh;
+    overflow-y: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    padding: 22px 20px 28px;
+    animation: sheet-up 0.18s ease-out;
+  }
+  @keyframes sheet-up {
+    from { transform: translateY(16px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 4px;
+  }
+  .modal-number-badge {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--green);
+  }
+  .modal-name { font-size: 19px; font-weight: 700; color: var(--text); margin: 0; }
+  .modal-position { font-size: 11.5px; color: var(--green); font-weight: 700; letter-spacing: 0.5px; margin: 2px 0 0; }
+  .modal-club-row {
+    margin: 16px 0 4px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    font-size: 13.5px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .modal-club-row b { color: var(--text); font-weight: 700; }
+  .modal-section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--text-faint);
+    margin: 20px 0 10px;
+  }
+  .modal-news-item {
+    display: block;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+  }
+  .modal-news-item:first-child { border-top: none; }
+  .modal-news-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+    margin: 0 0 3px;
+  }
+  .modal-news-meta { font-size: 11px; color: var(--text-faint); }
+  .modal-fallback {
+    font-size: 12.5px;
+    color: var(--text-faint);
+    line-height: 1.6;
+    margin: 4px 0 12px;
+  }
+  .modal-search-link {
+    display: inline-block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
   }
 
   nav.tabbar {
@@ -430,6 +558,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .live-dot { animation: none; }
+    .modal-sheet { animation: none; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .card { transition: border-color 0.15s ease; }
@@ -459,6 +588,8 @@
   <div id="filterBlock"></div>
   <div id="content"></div>
 </main>
+
+<div id="modalRoot"></div>
 
 <nav class="tabbar">
   <div class="tabbar-inner">
@@ -514,6 +645,7 @@ const state = {
   config: null,
   scoreFilter: "all",
   transferFilter: "all",
+  selectedPlayer: null, // { number, name, club, country, position }
 };
 
 async function loadJSON(url) {
@@ -677,19 +809,97 @@ function renderPlayersTab() {
       <p class="position-label">${group.label}</p>
       <div class="player-grid">
         ${group.players.map((p) => `
-          <div class="player-card">
+          <button class="player-card ${p.status ? "is-inactive" : ""}" data-player-number="${p.number}" data-position="${group.code}">
             <div class="player-top">
               <span class="player-number">${p.number}</span>
+              ${p.keyman ? `<span class="player-keyman">◇</span>` : ""}
               <span class="player-name">${p.name}</span>
             </div>
             <div class="player-club">${p.country || ""} ${p.club}</div>
-          </div>
+            ${p.status ? `<div class="player-status">${p.status}</div>` : ""}
+          </button>
         `).join("")}
       </div>
     </div>
   `).join("");
   const note = data.note ? `<p class="players-note">${data.note}</p>` : "";
   return note + groups;
+}
+
+/* Cross-reference this player's name against the real scores/transfers feeds.
+   Only real fetched items are shown — nothing fabricated. */
+function findPlayerNews(playerName) {
+  const key = playerName.replace(/\s+/g, "");
+  const pools = [
+    ...(state.scores?.items || []).map((i) => ({ ...i, _tab: "速報" })),
+    ...(state.transfers?.items || []).map((i) => ({ ...i, _tab: "移籍" })),
+  ];
+  return pools
+    .filter((item) => (item.title || "").replace(/\s+/g, "").includes(key))
+    .slice(0, 6);
+}
+
+function openPlayerModal(number, positionCode) {
+  const group = state.players.positions.find((g) => g.code === positionCode);
+  const player = group?.players.find((p) => String(p.number) === String(number));
+  if (!player) return;
+  state.selectedPlayer = { ...player, position: group.label };
+  renderModal();
+}
+
+function closePlayerModal() {
+  state.selectedPlayer = null;
+  renderModal();
+}
+
+function renderModal() {
+  const root = document.getElementById("modalRoot");
+  if (!state.selectedPlayer) {
+    root.innerHTML = "";
+    return;
+  }
+  const p = state.selectedPlayer;
+  const news = findPlayerNews(p.name);
+  const searchQuery = encodeURIComponent(`${p.name} ${p.club}`);
+
+  const newsHtml = news.length
+    ? news.map((item) => `
+        <a class="modal-news-item" href="${item.link}" target="_blank" rel="noopener noreferrer">
+          <p class="modal-news-title">${item.title}</p>
+          <span class="modal-news-meta">${item._tab} ・ ${item.source || ""} ・ ${timeAgo(item.pubDate)}</span>
+        </a>
+      `).join("")
+    : `
+        <p class="modal-fallback">現在、速報・移籍タブに関連するニュースは見つかりませんでした。</p>
+        <a class="modal-search-link" href="https://news.google.com/search?q=${searchQuery}&hl=ja&gl=JP&ceid=JP:ja" target="_blank" rel="noopener noreferrer">Googleニュースで検索する →</a>
+      `;
+
+  root.innerHTML = `
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-sheet" style="position:relative;">
+        <button class="modal-close" id="modalCloseBtn" aria-label="閉じる">✕</button>
+        <div class="modal-header">
+          <div class="modal-number-badge">${p.number}</div>
+          <div>
+            <p class="modal-name">${p.keyman ? `<span class="player-keyman">◇</span> ` : ""}${p.name}</p>
+            <p class="modal-position">${p.position}</p>
+          </div>
+        </div>
+        <div class="modal-club-row">
+          <span>${p.country || ""}</span>
+          <span>所属:&nbsp;<b>${p.club}</b></span>
+        </div>
+        ${p.status ? `<p class="player-status" style="margin:8px 2px 0;">${p.status}</p>` : ""}
+        <p class="modal-section-label">RELATED NEWS</p>
+        ${newsHtml}
+      </div>
+    </div>
+  `;
+
+  document.getElementById("modalOverlay").addEventListener("click", (e) => {
+    if (e.target.id === "modalOverlay") closePlayerModal();
+  });
+  document.getElementById("modalCloseBtn").addEventListener("click", closePlayerModal);
 }
 
 function renderSectionHeading() {
@@ -743,6 +953,11 @@ function renderContent() {
 
   if (tab === "players") {
     content.innerHTML = promoCard() + renderPlayersTab();
+    content.querySelectorAll(".player-card").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        openPlayerModal(btn.dataset.playerNumber, btn.dataset.position);
+      });
+    });
     return;
   }
 
