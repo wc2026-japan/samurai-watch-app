@@ -12,13 +12,17 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const dataDir = path.join(rootDir, "data");
 
+const MAX_AGE_DAYS = 3;
+
+const SUMMARY_TITLE_PATTERN = /まとめ|一覧|総括|振り返り|完全ガイド|特集|決定した移籍は|相次ぐ.*ニュース/;
+
 function readConfig() {
   const raw = fs.readFileSync(path.join(dataDir, "config.json"), "utf-8");
   return JSON.parse(raw);
 }
 
 function googleNewsUrl(query) {
-  const params = new URLSearchParams({ q: query, hl: "ja", gl: "JP", ceid: "JP:ja" });
+  const params = new URLSearchParams({ q: `${query} when:3d`, hl: "ja", gl: "JP", ceid: "JP:ja" });
   return `https://news.google.com/rss/search?${params.toString()}`;
 }
 
@@ -59,6 +63,14 @@ function parseRssItems(xmlText) {
   });
 }
 
+function isFresh(pubDateStr) {
+  const d = new Date(pubDateStr);
+  if (isNaN(d.getTime())) return false;
+  const ageMs = Date.now() - d.getTime();
+  const ageDays = ageMs / (1000 * 60 * 60 * 24);
+  return ageDays >= -0.5 && ageDays <= MAX_AGE_DAYS;
+}
+
 async function fetchFeed(query, limit = 15) {
   const url = googleNewsUrl(query);
   const res = await fetch(url, {
@@ -70,6 +82,8 @@ async function fetchFeed(query, limit = 15) {
   const text = await res.text();
   return parseRssItems(text)
     .filter((item) => item.title && item.link)
+    .filter((item) => !SUMMARY_TITLE_PATTERN.test(item.title))
+    .filter((item) => isFresh(item.pubDate))
     .slice(0, limit);
 }
 
@@ -99,4 +113,3 @@ main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
