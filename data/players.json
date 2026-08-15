@@ -1,0 +1,56 @@
+{
+  "asOf": "2026-05-27",
+  "note": "所属クラブはW杯2026メンバー発表時点(2026年5月27日)の情報です。その後の移籍については「移籍」タブでご確認ください。",
+  "positions": [
+    {
+      "code": "GK",
+      "label": "GK",
+      "players": [
+        { "number": 1, "name": "鈴木 彩艶", "club": "パルマ・カルチョ", "country": "🇮🇹" },
+        { "number": 12, "name": "大迫 敬介", "club": "サンフレッチェ広島", "country": "🇯🇵" },
+        { "number": 23, "name": "早川 友基", "club": "鹿島アントラーズ", "country": "🇯🇵" }
+      ]
+    },
+    {
+      "code": "DF",
+      "label": "DF",
+      "players": [
+        { "number": 2, "name": "菅原 由勢", "club": "ヴェルダー・ブレーメン", "country": "🇩🇪" },
+        { "number": 3, "name": "谷口 彰悟", "club": "シント=トロイデンVV", "country": "🇧🇪" },
+        { "number": 4, "name": "板倉 滉", "club": "アヤックス", "country": "🇳🇱" },
+        { "number": 5, "name": "長友 佑都", "club": "FC東京", "country": "🇯🇵" },
+        { "number": 16, "name": "渡辺 剛", "club": "フェイエノールト", "country": "🇳🇱" },
+        { "number": 20, "name": "瀬古 歩夢", "club": "ル・アーヴルAC", "country": "🇫🇷" },
+        { "number": 21, "name": "伊藤 洋輝", "club": "バイエルン・ミュンヘン", "country": "🇩🇪" },
+        { "number": 22, "name": "冨安 健洋", "club": "アヤックス", "country": "🇳🇱" },
+        { "number": 25, "name": "鈴木 淳之介", "club": "FCコペンハーゲン", "country": "🇩🇰" }
+      ]
+    },
+    {
+      "code": "MF",
+      "label": "MF",
+      "players": [
+        { "number": 6, "name": "遠藤 航", "club": "リバプールFC", "country": "🏴" },
+        { "number": 7, "name": "田中 碧", "club": "リーズ・ユナイテッド", "country": "🏴" },
+        { "number": 8, "name": "久保 建英", "club": "レアル・ソシエダード", "country": "🇪🇸" },
+        { "number": 10, "name": "堂安 律", "club": "アイントラハト・フランクフルト", "country": "🇩🇪" },
+        { "number": 13, "name": "中村 敬斗", "club": "スタッド・ランス", "country": "🇫🇷" },
+        { "number": 14, "name": "伊東 純也", "club": "KRCゲンク", "country": "🇧🇪" },
+        { "number": 15, "name": "鎌田 大地", "club": "クリスタル・パレス", "country": "🏴" },
+        { "number": 17, "name": "鈴木 唯人", "club": "SCフライブルク", "country": "🇩🇪" },
+        { "number": 24, "name": "佐野 海舟", "club": "マインツ05", "country": "🇩🇪" }
+      ]
+    },
+    {
+      "code": "FW",
+      "label": "FW",
+      "players": [
+        { "number": 9, "name": "後藤 啓介", "club": "SCフライブルク", "country": "🇩🇪" },
+        { "number": 11, "name": "前田 大然", "club": "セルティック", "country": "🏴" },
+        { "number": 18, "name": "上田 綺世", "club": "フェイエノールト", "country": "🇳🇱" },
+        { "number": 19, "name": "小川 航基", "club": "NECナイメヘン", "country": "🇳🇱" },
+        { "number": 26, "name": "塩貝 健人", "club": "VfLヴォルフスブルク", "country": "🇩🇪" }
+      ]
+    }
+  ]
+}
