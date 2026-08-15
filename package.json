@@ -1,0 +1,13 @@
+{
+  "name": "samurai-watch-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "海外組フォローアプリ (SAMURAI WATCH) - static site + GitHub Actions news fetcher",
+  "scripts": {
+    "update-news": "node scripts/fetch-news.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
