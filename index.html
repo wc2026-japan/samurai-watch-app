@@ -13,8 +13,8 @@
   :root {
     --bg: #0c0c0f;
     --bg-header: rgba(12,12,15,0.95);
-    --card: #141417;
-    --border: #242429;
+    --card: #16161a;
+    --border: #262629;
     --border-hover: #3a3a42;
     --text: #F2EFEA;
     --text-muted: #9a9aa2;
@@ -24,9 +24,10 @@
     --red-hover: #b01a33;
     --gold: #B8934D;
     --blue: #7C9CBF;
+    --green: #6FA98A;
   }
 
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
   body {
     margin: 0;
@@ -50,7 +51,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 16px 8px;
+    padding: 16px 18px 8px;
   }
   h1 {
     font-size: 20px;
@@ -63,32 +64,133 @@
   .tagline { font-size: 11px; color: var(--text-faint); margin: 4px 0 0; }
 
   main {
-    padding: 16px 16px 96px;
+    padding: 18px 18px 100px;
     max-width: 512px;
     margin: 0 auto;
   }
 
-  .banner {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: #17141a;
-    padding: 10px 12px;
-    margin-bottom: 16px;
+  /* ---- section heading (WC2026-guide inspired) ---- */
+  .section-eyebrow {
+    font-family: 'Oswald', sans-serif;
     font-size: 11.5px;
-    color: var(--text-muted);
-    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent, var(--red));
+    margin: 0 0 4px;
+  }
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 16px;
+    letter-spacing: 0.2px;
   }
 
+  /* ---- LIVE DATA banner ---- */
+  .live-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #17141a;
+    padding: 11px 16px;
+    margin-bottom: 20px;
+  }
+  .live-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: var(--red);
+  }
+  .live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--red);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(200,30,58,0.5); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(200,30,58,0); }
+  }
+  .live-times {
+    text-align: right;
+    font-size: 11px;
+    color: var(--text-faint);
+    line-height: 1.5;
+  }
+  .live-times b { color: var(--text-muted); font-weight: 600; }
+
+  /* ---- FILTER chips ---- */
+  .filter-block { margin-bottom: 18px; }
+  .filter-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--accent, var(--red));
+    margin-bottom: 8px;
+  }
+  .filter-label .filter-tag {
+    font-family: 'Oswald', sans-serif;
+  }
+  .filter-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .filter-row::-webkit-scrollbar { display: none; }
+  .filter-chip {
+    flex-shrink: 0;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+  .filter-chip.active {
+    color: var(--bg);
+    background: var(--accent, var(--red));
+    border-color: var(--accent, var(--red));
+    font-weight: 700;
+  }
+
+  /* ---- NEW badge ---- */
+  .new-badge {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #fff;
+    background: var(--red);
+    border-radius: 4px;
+    padding: 1px 5px;
+    margin-left: 6px;
+    vertical-align: 1px;
+  }
+
+  /* ---- standard card ---- */
   .card {
     display: block;
-    border-radius: 8px;
+    border-radius: 14px;
     border: 1px solid var(--border);
     background: var(--card);
-    padding: 16px;
-    margin-bottom: 12px;
+    padding: 18px;
+    margin-bottom: 14px;
     text-decoration: none;
     color: inherit;
   }
@@ -98,7 +200,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
   }
   .card-source {
     font-size: 11px;
@@ -106,30 +208,194 @@
     letter-spacing: 0.4px;
     text-transform: uppercase;
   }
-  .card-date { font-size: 11px; color: var(--text-faint); }
+  .card-date { font-size: 11px; color: var(--text-faint); flex-shrink: 0; }
   .card h3 {
     font-size: 15px;
-    line-height: 1.4;
+    line-height: 1.45;
     font-weight: 600;
-    margin: 0 0 4px;
+    margin: 0 0 5px;
     color: var(--text);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .card p {
     font-size: 13px;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
     margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .card-open {
     display: flex;
     align-items: center;
     gap: 4px;
-    margin-top: 8px;
+    margin-top: 10px;
     font-size: 11px;
     color: var(--text-fainter);
   }
 
   .empty { text-align: center; padding: 64px 24px; color: #8a8a92; font-size: 14px; }
+
+  /* ---- timeline (速報) ---- */
+  .timeline {
+    position: relative;
+    padding-left: 20px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -20px;
+    top: 5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--red);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--border);
+  }
+  .timeline-time {
+    font-size: 11px;
+    color: var(--text-faint);
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.3px;
+  }
+
+  /* ---- transfer card (移籍) ---- */
+  .transfer-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 9px;
+  }
+  .transfer-names {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    min-width: 0;
+  }
+  .transfer-names .dest {
+    color: var(--gold);
+  }
+  .transfer-arrow { color: var(--text-fainter); flex-shrink: 0; }
+  .status-badge {
+    flex-shrink: 0;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    padding: 2px 9px;
+  }
+  .transfer-caption {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0 0 9px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ---- WC guide link card ---- */
+  .promo-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, #1c1116 0%, #17141a 100%);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .promo-card:hover { border-color: var(--border-hover); }
+  .promo-icon {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .promo-text { min-width: 0; }
+  .promo-title { font-size: 13.5px; font-weight: 700; color: var(--text); margin: 0 0 2px; }
+  .promo-sub { font-size: 11.5px; color: var(--text-faint); margin: 0; }
+
+  /* ---- players tab ---- */
+  .players-note {
+    font-size: 11px;
+    color: var(--text-faint);
+    line-height: 1.5;
+    margin: 0 0 18px;
+  }
+  .position-group { margin-bottom: 22px; }
+  .position-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--green);
+    margin: 0 0 10px;
+  }
+  .player-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .player-card {
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    padding: 12px 13px;
+  }
+  .player-top {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+  .player-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-fainter);
+  }
+  .player-name { font-size: 13.5px; font-weight: 700; color: var(--text); }
+  .player-club {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
 
   nav.tabbar {
     position: fixed;
@@ -162,8 +428,12 @@
   .tab-btn span { font-size: 11px; margin-top: 4px; font-weight: 500; }
   .tab-btn.active { color: var(--accent, var(--red)); }
 
+  @media (prefers-reduced-motion: reduce) {
+    .live-dot { animation: none; }
+  }
   @media (prefers-reduced-motion: no-preference) {
     .card { transition: border-color 0.15s ease; }
+    .filter-chip { transition: background 0.12s ease, color 0.12s ease; }
   }
 </style>
 </head>
@@ -179,7 +449,14 @@
 </header>
 
 <main>
-  <div class="banner" id="banner">読み込み中...</div>
+  <div id="sectionHeading"></div>
+
+  <div class="live-banner" id="liveBanner">
+    <span class="live-badge"><span class="live-dot"></span>LIVE DATA</span>
+    <span class="live-times" id="liveTimes">読み込み中...</span>
+  </div>
+
+  <div id="filterBlock"></div>
   <div id="content"></div>
 </main>
 
@@ -193,6 +470,10 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
       <span>移籍</span>
     </button>
+    <button class="tab-btn" data-tab="players" style="--accent: #6FA98A;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span>選手</span>
+    </button>
     <button class="tab-btn" data-tab="articles" style="--accent: #7C9CBF;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
       <span>記事</span>
@@ -201,13 +482,50 @@
 </nav>
 
 <script>
-const ACCENTS = { scores: "#C81E3A", transfers: "#B8934D", articles: "#7C9CBF" };
-const state = { activeTab: "scores", scores: null, transfers: null, config: null };
+const ACCENTS = { scores: "#C81E3A", transfers: "#B8934D", players: "#6FA98A", articles: "#7C9CBF" };
+const SECTION_HEADINGS = {
+  scores: { eyebrow: "NEWS", title: "海外組速報" },
+  transfers: { eyebrow: "TRANSFER", title: "海外移籍情報" },
+  players: { eyebrow: "SQUAD", title: "日本代表メンバー" },
+  articles: { eyebrow: "ARTICLES", title: "関連ニュース" },
+};
+const NEW_THRESHOLD_MS = 24 * 60 * 60 * 1000; // 24 hours
+const WC_GUIDE_URL = "https://wc2026-japan.github.io/guide/";
+
+const SCORE_FILTERS = [
+  { id: "all", label: "すべて" },
+  { id: "goal", label: "ゴール" },
+  { id: "appearance", label: "出場" },
+  { id: "transfer", label: "移籍" },
+  { id: "nt", label: "代表" },
+  { id: "news", label: "ニュース" },
+];
+const TRANSFER_FILTERS = [
+  { id: "all", label: "すべて" },
+  { id: "decided", label: "決定" },
+  { id: "rumor", label: "噂" },
+];
+
+const state = {
+  activeTab: "scores",
+  scores: null,
+  transfers: null,
+  players: null,
+  config: null,
+  scoreFilter: "all",
+  transferFilter: "all",
+};
 
 async function loadJSON(url) {
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
+}
+
+function isNew(dateStr) {
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return false;
+  return Date.now() - d.getTime() < NEW_THRESHOLD_MS;
 }
 
 function timeAgo(dateStr) {
@@ -224,16 +542,117 @@ function timeAgo(dateStr) {
   return d.toLocaleDateString("ja-JP", { month: "short", day: "numeric" });
 }
 
-function renderCard(item, accent) {
+function timeLabel(dateStr) {
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return "";
+  return d.toLocaleString("ja-JP", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" });
+}
+
+function newBadge(item) {
+  return isNew(item.pubDate) ? `<span class="new-badge">NEW</span>` : "";
+}
+
+function promoCard() {
+  return `
+    <a class="promo-card" href="${WC_GUIDE_URL}" target="_blank" rel="noopener noreferrer">
+      <span class="promo-icon">🏆</span>
+      <span class="promo-text">
+        <p class="promo-title">W杯2026 全104試合ガイドを見る</p>
+        <p class="promo-sub">WC2026 GUIDE JAPAN で日程・結果・放送局をチェック</p>
+      </span>
+    </a>
+  `;
+}
+
+/* ---- Keyword-based categorization. Only uses words that actually appear
+   in the title/description — no invented categories. ---- */
+function scoreCategory(item) {
+  const t = `${item.title || ""} ${item.description || ""}`;
+  if (/ゴール|得点|決勝弾|挙げ/.test(t)) return "goal";
+  if (/移籍/.test(t)) return "transfer";
+  if (/代表/.test(t)) return "nt";
+  if (/出場|先発|途中出場|フル出場/.test(t)) return "appearance";
+  return "news";
+}
+
+function transferCategory(item) {
+  const t = item.title || "";
+  if (/決定|正式|合意|内定/.test(t)) return "decided";
+  if (/噂|報道|浮上|関心|オファー|接触/.test(t)) return "rumor";
+  return "other";
+}
+
+/* Best-effort transfer parsing. Only returns a structured result when the
+   title clearly follows a "選手名、移籍先クラブへ(完全)移籍..." pattern.
+   Anything else falls back to a normal news card — never invent a
+   destination club or status that isn't actually in the text. */
+function parseTransfer(item) {
+  const title = item.title || "";
+  if (!title.includes("移籍")) return null;
+  const commaIdx = title.indexOf("、");
+  if (commaIdx === -1) return null;
+  const namePart = title.slice(0, commaIdx).trim();
+  const restPart = title.slice(commaIdx + 1).trim();
+  const destMatch = restPart.match(/^(.+?)(へ|に)?(の)?(完全)?移籍/);
+  if (!destMatch || !destMatch[1]) return null;
+  const dest = destMatch[1].trim();
+  if (!dest || dest.length > 18 || namePart.length > 14) return null;
+
+  let status = null;
+  if (title.includes("決定")) status = "決定";
+  else if (title.includes("正式")) status = "正式発表";
+  else if (title.includes("合意")) status = "合意";
+  else if (title.includes("内定")) status = "内定";
+  else if (title.includes("交渉")) status = "交渉中";
+
+  return { name: namePart, dest, status };
+}
+
+function renderTimelineCard(item, accent) {
+  return `
+    <div class="timeline-item">
+      <span class="timeline-dot" style="background:${accent}"></span>
+      <div class="timeline-time">${timeLabel(item.pubDate)}${newBadge(item)}</div>
+      <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
+          <span class="card-date">${timeAgo(item.pubDate)}</span>
+        </div>
+        <h3>${item.title}</h3>
+        <p>${item.description || ""}</p>
+        <div class="card-open">開く</div>
+      </a>
+    </div>
+  `;
+}
+
+function renderTransferCard(item, accent) {
+  const transfer = parseTransfer(item);
+  if (!transfer) {
+    return `
+      <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
+          <span class="card-date">${timeAgo(item.pubDate)}${newBadge(item)}</span>
+        </div>
+        <h3>${item.title}</h3>
+        <p>${item.description || ""}</p>
+        <div class="card-open">開く</div>
+      </a>
+    `;
+  }
   return `
     <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
       <div class="card-top">
         <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
-        <span class="card-date">${timeAgo(item.pubDate)}</span>
+        <span class="card-date">${timeAgo(item.pubDate)}${newBadge(item)}</span>
       </div>
-      <h3>${item.title}</h3>
-      <p>${item.description || ""}</p>
-      <div class="card-open">開く</div>
+      <div class="transfer-flow">
+        <span class="transfer-names">🇯🇵&nbsp;${transfer.name}&nbsp;<span class="transfer-arrow">→</span>&nbsp;<span class="dest">${transfer.dest}</span></span>
+        ${transfer.status ? `<span class="status-badge">${transfer.status}</span>` : ""}
+      </div>
+      <p class="transfer-caption">${item.title}</p>
+      <div class="card-open">詳細を見る</div>
     </a>
   `;
 }
@@ -243,23 +662,87 @@ function renderArticlesTab() {
   return `
     <a class="card" href="https://note.com/${encodeURIComponent(user)}" target="_blank" rel="noopener noreferrer">
       <span class="card-source" style="color:${ACCENTS.articles}">note.com</span>
-      <h3 style="margin-top:8px;">サムライウォッチの記事一覧を開く</h3>
+      <h3 style="margin-top:9px;">サムライウォッチの記事一覧を開く</h3>
       <p>note.com/${user} で公開中の無料記事・有料タクティカル分析をまとめて確認できます。</p>
       <div class="card-open">noteで開く</div>
     </a>
   `;
 }
 
-function render() {
+function renderPlayersTab() {
+  if (!state.players) return `<div class="empty">読み込み中...</div>`;
+  const data = state.players;
+  const groups = data.positions.map((group) => `
+    <div class="position-group">
+      <p class="position-label">${group.label}</p>
+      <div class="player-grid">
+        ${group.players.map((p) => `
+          <div class="player-card">
+            <div class="player-top">
+              <span class="player-number">${p.number}</span>
+              <span class="player-name">${p.name}</span>
+            </div>
+            <div class="player-club">${p.country || ""} ${p.club}</div>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `).join("");
+  const note = data.note ? `<p class="players-note">${data.note}</p>` : "";
+  return note + groups;
+}
+
+function renderSectionHeading() {
+  const h = SECTION_HEADINGS[state.activeTab];
+  document.getElementById("sectionHeading").innerHTML = `
+    <p class="section-eyebrow" style="--accent:${ACCENTS[state.activeTab]}">${h.eyebrow}</p>
+    <h2 class="section-title">${h.title}</h2>
+  `;
+}
+
+function renderFilterBlock() {
+  const el = document.getElementById("filterBlock");
+  if (state.activeTab !== "scores" && state.activeTab !== "transfers") {
+    el.innerHTML = "";
+    return;
+  }
+  const isScores = state.activeTab === "scores";
+  const filters = isScores ? SCORE_FILTERS : TRANSFER_FILTERS;
+  const activeId = isScores ? state.scoreFilter : state.transferFilter;
+  const accent = ACCENTS[state.activeTab];
+  el.innerHTML = `
+    <div class="filter-block">
+      <div class="filter-label" style="--accent:${accent}">
+        <span class="filter-tag">FILTER</span>
+      </div>
+      <div class="filter-row">
+        ${filters.map((f) => `
+          <button class="filter-chip ${f.id === activeId ? "active" : ""}" data-filter="${f.id}" style="--accent:${accent}">${f.label}</button>
+        `).join("")}
+      </div>
+    </div>
+  `;
+  el.querySelectorAll(".filter-chip").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (isScores) state.scoreFilter = btn.dataset.filter;
+      else state.transferFilter = btn.dataset.filter;
+      renderFilterBlock();
+      renderContent();
+    });
+  });
+}
+
+function renderContent() {
   const content = document.getElementById("content");
   const tab = state.activeTab;
 
-  document.querySelectorAll(".tab-btn").forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.tab === tab);
-  });
-
   if (tab === "articles") {
     content.innerHTML = renderArticlesTab();
+    return;
+  }
+
+  if (tab === "players") {
+    content.innerHTML = promoCard() + renderPlayersTab();
     return;
   }
 
@@ -268,49 +751,76 @@ function render() {
     content.innerHTML = `<div class="empty">読み込み中...</div>`;
     return;
   }
-  if (feed.items.length === 0) {
-    content.innerHTML = `<div class="empty">記事が見つかりませんでした。</div>`;
+
+  let items = feed.items;
+  if (tab === "scores" && state.scoreFilter !== "all") {
+    items = items.filter((item) => scoreCategory(item) === state.scoreFilter);
+  }
+  if (tab === "transfers" && state.transferFilter !== "all") {
+    items = items.filter((item) => transferCategory(item) === state.transferFilter);
+  }
+
+  if (items.length === 0) {
+    content.innerHTML = `<div class="empty">該当する情報が見つかりませんでした。</div>`;
     return;
   }
-  content.innerHTML = feed.items.map((item) => renderCard(item, ACCENTS[tab])).join("");
+
+  if (tab === "scores") {
+    content.innerHTML = `<div class="timeline">${items.map((item) => renderTimelineCard(item, ACCENTS.scores)).join("")}</div>`;
+  } else {
+    content.innerHTML = items.map((item) => renderTransferCard(item, ACCENTS.transfers)).join("");
+  }
 }
 
-function renderBanner() {
-  const banner = document.getElementById("banner");
+function renderLiveBanner() {
+  const timesEl = document.getElementById("liveTimes");
   const feed = state.activeTab === "transfers" ? state.transfers : state.scores;
-  if (state.activeTab === "articles" || !feed) {
-    banner.textContent = "1時間ごとに自動更新されます。";
+  if (state.activeTab === "articles" || state.activeTab === "players" || !feed || !feed.updatedAt) {
+    timesEl.innerHTML = state.activeTab === "players" ? `選手データは手動更新` : `毎時0分に自動更新`;
     return;
   }
   const updated = new Date(feed.updatedAt);
-  const label = isNaN(updated.getTime()) ? "" : updated.toLocaleString("ja-JP", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
-  banner.textContent = `最終更新: ${label}(1時間ごとに自動更新)`;
+  if (isNaN(updated.getTime())) {
+    timesEl.innerHTML = `毎時0分に自動更新`;
+    return;
+  }
+  const next = new Date(updated.getTime());
+  next.setHours(next.getHours() + 1, 0, 0, 0);
+  const fmt = (d) => d.toLocaleTimeString("ja-JP", { hour: "2-digit", minute: "2-digit" });
+  timesEl.innerHTML = `最終更新 <b>${fmt(updated)}</b> ・ 次回 <b>${fmt(next)}</b>`;
+}
+
+function renderAll() {
+  renderSectionHeading();
+  renderFilterBlock();
+  renderContent();
+  renderLiveBanner();
 }
 
 document.querySelectorAll(".tab-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab-btn").forEach((b) => b.classList.toggle("active", b === btn));
     state.activeTab = btn.dataset.tab;
-    render();
-    renderBanner();
+    renderAll();
   });
 });
 
 (async function init() {
   try {
-    const [scores, transfers, config] = await Promise.all([
+    const [scores, transfers, players, config] = await Promise.all([
       loadJSON("./data/scores.json"),
       loadJSON("./data/transfers.json"),
+      loadJSON("./data/players.json"),
       loadJSON("./data/config.json"),
     ]);
     state.scores = scores;
     state.transfers = transfers;
+    state.players = players;
     state.config = config;
   } catch (err) {
-    document.getElementById("banner").textContent = "データの読み込みに失敗しました。";
     console.error(err);
   }
-  render();
-  renderBanner();
+  renderAll();
 })();
 </script>
 </body>
