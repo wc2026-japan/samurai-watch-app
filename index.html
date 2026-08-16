@@ -63,6 +63,22 @@
   h1 span { color: var(--red); }
   .tagline { font-size: 11px; color: var(--text-faint); margin: 4px 0 0; }
 
+  .header-actions { display: flex; gap: 8px; }
+  .icon-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .icon-btn svg { width: 17px; height: 17px; }
+  .icon-btn:hover { border-color: var(--border-hover); color: var(--text); }
+
   main {
     padding: 18px 18px 100px;
     max-width: 512px;
@@ -84,6 +100,48 @@
     color: var(--text);
     margin: 0 0 16px;
     letter-spacing: 0.2px;
+  }
+
+  /* ---- today's digest ---- */
+  .digest-card {
+    border-radius: 14px;
+    border: 1px solid rgba(200,30,58,0.35);
+    background: linear-gradient(135deg, rgba(200,30,58,0.12) 0%, rgba(23,20,26,0.4) 60%);
+    padding: 16px;
+    margin-bottom: 18px;
+  }
+  .digest-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--red);
+    margin: 0 0 10px;
+  }
+  .digest-item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 8px 0;
+  }
+  .digest-item + .digest-item { border-top: 1px solid rgba(255,255,255,0.08); }
+  .digest-item-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .digest-item-meta {
+    font-size: 10.5px;
+    color: var(--text-faint);
+    margin-top: 3px;
   }
 
   /* ---- LIVE DATA banner ---- */
@@ -237,6 +295,15 @@
     margin-top: 10px;
     font-size: 11px;
     color: var(--text-fainter);
+  }
+  .card-thumb {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background: var(--bg);
+    display: block;
   }
 
   .empty { text-align: center; padding: 64px 24px; color: #8a8a92; font-size: 14px; }
@@ -560,6 +627,105 @@
   }
   .sns-btn.is-fallback { color: var(--text-faint); }
 
+  /* ---- search overlay ---- */
+  .search-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+  }
+  .search-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .search-input {
+    flex: 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 15px;
+    color: var(--text);
+    font-family: inherit;
+  }
+  .search-input::placeholder { color: var(--text-fainter); }
+  .search-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 16px 40px;
+    max-width: 512px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .search-group-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--text-faint);
+    margin: 18px 0 8px;
+  }
+  .search-group-label:first-child { margin-top: 0; }
+  .search-player-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .search-player-row .player-name { font-size: 14px; }
+  .search-player-row .player-club { margin-top: 2px; }
+
+  /* ---- glossary ---- */
+  .glossary-item { padding: 12px 0; border-top: 1px solid var(--border); }
+  .glossary-item:first-child { border-top: none; }
+  .glossary-term { font-size: 14px; font-weight: 700; color: var(--text); margin: 0 0 4px; }
+  .glossary-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+  /* ---- first-time guide ---- */
+  .guide-step {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+  }
+  .guide-step:first-child { border-top: none; }
+  .guide-step-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+  .guide-step-title { font-size: 13.5px; font-weight: 700; color: var(--text); margin: 0 0 2px; }
+  .guide-step-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin: 0; }
+  .guide-start-btn {
+    width: 100%;
+    margin-top: 18px;
+    background: var(--red);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 0;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
   nav.tabbar {
     position: fixed;
     bottom: 0;
@@ -609,10 +775,19 @@
       <h1 class="font-display">SAMURAI <span>WATCH</span></h1>
       <p class="tagline">海外組フォローアプリ</p>
     </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="glossaryBtn" aria-label="用語集">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+      </button>
+      <button class="icon-btn" id="searchBtn" aria-label="検索">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
 <main>
+  <div id="digestBlock"></div>
   <div id="sectionHeading"></div>
 
   <div class="live-banner" id="liveBanner">
@@ -625,6 +800,8 @@
 </main>
 
 <div id="modalRoot"></div>
+<div id="searchRoot"></div>
+<div id="infoRoot"></div>
 
 <nav class="tabbar">
   <div class="tabbar-inner">
@@ -672,6 +849,21 @@ const TRANSFER_FILTERS = [
   { id: "rumor", label: "噂" },
 ];
 
+const GLOSSARY = [
+  { term: "完全移籍", desc: "選手の登録を完全に別クラブへ譲渡する移籍。レンタルと違い、元のクラブには自動的には戻らない。" },
+  { term: "レンタル移籍(期限付き移籍)", desc: "契約はそのままに、一定期間だけ別クラブでプレーする移籍。期間が終われば元クラブに復帰するのが基本。" },
+  { term: "買取オプション", desc: "レンタル移籍の契約に付随し、条件を満たせば移籍先クラブがそのまま完全移籍として選手を獲得できる権利。" },
+  { term: "移籍金", desc: "選手の契約を保有するクラブに対して、獲得する側のクラブが支払う金額。" },
+  { term: "移籍金非公開", desc: "移籍が成立したものの、実際に支払われた移籍金の金額をクラブ側が公表していない状態。" },
+  { term: "背番号", desc: "各選手に割り当てられる、ユニフォームに入る試合用の番号。" },
+  { term: "先発 / スタメン", desc: "試合開始の時点からピッチに立つ11人のこと。" },
+  { term: "途中出場", desc: "試合の途中で交代選手としてピッチに入ること。" },
+  { term: "クリーンシート", desc: "GKやDFが、試合を無失点(0失点)で終えること。" },
+  { term: "アシスト", desc: "得点に直接つながるパスやプレーを記録すること。" },
+  { term: "個人合意", desc: "選手と獲得を目指すクラブの間で、契約条件について合意ができている状態。クラブ間の移籍金交渉が別途必要な場合が多い。" },
+  { term: "移籍リンク(交渉中)", desc: "正式契約の前段階で、クラブ間または選手との交渉が進んでいる状態。決定ではない点に注意。" },
+];
+
 const state = {
   activeTab: "scores",
   scores: null,
@@ -682,6 +874,8 @@ const state = {
   scoreFilter: "all",
   transferFilter: "all",
   selectedPlayer: null, // { number, name, club, country, position }
+  searchOpen: false,
+  searchQuery: "",
 };
 
 async function loadJSON(url) {
@@ -729,6 +923,42 @@ function promoCard() {
         <p class="promo-sub">WC2026 GUIDE JAPAN で日程・結果・放送局をチェック</p>
       </span>
     </a>
+  `;
+}
+
+/* Today's digest: pulls the most recent 1-2 items across scores + transfers
+   (whichever is freshest), so opening the app answers "what happened
+   today" without needing to pick a tab first. Only uses real fetched
+   items — shows nothing if there's genuinely nothing recent. */
+function renderDigest() {
+  const el = document.getElementById("digestBlock");
+  if (!state.scores || !state.transfers) {
+    el.innerHTML = "";
+    return;
+  }
+  const pool = [
+    ...(state.scores.items || []).map((i) => ({ ...i, _tab: "速報", _accent: ACCENTS.scores })),
+    ...(state.transfers.items || []).map((i) => ({ ...i, _tab: "移籍", _accent: ACCENTS.transfers })),
+  ]
+    .filter((i) => !isNaN(new Date(i.pubDate).getTime()))
+    .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+    .slice(0, 2);
+
+  if (pool.length === 0) {
+    el.innerHTML = "";
+    return;
+  }
+
+  el.innerHTML = `
+    <div class="digest-card">
+      <p class="digest-label">🔴 今日のダイジェスト</p>
+      ${pool.map((item) => `
+        <a class="digest-item" href="${item.link}" target="_blank" rel="noopener noreferrer">
+          <div class="digest-item-title">${item.title}</div>
+          <div class="digest-item-meta" style="color:${item._accent}">${item._tab} ・ ${timeAgo(item.pubDate)}</div>
+        </a>
+      `).join("")}
+    </div>
   `;
 }
 
@@ -782,6 +1012,7 @@ function renderTimelineCard(item, accent) {
       <span class="timeline-dot" style="background:${accent}"></span>
       <div class="timeline-time">${timeLabel(item.pubDate)}${newBadge(item)}</div>
       <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+        ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
         <div class="card-top">
           <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
           <span class="card-date">${timeAgo(item.pubDate)}</span>
@@ -799,6 +1030,7 @@ function renderTransferCard(item, accent) {
   if (!transfer) {
     return `
       <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+        ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
         <div class="card-top">
           <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
           <span class="card-date">${timeAgo(item.pubDate)}${newBadge(item)}</span>
@@ -811,6 +1043,7 @@ function renderTransferCard(item, accent) {
   }
   return `
     <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+      ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
       <div class="card-top">
         <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
         <span class="card-date">${timeAgo(item.pubDate)}${newBadge(item)}</span>
@@ -823,6 +1056,35 @@ function renderTransferCard(item, accent) {
       <div class="card-open">詳細を見る</div>
     </a>
   `;
+}
+
+function renderXFallbackCard() {
+  const xUser = state.config?.xUser || "coin0115";
+  return `
+    <a class="promo-card" href="https://x.com/${encodeURIComponent(xUser)}" target="_blank" rel="noopener noreferrer">
+      <span class="promo-icon">𝕏</span>
+      <span class="promo-text">
+        <p class="promo-title">Xで最新投稿を見る</p>
+        <p class="promo-sub">@${xUser} (埋め込み表示が利用できないため、直接リンクします)</p>
+      </span>
+    </a>
+  `;
+}
+
+/* X's embed timeline is unreliable as of 2026 — it frequently just shows
+   the "Tweets by ~" fallback text forever, especially for viewers not
+   logged into X. There's no way to fix that from our side, so instead we
+   wait a few seconds and swap it for a plain link if it never rendered. */
+function scheduleTwitterFallbackCheck(container) {
+  setTimeout(() => {
+    if (state.activeTab !== "articles") return;
+    const anchor = container.querySelector("a.twitter-timeline");
+    if (!anchor) return; // it rendered successfully (replaced with an iframe)
+    const embedCard = container.querySelector(".x-embed-card");
+    if (embedCard) {
+      embedCard.outerHTML = renderXFallbackCard();
+    }
+  }, 4000);
 }
 
 function renderArticlesTab() {
@@ -866,6 +1128,7 @@ function renderArticlesTab() {
 function renderTimelineStyleArticleCard(item) {
   return `
     <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+      ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
       <div class="card-top">
         <span class="card-source" style="color:${ACCENTS.articles}">${item.source || "note.com"}</span>
         <span class="card-date">${timeAgo(item.pubDate)}${newBadge(item)}</span>
@@ -1002,6 +1265,208 @@ function renderModal() {
   document.getElementById("modalCloseBtn").addEventListener("click", closePlayerModal);
 }
 
+/* ---- keyword search (across scores, transfers, articles, players) ---- */
+function openSearch() {
+  state.searchOpen = true;
+  state.searchQuery = "";
+  renderSearch();
+  setTimeout(() => {
+    const input = document.getElementById("searchInput");
+    if (input) input.focus();
+  }, 30);
+}
+
+function closeSearch() {
+  state.searchOpen = false;
+  document.getElementById("searchRoot").innerHTML = "";
+}
+
+function runSearch(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return { news: [], players: [] };
+
+  const newsPool = [
+    ...(state.scores?.items || []).map((i) => ({ ...i, _tab: "速報", _accent: ACCENTS.scores })),
+    ...(state.transfers?.items || []).map((i) => ({ ...i, _tab: "移籍", _accent: ACCENTS.transfers })),
+    ...(state.articles?.items || []).map((i) => ({ ...i, _tab: "記事", _accent: ACCENTS.articles })),
+  ].filter((i) => `${i.title} ${i.description || ""}`.toLowerCase().includes(q));
+
+  const playerPool = [];
+  if (state.players) {
+    state.players.positions.forEach((group) => {
+      group.players.forEach((p) => {
+        if (`${p.name} ${p.club}`.toLowerCase().includes(q)) {
+          playerPool.push({ ...p, _position: group.label, _code: group.code });
+        }
+      });
+    });
+  }
+
+  return { news: newsPool.slice(0, 20), players: playerPool };
+}
+
+function renderSearch() {
+  const root = document.getElementById("searchRoot");
+  if (!state.searchOpen) {
+    root.innerHTML = "";
+    return;
+  }
+  const results = runSearch(state.searchQuery);
+  const hasQuery = state.searchQuery.trim().length > 0;
+  const total = results.news.length + results.players.length;
+
+  let bodyHtml;
+  if (!hasQuery) {
+    bodyHtml = `<div class="empty">選手名・クラブ名・キーワードで検索できます</div>`;
+  } else if (total === 0) {
+    bodyHtml = `<div class="empty">「${state.searchQuery}」に一致する情報が見つかりませんでした</div>`;
+  } else {
+    const playersHtml = results.players.length
+      ? `<p class="search-group-label">選手 (${results.players.length})</p>` +
+        results.players.map((p) => `
+          <div class="search-player-row" data-player-number="${p.number}" data-position="${p._code}">
+            <div>
+              <div class="player-top" style="margin-bottom:2px;">
+                <span class="player-number">${p.number}</span>
+                <span class="player-name">${p.name}</span>
+              </div>
+              <div class="player-club">${p.country || ""} ${p.club}</div>
+            </div>
+            <span style="color:var(--text-fainter); font-size:12px;">${p._position}</span>
+          </div>
+        `).join("")
+      : "";
+
+    const newsHtml = results.news.length
+      ? `<p class="search-group-label">ニュース・記事 (${results.news.length})</p>` +
+        results.news.map((item) => `
+          <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+            ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
+            <div class="card-top">
+              <span class="card-source" style="color:${item._accent}">${item._tab} ・ ${item.source || ""}</span>
+              <span class="card-date">${timeAgo(item.pubDate)}</span>
+            </div>
+            <h3>${item.title}</h3>
+            <p>${item.description || ""}</p>
+            <div class="card-open">開く</div>
+          </a>
+        `).join("")
+      : "";
+
+    bodyHtml = playersHtml + newsHtml;
+  }
+
+  root.innerHTML = `
+    <div class="search-overlay" id="searchOverlayEl">
+      <div class="search-top">
+        <input class="search-input" id="searchInput" type="text" placeholder="選手名やチームで検索" value="${state.searchQuery.replace(/"/g, "&quot;")}" />
+        <button class="icon-btn" id="searchCloseBtn" aria-label="閉じる">✕</button>
+      </div>
+      <div class="search-body" id="searchBody">${bodyHtml}</div>
+    </div>
+  `;
+
+  document.getElementById("searchCloseBtn").addEventListener("click", closeSearch);
+  const input = document.getElementById("searchInput");
+  input.addEventListener("input", (e) => {
+    state.searchQuery = e.target.value;
+    renderSearch();
+    // re-focus + restore cursor position after re-render
+    const newInput = document.getElementById("searchInput");
+    if (newInput) {
+      newInput.focus();
+      const len = newInput.value.length;
+      newInput.setSelectionRange(len, len);
+    }
+  });
+  root.querySelectorAll(".search-player-row").forEach((row) => {
+    row.addEventListener("click", () => {
+      closeSearch();
+      openPlayerModal(row.dataset.playerNumber, row.dataset.position);
+    });
+  });
+}
+
+/* ---- glossary ---- */
+function openGlossary() {
+  const root = document.getElementById("infoRoot");
+  root.innerHTML = `
+    <div class="modal-overlay" id="glossaryOverlay">
+      <div class="modal-sheet" style="position:relative;">
+        <button class="modal-close" id="glossaryCloseBtn" aria-label="閉じる">✕</button>
+        <p class="section-eyebrow" style="--accent:${ACCENTS.scores}; margin-bottom:2px;">GLOSSARY</p>
+        <h2 class="section-title" style="margin-bottom:6px;">サッカー用語集</h2>
+        <div>
+          ${GLOSSARY.map((g) => `
+            <div class="glossary-item">
+              <p class="glossary-term">${g.term}</p>
+              <p class="glossary-desc">${g.desc}</p>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById("glossaryOverlay").addEventListener("click", (e) => {
+    if (e.target.id === "glossaryOverlay") closeInfoOverlay();
+  });
+  document.getElementById("glossaryCloseBtn").addEventListener("click", closeInfoOverlay);
+}
+
+function closeInfoOverlay() {
+  document.getElementById("infoRoot").innerHTML = "";
+}
+
+/* ---- first-time mini guide ---- */
+const GUIDE_STORAGE_KEY = "sw_guide_seen_v1";
+const GUIDE_STEPS = [
+  { icon: "🔴", title: "速報", desc: "海外組の試合結果・出場情報をタイムラインで確認できます。" },
+  { icon: "🟡", title: "移籍", desc: "誰がどこへ移籍したかを、決定/噂で絞り込んで確認できます。" },
+  { icon: "🟢", title: "選手", desc: "日本代表メンバーを一覧表示。タップで詳細とSNSが見られます。" },
+  { icon: "🔵", title: "記事", desc: "サムライウォッチの記事とX投稿をまとめてチェックできます。" },
+];
+
+function showGuideIfFirstTime() {
+  let seen = null;
+  try {
+    seen = window.localStorage.getItem(GUIDE_STORAGE_KEY);
+  } catch {
+    // localStorage unavailable — just skip the guide silently
+    return;
+  }
+  if (seen) return;
+
+  const root = document.getElementById("infoRoot");
+  root.innerHTML = `
+    <div class="modal-overlay" id="guideOverlay">
+      <div class="modal-sheet" style="position:relative;">
+        <p class="section-eyebrow" style="--accent:${ACCENTS.scores}; margin-bottom:2px;">WELCOME</p>
+        <h2 class="section-title" style="margin-bottom:2px;">SAMURAI WATCHの使い方</h2>
+        <div>
+          ${GUIDE_STEPS.map((s) => `
+            <div class="guide-step">
+              <span class="guide-step-icon">${s.icon}</span>
+              <div>
+                <p class="guide-step-title">${s.title}</p>
+                <p class="guide-step-desc">${s.desc}</p>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+        <button class="guide-start-btn" id="guideStartBtn">はじめる</button>
+      </div>
+    </div>
+  `;
+  document.getElementById("guideStartBtn").addEventListener("click", () => {
+    try {
+      window.localStorage.setItem(GUIDE_STORAGE_KEY, "1");
+    } catch {
+      // ignore — worst case the guide shows again next visit
+    }
+    document.getElementById("infoRoot").innerHTML = "";
+  });
+}
+
 function renderSectionHeading() {
   const h = SECTION_HEADINGS[state.activeTab];
   document.getElementById("sectionHeading").innerHTML = `
@@ -1051,6 +1516,7 @@ function renderContent() {
     if (window.twttr && window.twttr.widgets) {
       window.twttr.widgets.load(content);
     }
+    scheduleTwitterFallbackCheck(content);
     return;
   }
 
@@ -1114,6 +1580,7 @@ function renderLiveBanner() {
 }
 
 function renderAll() {
+  renderDigest();
   renderSectionHeading();
   renderFilterBlock();
   renderContent();
@@ -1127,6 +1594,9 @@ document.querySelectorAll(".tab-btn").forEach((btn) => {
     renderAll();
   });
 });
+
+document.getElementById("searchBtn").addEventListener("click", openSearch);
+document.getElementById("glossaryBtn").addEventListener("click", openGlossary);
 
 (async function init() {
   try {
@@ -1146,6 +1616,7 @@ document.querySelectorAll(".tab-btn").forEach((btn) => {
     console.error(err);
   }
   renderAll();
+  showGuideIfFirstTime();
 })();
 </script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
