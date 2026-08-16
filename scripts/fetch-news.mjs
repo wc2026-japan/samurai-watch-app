@@ -68,6 +68,24 @@ function stripHtml(str) {
   return str.replace(/<[^>]*>/g, "").trim();
 }
 
+/* Best-effort image extraction. Tries, in order: <enclosure url>,
+   <media:content>/<media:thumbnail>, then the first <img src> inside the
+   raw item XML (which catches images embedded in <description>/
+   <content:encoded> HTML). Returns null if nothing is found — no
+   placeholder or fabricated image is ever used. */
+function extractImage(itemXml) {
+  const enclosureMatch = itemXml.match(/<enclosure[^>]*url=["']([^"']+)["'][^>]*>/i);
+  if (enclosureMatch) return enclosureMatch[1];
+
+  const mediaMatch = itemXml.match(/<media:(?:content|thumbnail)[^>]*url=["']([^"']+)["'][^>]*>/i);
+  if (mediaMatch) return mediaMatch[1];
+
+  const imgMatch = itemXml.match(/<img[^>]*src=["']([^"']+)["']/i);
+  if (imgMatch) return imgMatch[1];
+
+  return null;
+}
+
 function parseRssItems(xmlText) {
   const blocks = xmlText.split(/<item[\s>]/i).slice(1);
   return blocks.map((block) => {
@@ -78,6 +96,7 @@ function parseRssItems(xmlText) {
       pubDate: extractTag(itemXml, "pubDate"),
       description: stripHtml(extractTag(itemXml, "description")).slice(0, 160),
       source: extractTag(itemXml, "source") || "Google News",
+      image: extractImage(itemXml),
     };
   });
 }
@@ -163,9 +182,23 @@ async function main() {
   console.log(`scores: ${scores.length} fresh item(s) fetched (kept ${scoresOut.items.length})`);
   console.log(`transfers: ${transfers.length} fresh item(s) fetched (kept ${transfersOut.items.length})`);
   console.log(`articles: ${articles.length} fresh item(s) fetched (kept ${articlesOut.items.length})`);
+
+  // Expose the *fresh* counts (before the failsafe kicks in) to the GitHub
+  // Actions workflow, so it can decide whether to send a "0 results"
+  // notification even though the failsafe kept the old data visible on
+  // the site.
+  if (process.env.GITHUB_OUTPUT) {
+    fs.appendFileSync(
+      process.env.GITHUB_OUTPUT,
+      `scores_count=${scores.length}\ntransfers_count=${transfers.length}\narticles_count=${articles.length}\n`
+    );
+  }
 }
 
 main().catch((err) => {
   console.error(err);
+  if (process.env.GITHUB_OUTPUT) {
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, `error_message=${String(err.message || err).slice(0, 500)}\n`);
+  }
   process.exit(1);
 });
