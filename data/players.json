@@ -6,53 +6,64 @@
       "code": "GK",
       "label": "GK",
       "players": [
-        { "number": 1, "name": "鈴木 彩艶", "club": "パルマ・カルチョ", "country": "🇮🇹", "keyman": true },
-        { "number": 12, "name": "大迫 敬介", "club": "サンフレッチェ広島", "country": "🇯🇵" },
-        { "number": 23, "name": "早川 友基", "club": "鹿島アントラーズ", "country": "🇯🇵" }
+        { "number": 1, "name": "鈴木 彩艶", "club": "パルマ・カルチョ", "country": "🇮🇹", "league": "セリエA", "keyman": true },
+        { "number": 12, "name": "大迫 敬介", "club": "サンフレッチェ広島", "country": "🇯🇵", "league": "J1リーグ" },
+        { "number": 23, "name": "早川 友基", "club": "鹿島アントラーズ", "country": "🇯🇵", "league": "J1リーグ" }
       ]
     },
     {
       "code": "DF",
       "label": "DF",
       "players": [
-        { "number": 2, "name": "菅原 由勢", "club": "ヴェルダー・ブレーメン", "country": "🇩🇪" },
-        { "number": 3, "name": "谷口 彰悟", "club": "シント=トロイデンVV", "country": "🇧🇪" },
-        { "number": 4, "name": "板倉 滉", "club": "アヤックス", "country": "🇳🇱", "keyman": true },
-        { "number": 5, "name": "長友 佑都", "club": "FC東京", "country": "🇯🇵" },
-        { "number": 16, "name": "渡辺 剛", "club": "フェイエノールト", "country": "🇳🇱" },
-        { "number": 20, "name": "瀬古 歩夢", "club": "ル・アーヴルAC", "country": "🇫🇷" },
-        { "number": 21, "name": "伊藤 洋輝", "club": "バイエルン・ミュンヘン", "country": "🇩🇪" },
-        { "number": 22, "name": "冨安 健洋", "club": "クリスタル・パレス", "country": "🏴", "keyman": true, "sns": { "instagram": "tomiyasu.t" } },
-        { "number": 25, "name": "鈴木 淳之介", "club": "FCコペンハーゲン", "country": "🇩🇰" }
+        { "number": 2, "name": "菅原 由勢", "club": "ヴェルダー・ブレーメン", "country": "🇩🇪", "league": "ブンデスリーガ" },
+        { "number": 3, "name": "谷口 彰悟", "club": "シント=トロイデンVV", "country": "🇧🇪", "league": "ベルギー1部リーグ" },
+        { "number": 4, "name": "板倉 滉", "club": "アヤックス", "country": "🇳🇱", "league": "エールディビジ", "keyman": true },
+        { "number": 5, "name": "長友 佑都", "club": "FC東京", "country": "🇯🇵", "league": "J1リーグ" },
+        { "number": 16, "name": "渡辺 剛", "club": "フェイエノールト", "country": "🇳🇱", "league": "エールディビジ" },
+        { "number": 20, "name": "瀬古 歩夢", "club": "ル・アーヴルAC", "country": "🇫🇷", "league": "リーグ・アン" },
+        { "number": 21, "name": "伊藤 洋輝", "club": "バイエルン・ミュンヘン", "country": "🇩🇪", "league": "ブンデスリーガ" },
+        { "number": 22, "name": "冨安 健洋", "club": "クリスタル・パレス", "country": "🏴", "league": "プレミアリーグ", "keyman": true, "sns": { "instagram": "tomiyasu.t" } },
+        { "number": 25, "name": "鈴木 淳之介", "club": "FCコペンハーゲン", "country": "🇩🇰", "league": "スーペルリーガ" }
       ]
     },
     {
       "code": "MF",
       "label": "MF",
       "players": [
-        { "number": 6, "name": "遠藤 航", "club": "リバプールFC", "country": "🏴", "status": "代表引退(6/12)", "sns": { "instagram": "endowataru" } },
-        { "number": 7, "name": "田中 碧", "club": "リーズ・ユナイテッド", "country": "🏴" },
-        { "number": 8, "name": "久保 建英", "club": "レアル・ソシエダード", "country": "🇪🇸", "keyman": true, "sns": { "instagram": "takefusa.kubo" } },
-        { "number": 10, "name": "堂安 律", "club": "アイントラハト・フランクフルト", "country": "🇩🇪", "sns": { "instagram": "doanritsu" } },
-        { "number": 13, "name": "中村 敬斗", "club": "スタッド・ランス", "country": "🇫🇷" },
-        { "number": 14, "name": "伊東 純也", "club": "KRCゲンク", "country": "🇧🇪" },
-        { "number": 15, "name": "鎌田 大地", "club": "クリスタル・パレス", "country": "🏴", "sns": { "instagram": "kamadadaichi" } },
-        { "number": 17, "name": "鈴木 唯人", "club": "SCフライブルク", "country": "🇩🇪" },
-        { "number": 24, "name": "佐野 海舟", "club": "マインツ05", "country": "🇩🇪" }
+        { "number": 6, "name": "遠藤 航", "club": "リバプールFC", "country": "🏴", "league": "プレミアリーグ", "status": "代表引退(6/12)", "sns": { "instagram": "endowataru" } },
+        { "number": 7, "name": "田中 碧", "club": "リーズ・ユナイテッド", "country": "🏴", "league": "プレミアリーグ" },
+        { "number": 8, "name": "久保 建英", "club": "レアル・ソシエダード", "country": "🇪🇸", "league": "ラ・リーガ", "keyman": true, "sns": { "instagram": "takefusa.kubo" } },
+        { "number": 10, "name": "堂安 律", "club": "アイントラハト・フランクフルト", "country": "🇩🇪", "league": "ブンデスリーガ", "sns": { "instagram": "doanritsu" } },
+        { "number": 13, "name": "中村 敬斗", "club": "スタッド・ランス", "country": "🇫🇷", "league": "リーグ・アン" },
+        { "number": 14, "name": "伊東 純也", "club": "KRCゲンク", "country": "🇧🇪", "league": "ベルギー1部リーグ" },
+        { "number": 15, "name": "鎌田 大地", "club": "クリスタル・パレス", "country": "🏴", "league": "プレミアリーグ", "sns": { "instagram": "kamadadaichi" } },
+        { "number": 17, "name": "鈴木 唯人", "club": "SCフライブルク", "country": "🇩🇪", "league": "ブンデスリーガ" },
+        { "number": 24, "name": "佐野 海舟", "club": "マインツ05", "country": "🇩🇪", "league": "ブンデスリーガ" }
       ]
     },
     {
       "code": "FW",
       "label": "FW",
       "players": [
-        { "number": 6, "name": "町野 修斗", "club": "ボルシアMG", "country": "🇩🇪", "status": "遠藤航の離脱に伴う追加招集" },
-        { "number": 9, "name": "後藤 啓介", "club": "SCフライブルク", "country": "🇩🇪" },
-        { "number": 11, "name": "前田 大然", "club": "イプスウィッチ・タウン", "country": "🏴" },
-        { "number": 18, "name": "上田 綺世", "club": "フェイエノールト", "country": "🇳🇱" },
-        { "number": 19, "name": "小川 航基", "club": "NECナイメヘン", "country": "🇳🇱" },
-        { "number": 26, "name": "塩貝 健人", "club": "VfLヴォルフスブルク", "country": "🇩🇪" },
-        { "number": 22, "name": "三笘 薫", "club": "ブライトン", "country": "🏴", "status": "左ハムストリング負傷でW杯メンバー外(復帰は9〜10月頃見込み)", "sns": { "instagram": "kaoru.m.0520" } }
+        { "number": 6, "name": "町野 修斗", "club": "ボルシアMG", "country": "🇩🇪", "league": "ブンデスリーガ", "status": "遠藤航の離脱に伴う追加招集" },
+        { "number": 9, "name": "後藤 啓介", "club": "SCフライブルク", "country": "🇩🇪", "league": "ブンデスリーガ" },
+        { "number": 11, "name": "前田 大然", "club": "イプスウィッチ・タウン", "country": "🏴", "league": "プレミアリーグ" },
+        { "number": 18, "name": "上田 綺世", "club": "フェイエノールト", "country": "🇳🇱", "league": "エールディビジ" },
+        { "number": 19, "name": "小川 航基", "club": "NECナイメヘン", "country": "🇳🇱", "league": "エールディビジ" },
+        { "number": 26, "name": "塩貝 健人", "club": "VfLヴォルフスブルク", "country": "🇩🇪", "league": "ブンデスリーガ" },
+        { "number": 22, "name": "三笘 薫", "club": "ブライトン", "country": "🏴", "league": "プレミアリーグ", "status": "左ハムストリング負傷でW杯メンバー外(復帰は9〜10月頃見込み)", "sns": { "instagram": "kaoru.m.0520" } }
       ]
     }
-  ]
+  ],
+  "leagues": {
+    "プレミアリーグ": { "country": "🏴 イングランド", "desc": "世界で最も視聴されているとされるイングランドの1部リーグ。放映権収入が突出しており、資金力のあるクラブが多い。" },
+    "ラ・リーガ": { "country": "🇪🇸 スペイン", "desc": "スペインの1部リーグ。パスを繋いで崩す技術的なスタイルを志向するクラブが多い。" },
+    "ブンデスリーガ": { "country": "🇩🇪 ドイツ", "desc": "ドイツの1部リーグ。若手の育成・登用に積極的なクラブが多く、平均観客動員数は世界トップクラス。" },
+    "セリエA": { "country": "🇮🇹 イタリア", "desc": "イタリアの1部リーグ。伝統的に堅守速攻や戦術的な駆け引きが重視される。" },
+    "リーグ・アン": { "country": "🇫🇷 フランス", "desc": "フランスの1部リーグ。移籍金が比較的抑えられており、有望な若手選手の登竜門としても知られる。" },
+    "エールディビジ": { "country": "🇳🇱 オランダ", "desc": "オランダの1部リーグ。攻撃的なスタイルと若手育成型クラブの多さで知られる。" },
+    "ベルギー1部リーグ": { "country": "🇧🇪 ベルギー", "desc": "正式名称ジュピラー・プロ・リーグ。育成環境の良さから、主要リーグへのステップアップの場としても知られる。" },
+    "スーペルリーガ": { "country": "🇩🇰 デンマーク", "desc": "デンマークの1部リーグ。育成力の高さで知られ、有望選手が主要リーグへ移籍する前段階として注目されることが多い。" },
+    "J1リーグ": { "country": "🇯🇵 日本", "desc": "日本の1部プロサッカーリーグ。" }
+  }
 }
