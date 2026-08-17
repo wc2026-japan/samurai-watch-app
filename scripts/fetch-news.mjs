@@ -68,17 +68,25 @@ function stripHtml(str) {
   return str.replace(/<[^>]*>/g, "").trim();
 }
 
-/* Best-effort image extraction. Tries, in order: <enclosure url>,
-   <media:content>/<media:thumbnail>, then the first <img src> inside the
-   raw item XML (which catches images embedded in <description>/
-   <content:encoded> HTML). Returns null if nothing is found — no
-   placeholder or fabricated image is ever used. */
+/* Best-effort image extraction. Tries several real-world RSS formats, in
+   order of how likely/reliable they are:
+   1. <enclosure url="...">                              (standard RSS)
+   2. <media:content url="..."> / <media:thumbnail url="..."> (MRSS, attribute form)
+   3. <media:content>https://...</media:content>          (MRSS, text-content form —
+      not spec-standard, but some platforms including note.com generate it this way)
+   4. first <img src="..."> inside the raw item XML (catches images embedded
+      in <description>/<content:encoded> HTML)
+   Returns null if nothing is found — no placeholder or fabricated image is
+   ever used. */
 function extractImage(itemXml) {
   const enclosureMatch = itemXml.match(/<enclosure[^>]*url=["']([^"']+)["'][^>]*>/i);
   if (enclosureMatch) return enclosureMatch[1];
 
-  const mediaMatch = itemXml.match(/<media:(?:content|thumbnail)[^>]*url=["']([^"']+)["'][^>]*>/i);
-  if (mediaMatch) return mediaMatch[1];
+  const mediaAttrMatch = itemXml.match(/<media:(?:content|thumbnail)[^>]*\burl=["']([^"']+)["'][^>]*>/i);
+  if (mediaAttrMatch) return mediaAttrMatch[1];
+
+  const mediaTextMatch = itemXml.match(/<media:(?:content|thumbnail)[^>]*>\s*(https?:\/\/[^\s<]+)\s*<\/media:(?:content|thumbnail)>/i);
+  if (mediaTextMatch) return mediaTextMatch[1];
 
   const imgMatch = itemXml.match(/<img[^>]*src=["']([^"']+)["']/i);
   if (imgMatch) return imgMatch[1];
