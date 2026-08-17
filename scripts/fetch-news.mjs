@@ -131,6 +131,25 @@ function sortByDateDesc(items) {
   });
 }
 
+// Trusted football media are bumped to the top of the list, but nothing is
+// excluded — a PR TIMES press release or a Qoly ranking article can still
+// show up, just lower down, rather than being hidden entirely.
+const TRUSTED_SOURCE_PATTERN = /サッカーキング|ゲキサカ|gekisaka|goal\.com|football\s*zone|フットボールゾーン|サッカーダイジェスト|soccer\s*digest|footballchannel|フットボールチャンネル/i;
+
+function isTrustedSource(item) {
+  return TRUSTED_SOURCE_PATTERN.test(item.source || "") || TRUSTED_SOURCE_PATTERN.test(item.link || "");
+}
+
+// Sorts newest-first within two tiers: trusted football media first, then
+// everything else. Stable relative order (by date) is preserved within
+// each tier.
+function prioritizeAndSort(items) {
+  const sorted = sortByDateDesc(items);
+  const trusted = sorted.filter(isTrustedSource);
+  const others = sorted.filter((item) => !isTrustedSource(item));
+  return [...trusted, ...others];
+}
+
 async function fetchFeed(query, when, maxAgeDays, limit = 15) {
   const url = googleNewsUrl(query, when);
   const res = await fetch(url, {
@@ -145,7 +164,7 @@ async function fetchFeed(query, when, maxAgeDays, limit = 15) {
     .filter((item) => !SUMMARY_TITLE_PATTERN.test(item.title))
     .filter((item) => !DOMESTIC_LEAGUE_PATTERN.test(item.title))
     .filter((item) => isFresh(item.pubDate, maxAgeDays));
-  return sortByDateDesc(items).slice(0, limit);
+  return prioritizeAndSort(items).slice(0, limit);
 }
 
 async function fetchNoteArticles(user, limit = ARTICLES_LIMIT) {
