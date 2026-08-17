@@ -308,6 +308,47 @@
 
   .empty { text-align: center; padding: 64px 24px; color: #8a8a92; font-size: 14px; }
 
+  .app-footer {
+    text-align: center;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .footer-link {
+    background: none;
+    border: none;
+    color: var(--text-faint);
+    font-size: 11px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 4px;
+    font-family: inherit;
+  }
+  .footer-dot { color: var(--text-fainter); font-size: 11px; }
+
+  .info-modal-body {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .info-modal-body h3 {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 18px 0 6px;
+  }
+  .info-modal-body h3:first-child { margin-top: 0; }
+  .info-modal-body a { color: var(--blue); text-decoration: underline; }
+  .info-modal-body .info-note {
+    margin-top: 16px;
+    font-size: 11px;
+    color: var(--text-fainter);
+  }
+
   /* ---- timeline (速報) ---- */
   .timeline {
     position: relative;
@@ -797,6 +838,12 @@
 
   <div id="filterBlock"></div>
   <div id="content"></div>
+
+  <div class="app-footer">
+    <button class="footer-link" id="aboutBtn">運営者情報</button>
+    <span class="footer-dot">・</span>
+    <button class="footer-link" id="contactBtn">お問い合わせ</button>
+  </div>
 </main>
 
 <div id="modalRoot"></div>
@@ -1417,6 +1464,52 @@ function closeInfoOverlay() {
   document.getElementById("infoRoot").innerHTML = "";
 }
 
+/* ---- about / contact ---- */
+function renderInfoModal(eyebrow, title, bodyHtml) {
+  const root = document.getElementById("infoRoot");
+  root.innerHTML = `
+    <div class="modal-overlay" id="infoOverlay">
+      <div class="modal-sheet" style="position:relative;">
+        <button class="modal-close" id="infoCloseBtn" aria-label="閉じる">✕</button>
+        <p class="section-eyebrow" style="--accent:${ACCENTS.articles}; margin-bottom:2px;">${eyebrow}</p>
+        <h2 class="section-title" style="margin-bottom:6px;">${title}</h2>
+        <div class="info-modal-body">${bodyHtml}</div>
+      </div>
+    </div>
+  `;
+  document.getElementById("infoOverlay").addEventListener("click", (e) => {
+    if (e.target.id === "infoOverlay") closeInfoOverlay();
+  });
+  document.getElementById("infoCloseBtn").addEventListener("click", closeInfoOverlay);
+}
+
+function openAbout() {
+  renderInfoModal("ABOUT", "運営者情報", `
+    <h3>サイト名</h3>
+    <p>SAMURAI WATCH(海外組フォローアプリ)</p>
+    <h3>運営者</h3>
+    <p>ハイセ</p>
+    <h3>発信媒体</h3>
+    <p>
+      X(旧Twitter):<a href="https://x.com/coin0115" target="_blank" rel="noopener noreferrer">ハイセ｜サッカー日本代表🇯🇵×W杯速報(@coin0115)</a><br />
+      note:<a href="https://note.com/samurai_watch" target="_blank" rel="noopener noreferrer">note.com/samurai_watch</a>(試合レポート・戦術分析)
+    </p>
+    <h3>サイトの目的</h3>
+    <p>海外で活躍する日本人サッカー選手の最新情報(速報・移籍・選手データ)を、日本のサッカーファン向けに分かりやすくまとめた非公式ファンアプリです。</p>
+  `);
+}
+
+function openContact() {
+  renderInfoModal("CONTACT", "お問い合わせ", `
+    <p>当サイトへのお問い合わせ(情報の誤りのご指摘・掲載に関するご要望・その他)は、以下の窓口までお願いします。</p>
+    <h3>X(旧Twitter)</h3>
+    <p><a href="https://x.com/coin0115" target="_blank" rel="noopener noreferrer">@coin0115(ハイセ｜サッカー日本代表🇯🇵×W杯速報)</a> のDMまたはリプライ</p>
+    <h3>note</h3>
+    <p><a href="https://note.com/samurai_watch" target="_blank" rel="noopener noreferrer">note.com/samurai_watch</a> のコメント欄</p>
+    <p class="info-note">※内容によっては返信できない場合があります。あらかじめご了承ください。</p>
+  `);
+}
+
 /* ---- first-time mini guide ---- */
 const GUIDE_STORAGE_KEY = "sw_guide_seen_v1";
 const GUIDE_STEPS = [
@@ -1543,6 +1636,15 @@ function renderContent() {
   if (tab === "transfers" && state.transferFilter !== "all") {
     items = items.filter((item) => transferCategory(item) === state.transferFilter);
   }
+  // Defensive sort: the data should already come pre-sorted from
+  // fetch-news.mjs, but sorting again here means the display is always
+  // newest-first even if a JSON file is ever edited by hand or a fetch
+  // run predates the sort fix.
+  items = [...items].sort((a, b) => {
+    const da = new Date(a.pubDate).getTime();
+    const db = new Date(b.pubDate).getTime();
+    return (isNaN(db) ? -Infinity : db) - (isNaN(da) ? -Infinity : da);
+  });
 
   if (items.length === 0) {
     content.innerHTML = `<div class="empty">該当する情報が見つかりませんでした。</div>`;
@@ -1597,6 +1699,8 @@ document.querySelectorAll(".tab-btn").forEach((btn) => {
 
 document.getElementById("searchBtn").addEventListener("click", openSearch);
 document.getElementById("glossaryBtn").addEventListener("click", openGlossary);
+document.getElementById("aboutBtn").addEventListener("click", openAbout);
+document.getElementById("contactBtn").addEventListener("click", openContact);
 
 (async function init() {
   try {
