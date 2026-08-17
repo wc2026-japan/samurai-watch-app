@@ -119,6 +119,18 @@ function isFresh(pubDateStr, maxAgeDays) {
   return ageDays >= -0.5 && ageDays <= maxAgeDays;
 }
 
+// Newest first. Items with an unparseable pubDate are pushed to the end
+// rather than dropped, so a parsing hiccup never causes silent data loss.
+function sortByDateDesc(items) {
+  return [...items].sort((a, b) => {
+    const da = new Date(a.pubDate).getTime();
+    const db = new Date(b.pubDate).getTime();
+    const va = isNaN(da) ? -Infinity : da;
+    const vb = isNaN(db) ? -Infinity : db;
+    return vb - va;
+  });
+}
+
 async function fetchFeed(query, when, maxAgeDays, limit = 15) {
   const url = googleNewsUrl(query, when);
   const res = await fetch(url, {
@@ -128,12 +140,12 @@ async function fetchFeed(query, when, maxAgeDays, limit = 15) {
     throw new Error(`Failed to fetch feed for "${query}": HTTP ${res.status}`);
   }
   const text = await res.text();
-  return parseRssItems(text)
+  const items = parseRssItems(text)
     .filter((item) => item.title && item.link)
     .filter((item) => !SUMMARY_TITLE_PATTERN.test(item.title))
     .filter((item) => !DOMESTIC_LEAGUE_PATTERN.test(item.title))
-    .filter((item) => isFresh(item.pubDate, maxAgeDays))
-    .slice(0, limit);
+    .filter((item) => isFresh(item.pubDate, maxAgeDays));
+  return sortByDateDesc(items).slice(0, limit);
 }
 
 async function fetchNoteArticles(user, limit = ARTICLES_LIMIT) {
@@ -146,10 +158,10 @@ async function fetchNoteArticles(user, limit = ARTICLES_LIMIT) {
     throw new Error(`Failed to fetch note.com feed for "${user}": HTTP ${res.status}`);
   }
   const text = await res.text();
-  return parseRssItems(text)
+  const items = parseRssItems(text)
     .filter((item) => item.title && item.link)
-    .map((item) => ({ ...item, source: item.source === "Google News" ? "note.com" : item.source }))
-    .slice(0, limit);
+    .map((item) => ({ ...item, source: item.source === "Google News" ? "note.com" : item.source }));
+  return sortByDateDesc(items).slice(0, limit);
 }
 
 function readExisting(fileName) {
