@@ -593,6 +593,47 @@
     margin: 0 0 14px;
     padding: 0 2px;
   }
+  .league-count-badge {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--green);
+    background: rgba(111,169,138,0.14);
+    border-radius: 999px;
+    padding: 1px 8px;
+    flex-shrink: 0;
+  }
+
+  .hot-players-card {
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: #17141a;
+    padding: 16px;
+    margin-bottom: 18px;
+  }
+  .hot-players-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hot-players-row::-webkit-scrollbar { display: none; }
+  .hot-player-chip {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 9px 13px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .hot-player-name { font-size: 12.5px; font-weight: 700; color: var(--text); white-space: nowrap; }
+  .hot-player-count { font-size: 10px; color: var(--red); font-weight: 600; }
   .player-status {
     font-size: 10.5px;
     color: #d98a6a;
@@ -928,7 +969,7 @@
     </button>
     <button class="tab-btn" data-tab="players" style="--accent: #6FA98A;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      <span>選手</span>
+      <span>海外組</span>
     </button>
     <button class="tab-btn" data-tab="articles" style="--accent: #7C9CBF;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
@@ -942,7 +983,7 @@ const ACCENTS = { scores: "#C81E3A", transfers: "#B8934D", players: "#6FA98A", a
 const SECTION_HEADINGS = {
   scores: { eyebrow: "NEWS", title: "海外組速報" },
   transfers: { eyebrow: "TRANSFER", title: "海外移籍情報" },
-  players: { eyebrow: "SQUAD", title: "日本代表メンバー" },
+  players: { eyebrow: "OVERSEAS", title: "海外組一覧" },
   articles: { eyebrow: "ARTICLES", title: "関連ニュース" },
 };
 const NEW_THRESHOLD_MS = 24 * 60 * 60 * 1000; // 24 hours
@@ -1277,10 +1318,65 @@ function renderTimelineStyleArticleCard(item) {
   `;
 }
 
+const OVERSEAS_EXCLUDE_LEAGUE = "J1リーグ";
+
+function getOverseasPositions(data) {
+  return data.positions
+    .map((group) => ({
+      ...group,
+      players: group.players.filter((p) => p.league !== OVERSEAS_EXCLUDE_LEAGUE),
+    }))
+    .filter((group) => group.players.length > 0);
+}
+
+/* "今週の注目選手": ranks players by how many times their name appears in
+   the past 7 days of scores + transfers headlines. Only counts real
+   fetched articles — a player with zero mentions just doesn't show up,
+   nothing is invented. */
+function computeHotPlayers(overseasPositions) {
+  if (!state.scores || !state.transfers) return [];
+  const allPlayers = overseasPositions.flatMap((g) => g.players.map((p) => ({ ...p, _code: g.code })));
+  const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+  const pool = [...(state.scores.items || []), ...(state.transfers.items || [])].filter((item) => {
+    const t = new Date(item.pubDate).getTime();
+    return !isNaN(t) && t >= sevenDaysAgo;
+  });
+  const ranked = allPlayers
+    .map((p) => {
+      const key = p.name.replace(/\s+/g, "");
+      const mentionCount = pool.filter((item) => (item.title || "").replace(/\s+/g, "").includes(key)).length;
+      return { ...p, mentionCount };
+    })
+    .filter((p) => p.mentionCount > 0)
+    .sort((a, b) => b.mentionCount - a.mentionCount)
+    .slice(0, 5);
+  return ranked;
+}
+
+function renderHotPlayers(hotPlayers) {
+  if (hotPlayers.length === 0) return "";
+  return `
+    <div class="hot-players-card">
+      <p class="digest-label" style="color:${ACCENTS.players};">🔥 今週の注目選手</p>
+      <div class="hot-players-row">
+        ${hotPlayers.map((p) => `
+          <button class="hot-player-chip" data-player-number="${p.number}" data-position="${p._code}">
+            <span class="hot-player-name">${p.name}</span>
+            <span class="hot-player-count">${p.mentionCount}件</span>
+          </button>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
 function renderPlayersTab() {
   if (!state.players) return `<div class="empty">読み込み中...</div>`;
   const data = state.players;
-  const groups = data.positions.map((group) => `
+  const overseasPositions = getOverseasPositions(data);
+  const hotPlayers = computeHotPlayers(overseasPositions);
+
+  const groups = overseasPositions.map((group) => `
     <div class="position-group">
       <p class="position-label">${group.label}</p>
       <div class="player-grid">
@@ -1300,23 +1396,29 @@ function renderPlayersTab() {
     </div>
   `).join("");
   const note = data.note ? `<p class="players-note">${data.note}</p>` : "";
-  return note + groups + renderLeaguesOverview(data.leagues);
+  return renderHotPlayers(hotPlayers) + note + groups + renderLeaguesOverview(data.leagues, overseasPositions);
 }
 
-function renderLeaguesOverview(leagues) {
+function renderLeaguesOverview(leagues, overseasPositions) {
   if (!leagues) return "";
-  const entries = Object.entries(leagues);
+  const counts = {};
+  overseasPositions.forEach((g) => g.players.forEach((p) => {
+    if (!p.league) return;
+    counts[p.league] = (counts[p.league] || 0) + 1;
+  }));
+  const entries = Object.entries(leagues).filter(([name]) => name !== OVERSEAS_EXCLUDE_LEAGUE);
   if (entries.length === 0) return "";
   return `
     <div class="leagues-overview">
       <p class="leagues-overview-label">LEAGUES</p>
-      <p class="leagues-overview-sub">選手が所属する${entries.length}つのリーグについて</p>
+      <p class="leagues-overview-sub">海外組が所属する${entries.length}つのリーグについて</p>
       ${entries.map(([name, info]) => `
         <details class="league-accordion">
           <summary>
             <span class="league-summary-left">
               <span class="league-overview-name">${name}</span>
               <span class="league-overview-country">${info.country || ""}</span>
+              ${counts[name] ? `<span class="league-count-badge">${counts[name]}人</span>` : ""}
             </span>
             <span class="league-chevron">›</span>
           </summary>
@@ -1747,7 +1849,7 @@ function renderContent() {
 
   if (tab === "players") {
     content.innerHTML = promoCard() + renderPlayersTab();
-    content.querySelectorAll(".player-card").forEach((btn) => {
+    content.querySelectorAll(".player-card, .hot-player-chip").forEach((btn) => {
       btn.addEventListener("click", () => {
         openPlayerModal(btn.dataset.playerNumber, btn.dataset.position);
       });
