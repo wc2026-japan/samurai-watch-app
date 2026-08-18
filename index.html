@@ -556,20 +556,43 @@
     color: var(--text-faint);
     margin: 0 0 14px;
   }
-  .league-overview-item {
-    padding: 12px 0;
+  .league-accordion {
     border-top: 1px solid var(--border);
   }
-  .league-overview-item:first-of-type { border-top: none; }
-  .league-overview-top {
+  .league-accordion:first-of-type { border-top: none; }
+  .league-accordion summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 4px;
+    gap: 10px;
+    padding: 13px 2px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .league-accordion summary::-webkit-details-marker { display: none; }
+  .league-accordion summary::marker { content: ""; }
+  .league-summary-left {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    min-width: 0;
   }
   .league-overview-name { font-size: 13.5px; font-weight: 700; color: var(--text); }
-  .league-overview-country { font-size: 11px; color: var(--text-faint); }
-  .league-overview-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+  .league-overview-country { font-size: 11px; color: var(--text-faint); flex-shrink: 0; }
+  .league-chevron {
+    flex-shrink: 0;
+    color: var(--text-fainter);
+    font-size: 13px;
+    transition: transform 0.15s ease;
+  }
+  .league-accordion[open] .league-chevron { transform: rotate(90deg); color: var(--green); }
+  .league-overview-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 14px;
+    padding: 0 2px;
+  }
   .player-status {
     font-size: 10.5px;
     color: #d98a6a;
@@ -1289,13 +1312,16 @@ function renderLeaguesOverview(leagues) {
       <p class="leagues-overview-label">LEAGUES</p>
       <p class="leagues-overview-sub">選手が所属する${entries.length}つのリーグについて</p>
       ${entries.map(([name, info]) => `
-        <div class="league-overview-item">
-          <div class="league-overview-top">
-            <span class="league-overview-name">${name}</span>
-            <span class="league-overview-country">${info.country || ""}</span>
-          </div>
+        <details class="league-accordion">
+          <summary>
+            <span class="league-summary-left">
+              <span class="league-overview-name">${name}</span>
+              <span class="league-overview-country">${info.country || ""}</span>
+            </span>
+            <span class="league-chevron">›</span>
+          </summary>
           <p class="league-overview-desc">${info.desc || ""}</p>
-        </div>
+        </details>
       `).join("")}
     </div>
   `;
