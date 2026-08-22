@@ -947,6 +947,23 @@
     font-family: inherit;
   }
   .tab-btn svg { width: 20px; height: 20px; }
+  .tab-icon-wrap { position: relative; display: inline-flex; }
+  .tab-badge {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    min-width: 15px;
+    height: 15px;
+    padding: 0 3px;
+    border-radius: 999px;
+    background: var(--red);
+    color: #fff;
+    font-size: 9.5px;
+    font-weight: 700;
+    line-height: 15px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+  }
   .tab-btn span { font-size: 11px; margin-top: 4px; font-weight: 500; }
   .tab-btn.active { color: var(--accent, var(--red)); }
 
@@ -1005,7 +1022,10 @@
 <nav class="tabbar">
   <div class="tabbar-inner">
     <button class="tab-btn active" data-tab="scores" style="--accent: #C81E3A;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+      <span class="tab-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        <span class="tab-badge" id="badge-scores" hidden></span>
+      </span>
       <span>速報</span>
     </button>
     <button class="tab-btn" data-tab="players" style="--accent: #6FA98A;">
@@ -1013,7 +1033,10 @@
       <span>海外組</span>
     </button>
     <button class="tab-btn" data-tab="transfers" style="--accent: #B8934D;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+      <span class="tab-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+        <span class="tab-badge" id="badge-transfers" hidden></span>
+      </span>
       <span>移籍</span>
     </button>
     <button class="tab-btn" data-tab="articles" style="--accent: #7C9CBF;">
@@ -1196,12 +1219,44 @@ function scoreCategory(item) {
   return "news";
 }
 
+// Left-edge accent color per category, so the card type is readable at a
+// glance while scrolling without needing to read the text.
+const SCORE_CATEGORY_COLOR = {
+  goal: "#C81E3A",
+  transfer: "#B8934D",
+  nt: "#6FA98A",
+  appearance: "#7C9CBF",
+  news: "#3a3a42",
+};
+
 function transferCategory(item) {
   const t = item.title || "";
   if (/決定|正式|合意|内定/.test(t)) return "decided";
   if (/噂|報道|浮上|関心|オファー|接触/.test(t)) return "rumor";
   return "other";
 }
+
+const TRANSFER_CATEGORY_COLOR = {
+  decided: "#B8934D",
+  rumor: "#6b6b73",
+  other: "#3a3a42",
+};
+
+// Icon shown alongside the transfer status text, so the stage of a move
+// is readable without reading the word itself.
+const STATUS_ICON = {
+  "決定": "✅",
+  "正式発表": "📢",
+  "合意": "🤝",
+  "内定": "📝",
+  "交渉中": "💬",
+};
+
+const TRANSFER_CATEGORY_ICON = {
+  decided: "✅",
+  rumor: "🔍",
+  other: "",
+};
 
 /* Best-effort transfer parsing. Only returns a structured result when the
    title clearly follows a "選手名、移籍先クラブへ(完全)移籍..." pattern.
@@ -1230,11 +1285,12 @@ function parseTransfer(item) {
 }
 
 function renderTimelineCard(item, accent) {
+  const catColor = SCORE_CATEGORY_COLOR[scoreCategory(item)] || accent;
   return `
     <div class="timeline-item">
       <span class="timeline-dot" style="background:${accent}"></span>
       <div class="timeline-time">${timeLabel(item.pubDate)}${newBadge(item)}</div>
-      <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+      <a class="card" style="border-left: 3px solid ${catColor};" href="${item.link}" target="_blank" rel="noopener noreferrer">
         ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
         <div class="card-top">
           <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
@@ -1250,12 +1306,14 @@ function renderTimelineCard(item, accent) {
 
 function renderTransferCard(item, accent) {
   const transfer = parseTransfer(item);
+  const catColor = TRANSFER_CATEGORY_COLOR[transferCategory(item)] || accent;
+  const catIcon = TRANSFER_CATEGORY_ICON[transferCategory(item)] || "";
   if (!transfer) {
     return `
-      <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+      <a class="card" style="border-left: 3px solid ${catColor};" href="${item.link}" target="_blank" rel="noopener noreferrer">
         ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
         <div class="card-top">
-          <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
+          <span class="card-source" style="color:${accent}">${catIcon ? `${catIcon} ` : ""}${item.source || "ニュース"}</span>
           <span class="card-date">${timeAgo(item.pubDate)}${newBadge(item)}</span>
         </div>
         <h3>${item.title}</h3>
@@ -1265,7 +1323,7 @@ function renderTransferCard(item, accent) {
     `;
   }
   return `
-    <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+    <a class="card" style="border-left: 3px solid ${catColor};" href="${item.link}" target="_blank" rel="noopener noreferrer">
       ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
       <div class="card-top">
         <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
@@ -1273,7 +1331,7 @@ function renderTransferCard(item, accent) {
       </div>
       <div class="transfer-flow">
         <span class="transfer-names">🇯🇵&nbsp;${transfer.name}&nbsp;<span class="transfer-arrow">→</span>&nbsp;<span class="dest">${transfer.dest}</span></span>
-        ${transfer.status ? `<span class="status-badge">${transfer.status}</span>` : ""}
+        ${transfer.status ? `<span class="status-badge">${STATUS_ICON[transfer.status] || ""} ${transfer.status}</span>` : ""}
       </div>
       <p class="transfer-caption">${item.title}</p>
       <div class="card-open">詳細を見る</div>
@@ -1991,18 +2049,90 @@ function renderLiveBanner() {
   timesEl.innerHTML = `最終更新 <b>${fmt(updated)}</b> ・ 次回 <b>${fmt(next)}</b>`;
 }
 
+/* ---- unread badges (速報 / 移籍 tabs) ----
+   Tracks the newest pubDate seen per tab in localStorage. On first ever
+   visit there's nothing to compare against, so the badge starts empty
+   (not "N items you've never seen") — only items that arrive AFTER that
+   first visit count as unread. Opening a tab marks it as read. */
+const UNREAD_TABS = ["scores", "transfers"];
+
+function getLastSeen(tabKey) {
+  try {
+    return window.localStorage.getItem(`sw_last_seen_${tabKey}`);
+  } catch {
+    return null;
+  }
+}
+
+function setLastSeen(tabKey, iso) {
+  try {
+    window.localStorage.setItem(`sw_last_seen_${tabKey}`, iso);
+  } catch {
+    // ignore — worst case the badge just doesn't persist across visits
+  }
+}
+
+function newestPubDate(feed) {
+  if (!feed || !feed.items || feed.items.length === 0) return null;
+  const dates = feed.items
+    .map((i) => new Date(i.pubDate).getTime())
+    .filter((t) => !isNaN(t));
+  if (dates.length === 0) return null;
+  return new Date(Math.max(...dates)).toISOString();
+}
+
+function renderTabBadges() {
+  UNREAD_TABS.forEach((tabKey) => {
+    const feed = tabKey === "scores" ? state.scores : state.transfers;
+    const badge = document.getElementById(`badge-${tabKey}`);
+    if (!badge || !feed) return;
+
+    const lastSeen = getLastSeen(tabKey);
+    if (!lastSeen) {
+      // First time ever — nothing to compare against yet. Baseline it to
+      // "now" so future new items can be detected, but show no badge yet.
+      const newest = newestPubDate(feed);
+      if (newest) setLastSeen(tabKey, newest);
+      badge.hidden = true;
+      return;
+    }
+
+    const lastSeenTime = new Date(lastSeen).getTime();
+    const unreadCount = feed.items.filter((i) => {
+      const t = new Date(i.pubDate).getTime();
+      return !isNaN(t) && t > lastSeenTime;
+    }).length;
+
+    if (unreadCount > 0 && state.activeTab !== tabKey) {
+      badge.hidden = false;
+      badge.textContent = unreadCount > 9 ? "9+" : String(unreadCount);
+    } else {
+      badge.hidden = true;
+    }
+  });
+}
+
+function markTabAsSeen(tabKey) {
+  if (!UNREAD_TABS.includes(tabKey)) return;
+  const feed = tabKey === "scores" ? state.scores : state.transfers;
+  const newest = newestPubDate(feed);
+  if (newest) setLastSeen(tabKey, newest);
+}
+
 function renderAll() {
   renderDigest();
   renderSectionHeading();
   renderFilterBlock();
   renderContent();
   renderLiveBanner();
+  renderTabBadges();
 }
 
 document.querySelectorAll(".tab-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".tab-btn").forEach((b) => b.classList.toggle("active", b === btn));
     state.activeTab = btn.dataset.tab;
+    markTabAsSeen(btn.dataset.tab);
     renderAll();
   });
 });
@@ -2030,6 +2160,10 @@ document.getElementById("contactBtn").addEventListener("click", openContact);
     console.error(err);
   }
   renderAll();
+  // The initially active tab (速報) is being viewed right now, so mark it
+  // seen immediately rather than showing a badge for content already on screen.
+  markTabAsSeen(state.activeTab);
+  renderTabBadges();
   showGuideIfFirstTime();
 })();
 </script>
