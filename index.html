@@ -726,6 +726,51 @@
     color: var(--text-faint);
     margin: 20px 0 10px;
   }
+  .profile-stats-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .profile-stat {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .profile-stat-label { font-size: 10.5px; color: var(--text-faint); }
+  .profile-stat-value { font-size: 15px; font-weight: 700; color: var(--text); font-family: 'Oswald', sans-serif; }
+  .career-list { position: relative; padding-left: 14px; }
+  .career-item {
+    position: relative;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding-bottom: 10px;
+  }
+  .career-item::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .career-item::after {
+    content: "";
+    position: absolute;
+    left: -11.5px;
+    top: 12px;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+  .career-item:last-child::after { display: none; }
   .modal-news-item {
     display: block;
     padding: 12px 0;
@@ -963,13 +1008,13 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
       <span>速報</span>
     </button>
-    <button class="tab-btn" data-tab="transfers" style="--accent: #B8934D;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
-      <span>移籍</span>
-    </button>
     <button class="tab-btn" data-tab="players" style="--accent: #6FA98A;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <span>海外組</span>
+    </button>
+    <button class="tab-btn" data-tab="transfers" style="--accent: #B8934D;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+      <span>移籍</span>
     </button>
     <button class="tab-btn" data-tab="articles" style="--accent: #7C9CBF;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
@@ -1360,7 +1405,7 @@ function renderHotPlayers(hotPlayers) {
       <p class="digest-label" style="color:${ACCENTS.players};">🔥 今週の注目選手</p>
       <div class="hot-players-row">
         ${hotPlayers.map((p) => `
-          <button class="hot-player-chip" data-player-number="${p.number}" data-position="${p._code}">
+          <button class="hot-player-chip" data-player-name="${p.name}">
             <span class="hot-player-name">${p.name}</span>
             <span class="hot-player-count">${p.mentionCount}件</span>
           </button>
@@ -1381,9 +1426,9 @@ function renderPlayersTab() {
       <p class="position-label">${group.label}</p>
       <div class="player-grid">
         ${group.players.map((p) => `
-          <button class="player-card ${p.status ? "is-inactive" : ""}" data-player-number="${p.number}" data-position="${group.code}">
+          <button class="player-card ${p.status ? "is-inactive" : ""}" data-player-name="${p.name}">
             <div class="player-top">
-              <span class="player-number">${p.number}</span>
+              ${p.number != null ? `<span class="player-number">${p.number}</span>` : ""}
               ${p.keyman ? `<span class="player-keyman">◇</span>` : ""}
               <span class="player-name">${p.name}</span>
             </div>
@@ -1442,6 +1487,31 @@ function findPlayerNews(playerName) {
     .slice(0, 6);
 }
 
+function renderProfileSection(p) {
+  const hasPhysical = p.height || p.weight;
+  const hasCareer = p.career && p.career.length > 0;
+  if (!hasPhysical && !hasCareer) return "";
+
+  const physicalRow = hasPhysical ? `
+    <div class="profile-stats-row">
+      ${p.height ? `<div class="profile-stat"><span class="profile-stat-label">身長</span><span class="profile-stat-value">${p.height}cm</span></div>` : ""}
+      ${p.weight ? `<div class="profile-stat"><span class="profile-stat-label">体重</span><span class="profile-stat-value">${p.weight}kg</span></div>` : ""}
+    </div>
+  ` : "";
+
+  const careerHtml = hasCareer ? `
+    <div class="career-list">
+      ${p.career.map((c) => `<div class="career-item">${c}</div>`).join("")}
+    </div>
+  ` : "";
+
+  return `
+    <p class="modal-section-label">PROFILE</p>
+    ${physicalRow}
+    ${careerHtml}
+  `;
+}
+
 function renderLeagueSection(p) {
   if (!p.league) return "";
   const info = state.players?.leagues?.[p.league];
@@ -1477,12 +1547,15 @@ function renderSnsRow(p) {
   `;
 }
 
-function openPlayerModal(number, positionCode) {
-  const group = state.players.positions.find((g) => g.code === positionCode);
-  const player = group?.players.find((p) => String(p.number) === String(number));
-  if (!player) return;
-  state.selectedPlayer = { ...player, position: group.label };
-  renderModal();
+function openPlayerModal(name) {
+  for (const group of state.players.positions) {
+    const player = group.players.find((p) => p.name === name);
+    if (player) {
+      state.selectedPlayer = { ...player, position: group.label };
+      renderModal();
+      return;
+    }
+  }
 }
 
 function closePlayerModal() {
@@ -1517,7 +1590,7 @@ function renderModal() {
       <div class="modal-sheet" style="position:relative;">
         <button class="modal-close" id="modalCloseBtn" aria-label="閉じる">✕</button>
         <div class="modal-header">
-          <div class="modal-number-badge">${p.number}</div>
+          ${p.number != null ? `<div class="modal-number-badge">${p.number}</div>` : ""}
           <div>
             <p class="modal-name">${p.keyman ? `<span class="player-keyman">◇</span> ` : ""}${p.name}</p>
             <p class="modal-position">${p.position}</p>
@@ -1529,6 +1602,7 @@ function renderModal() {
         </div>
         ${p.status ? `<p class="player-status" style="margin:8px 2px 0;">${p.status}</p>` : ""}
 
+        ${renderProfileSection(p)}
         ${renderLeagueSection(p)}
 
         <p class="modal-section-label">SNS</p>
@@ -1605,10 +1679,10 @@ function renderSearch() {
     const playersHtml = results.players.length
       ? `<p class="search-group-label">選手 (${results.players.length})</p>` +
         results.players.map((p) => `
-          <div class="search-player-row" data-player-number="${p.number}" data-position="${p._code}">
+          <div class="search-player-row" data-player-name="${p.name}">
             <div>
               <div class="player-top" style="margin-bottom:2px;">
-                <span class="player-number">${p.number}</span>
+                ${p.number != null ? `<span class="player-number">${p.number}</span>` : ""}
                 <span class="player-name">${p.name}</span>
               </div>
               <div class="player-club">${p.country || ""} ${p.club}</div>
@@ -1663,7 +1737,7 @@ function renderSearch() {
   root.querySelectorAll(".search-player-row").forEach((row) => {
     row.addEventListener("click", () => {
       closeSearch();
-      openPlayerModal(row.dataset.playerNumber, row.dataset.position);
+      openPlayerModal(row.dataset.playerName);
     });
   });
 }
@@ -1851,7 +1925,7 @@ function renderContent() {
     content.innerHTML = promoCard() + renderPlayersTab();
     content.querySelectorAll(".player-card, .hot-player-chip").forEach((btn) => {
       btn.addEventListener("click", () => {
-        openPlayerModal(btn.dataset.playerNumber, btn.dataset.position);
+        openPlayerModal(btn.dataset.playerName);
       });
     });
     return;
@@ -1905,7 +1979,13 @@ function renderLiveBanner() {
     timesEl.innerHTML = `毎時0分に自動更新`;
     return;
   }
-  const next = new Date(updated.getTime());
+  // "Next update" is always the next top-of-hour from right now — not
+  // "last run + 1h" — because GitHub Actions cron runs aren't guaranteed
+  // to fire exactly on the hour (they can drift by several minutes).
+  // Anchoring to the last run time made this label drift out of sync and
+  // sometimes show a "next" time already in the past.
+  const now = new Date();
+  const next = new Date(now.getTime());
   next.setHours(next.getHours() + 1, 0, 0, 0);
   const fmt = (d) => d.toLocaleTimeString("ja-JP", { hour: "2-digit", minute: "2-digit" });
   timesEl.innerHTML = `最終更新 <b>${fmt(updated)}</b> ・ 次回 <b>${fmt(next)}</b>`;
