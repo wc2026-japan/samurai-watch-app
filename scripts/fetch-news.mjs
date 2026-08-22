@@ -20,6 +20,21 @@ const SCORE_WHEN = "5d";
 const TRANSFER_WHEN = "30d";
 const ARTICLES_LIMIT = 20;
 
+// Overall cap on how many items land in each output file, after merging
+// the broad query with all the per-player queries and de-duplicating.
+const SCORES_OUTPUT_LIMIT = 40;
+const TRANSFERS_OUTPUT_LIMIT = 40;
+
+// A single broad query (e.g. "海外組 日本人選手 サッカー 結果") requires
+// Google News to match ALL of those words somewhere in the article. Real
+// headlines ("谷口彰悟、劇的決勝弾！") often don't literally contain words
+// like "海外組" or "結果", so they never surface at all — not a filtering
+// bug, a query-matching miss. Querying per player name fixes this: it
+// finds a player's news regardless of how the headline is phrased, and
+// stops one player's big story from crowding out a quieter one.
+const PER_PLAYER_SCORE_LIMIT = 2;
+const PER_PLAYER_TRANSFER_LIMIT = 2;
+
 // Roundup / evergreen / explainer articles rank well for generic queries
 // but aren't the individual match/transfer news this app is meant to show.
 // Titles matching these are filtered out.
@@ -34,6 +49,24 @@ const DOMESTIC_LEAGUE_PATTERN = /J1リーグ|J2リーグ|J3リーグ|Ｊ1リー�
 function readConfig() {
   const raw = fs.readFileSync(path.join(dataDir, "config.json"), "utf-8");
   return JSON.parse(raw);
+}
+
+// Only players actually based overseas get their own query — J1-based
+// squad members (大迫敬介 etc.) are out of scope for this app.
+function readOverseasPlayerNames() {
+  try {
+    const raw = fs.readFileSync(path.join(dataDir, "players.json"), "utf-8");
+    const data = JSON.parse(raw);
+    const names = [];
+    for (const group of data.positions || []) {
+      for (const p of group.players || []) {
+        if (p.league !== "J1リーグ" && p.name) names.push(p.name);
+      }
+    }
+    return names;
+  } catch {
+    return [];
+  }
 }
 
 function googleNewsUrl(query, when) {
@@ -150,13 +183,31 @@ function prioritizeAndSort(items) {
   return [...trusted, ...others];
 }
 
-async function fetchFeed(query, when, maxAgeDays, limit = 15) {
+function dedupeByLink(items) {
+  const seen = new Set();
+  const out = [];
+  for (const item of items) {
+    if (seen.has(item.link)) continue;
+    seen.add(item.link);
+    out.push(item);
+  }
+  return out;
+}
+
+async function fetchOne(query, when, maxAgeDays, limit) {
   const url = googleNewsUrl(query, when);
-  const res = await fetch(url, {
-    headers: { "User-Agent": "Mozilla/5.0 (compatible; SamuraiWatchBot/1.0)" },
-  });
+  let res;
+  try {
+    res = await fetch(url, {
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; SamuraiWatchBot/1.0)" },
+    });
+  } catch (err) {
+    console.error(`Network error fetching "${query}": ${err.message}`);
+    return [];
+  }
   if (!res.ok) {
-    throw new Error(`Failed to fetch feed for "${query}": HTTP ${res.status}`);
+    console.error(`Failed to fetch feed for "${query}": HTTP ${res.status}`);
+    return [];
   }
   const text = await res.text();
   const items = parseRssItems(text)
@@ -165,6 +216,25 @@ async function fetchFeed(query, when, maxAgeDays, limit = 15) {
     .filter((item) => !DOMESTIC_LEAGUE_PATTERN.test(item.title))
     .filter((item) => isFresh(item.pubDate, maxAgeDays));
   return prioritizeAndSort(items).slice(0, limit);
+}
+
+// Runs the broad catch-all query plus one query per overseas player name,
+// merges everything, de-dupes by link, and caps the total. Per-player
+// queries fail independently (a single player's fetch hiccup doesn't lose
+// the rest) — failures are just logged and skipped.
+async function fetchFeedWithPerPlayer({ broadQuery, playerKeyword, when, maxAgeDays, perPlayerLimit, outputLimit, playerNames }) {
+  const broadPromise = fetchOne(broadQuery, when, maxAgeDays, 15);
+  const perPlayerPromises = playerNames.map((name) =>
+    fetchOne(`${name} ${playerKeyword}`, when, maxAgeDays, perPlayerLimit)
+  );
+
+  const results = await Promise.allSettled([broadPromise, ...perPlayerPromises]);
+  const merged = [];
+  for (const r of results) {
+    if (r.status === "fulfilled") merged.push(...r.value);
+  }
+  const deduped = dedupeByLink(merged);
+  return prioritizeAndSort(deduped).slice(0, outputLimit);
 }
 
 async function fetchNoteArticles(user, limit = ARTICLES_LIMIT) {
@@ -203,11 +273,30 @@ function writeWithFailsafe(fileName, freshItems, now) {
 
 async function main() {
   const config = readConfig();
+  const playerNames = readOverseasPlayerNames();
   const now = new Date().toISOString();
 
+  console.log(`Querying ${playerNames.length} overseas players individually, plus the broad catch-all query, for both scores and transfers.`);
+
   const [scores, transfers, articles] = await Promise.all([
-    fetchFeed(config.scoreQuery, SCORE_WHEN, SCORE_MAX_AGE_DAYS),
-    fetchFeed(config.transferQuery, TRANSFER_WHEN, TRANSFER_MAX_AGE_DAYS),
+    fetchFeedWithPerPlayer({
+      broadQuery: config.scoreQuery,
+      playerKeyword: "サッカー",
+      when: SCORE_WHEN,
+      maxAgeDays: SCORE_MAX_AGE_DAYS,
+      perPlayerLimit: PER_PLAYER_SCORE_LIMIT,
+      outputLimit: SCORES_OUTPUT_LIMIT,
+      playerNames,
+    }),
+    fetchFeedWithPerPlayer({
+      broadQuery: config.transferQuery,
+      playerKeyword: "移籍",
+      when: TRANSFER_WHEN,
+      maxAgeDays: TRANSFER_MAX_AGE_DAYS,
+      perPlayerLimit: PER_PLAYER_TRANSFER_LIMIT,
+      outputLimit: TRANSFERS_OUTPUT_LIMIT,
+      playerNames,
+    }),
     fetchNoteArticles(config.noteUser),
   ]);
 
