@@ -495,6 +495,7 @@
     gap: 10px;
   }
   .player-card {
+    position: relative;
     border-radius: 12px;
     border: 1px solid var(--border);
     background: var(--card);
@@ -506,6 +507,22 @@
     color: inherit;
   }
   .player-card:hover { border-color: var(--border-hover); }
+  .fav-star {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    color: var(--gold);
+    font-size: 15px;
+    cursor: pointer;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .player-top {
     display: flex;
     align-items: baseline;
@@ -519,6 +536,15 @@
     color: var(--text-fainter);
   }
   .player-name { font-size: 13.5px; font-weight: 700; color: var(--text); }
+  ruby { ruby-position: over; }
+  rt {
+    font-size: 8.5px;
+    font-weight: 500;
+    color: var(--text-faint);
+    user-select: none;
+  }
+  .modal-name rt { font-size: 10px; }
+  .hot-player-name rt { font-size: 7.5px; }
   .player-keyman { color: var(--green); font-size: 11px; margin-right: 1px; }
   .player-club {
     font-size: 11.5px;
@@ -1079,6 +1105,7 @@ const WC_GUIDE_URL = "https://wc2026-japan.github.io/guide/";
 
 const SCORE_FILTERS = [
   { id: "all", label: "すべて" },
+  { id: "favorites", label: "★お気に入り" },
   { id: "goal", label: "ゴール" },
   { id: "appearance", label: "出場" },
   { id: "transfer", label: "移籍" },
@@ -1118,7 +1145,48 @@ const state = {
   selectedPlayer: null, // { number, name, club, country, position }
   searchOpen: false,
   searchQuery: "",
+  favorites: new Set(),
 };
+
+const FAVORITES_STORAGE_KEY = "sw_favorite_players";
+
+function loadFavorites() {
+  try {
+    const raw = window.localStorage.getItem(FAVORITES_STORAGE_KEY);
+    if (raw) state.favorites = new Set(JSON.parse(raw));
+  } catch {
+    // localStorage unavailable — favorites just won't persist
+  }
+}
+
+function saveFavorites() {
+  try {
+    window.localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...state.favorites]));
+  } catch {
+    // ignore
+  }
+}
+
+function isFavorite(name) {
+  return state.favorites.has(name);
+}
+
+function toggleFavorite(name) {
+  if (state.favorites.has(name)) state.favorites.delete(name);
+  else state.favorites.add(name);
+  saveFavorites();
+}
+
+// Same "does this headline mention this player" matching used for the
+// player-detail modal's related-news and the hot-players ranking.
+function itemMentionsFavorite(item) {
+  if (state.favorites.size === 0) return false;
+  const title = (item.title || "").replace(/\s+/g, "");
+  for (const name of state.favorites) {
+    if (title.includes(name.replace(/\s+/g, ""))) return true;
+  }
+  return false;
+}
 
 async function loadJSON(url) {
   const res = await fetch(url, { cache: "no-store" });
@@ -1456,6 +1524,11 @@ function computeHotPlayers(overseasPositions) {
   return ranked;
 }
 
+function nameWithFurigana(p) {
+  if (!p.reading) return p.name;
+  return `<ruby>${p.name}<rt>${p.reading}</rt></ruby>`;
+}
+
 function renderHotPlayers(hotPlayers) {
   if (hotPlayers.length === 0) return "";
   return `
@@ -1464,7 +1537,7 @@ function renderHotPlayers(hotPlayers) {
       <div class="hot-players-row">
         ${hotPlayers.map((p) => `
           <button class="hot-player-chip" data-player-name="${p.name}">
-            <span class="hot-player-name">${p.name}</span>
+            <span class="hot-player-name">${nameWithFurigana(p)}</span>
             <span class="hot-player-count">${p.mentionCount}件</span>
           </button>
         `).join("")}
@@ -1484,16 +1557,17 @@ function renderPlayersTab() {
       <p class="position-label">${group.label}</p>
       <div class="player-grid">
         ${group.players.map((p) => `
-          <button class="player-card ${p.status ? "is-inactive" : ""}" data-player-name="${p.name}">
+          <div class="player-card ${p.status ? "is-inactive" : ""}" data-player-name="${p.name}">
+            <button class="fav-star" data-fav-name="${p.name}" aria-label="お気に入り">${isFavorite(p.name) ? "★" : "☆"}</button>
             <div class="player-top">
               ${p.number != null ? `<span class="player-number">${p.number}</span>` : ""}
               ${p.keyman ? `<span class="player-keyman">◇</span>` : ""}
-              <span class="player-name">${p.name}</span>
+              <span class="player-name">${nameWithFurigana(p)}</span>
             </div>
             <div class="player-club">${p.country || ""} ${p.club}</div>
             ${p.league ? `<div><span class="player-league-tag">${p.league}</span></div>` : ""}
             ${p.status ? `<div class="player-status">${p.status}</div>` : ""}
-          </button>
+          </div>
         `).join("")}
       </div>
     </div>
@@ -1649,10 +1723,11 @@ function renderModal() {
         <button class="modal-close" id="modalCloseBtn" aria-label="閉じる">✕</button>
         <div class="modal-header">
           ${p.number != null ? `<div class="modal-number-badge">${p.number}</div>` : ""}
-          <div>
-            <p class="modal-name">${p.keyman ? `<span class="player-keyman">◇</span> ` : ""}${p.name}</p>
+          <div style="flex:1;">
+            <p class="modal-name">${p.keyman ? `<span class="player-keyman">◇</span> ` : ""}${nameWithFurigana(p)}</p>
             <p class="modal-position">${p.position}</p>
           </div>
+          <button class="fav-star" id="modalFavStar" data-fav-name="${p.name}" aria-label="お気に入り" style="position:static; font-size:20px;">${isFavorite(p.name) ? "★" : "☆"}</button>
         </div>
         <div class="modal-club-row">
           <span>${p.country || ""}</span>
@@ -1676,6 +1751,10 @@ function renderModal() {
     if (e.target.id === "modalOverlay") closePlayerModal();
   });
   document.getElementById("modalCloseBtn").addEventListener("click", closePlayerModal);
+  document.getElementById("modalFavStar").addEventListener("click", () => {
+    toggleFavorite(p.name);
+    document.getElementById("modalFavStar").textContent = isFavorite(p.name) ? "★" : "☆";
+  });
 }
 
 /* ---- keyword search (across scores, transfers, articles, players) ---- */
@@ -1741,7 +1820,7 @@ function renderSearch() {
             <div>
               <div class="player-top" style="margin-bottom:2px;">
                 ${p.number != null ? `<span class="player-number">${p.number}</span>` : ""}
-                <span class="player-name">${p.name}</span>
+                <span class="player-name">${nameWithFurigana(p)}</span>
               </div>
               <div class="player-club">${p.country || ""} ${p.club}</div>
             </div>
@@ -1986,6 +2065,13 @@ function renderContent() {
         openPlayerModal(btn.dataset.playerName);
       });
     });
+    content.querySelectorAll(".fav-star").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleFavorite(btn.dataset.favName);
+        btn.textContent = isFavorite(btn.dataset.favName) ? "★" : "☆";
+      });
+    });
     return;
   }
 
@@ -1996,7 +2082,13 @@ function renderContent() {
   }
 
   let items = feed.items;
-  if (tab === "scores" && state.scoreFilter !== "all") {
+  if (tab === "scores" && state.scoreFilter === "favorites") {
+    if (state.favorites.size === 0) {
+      content.innerHTML = `<div class="empty">まだお気に入り選手が登録されていません。「海外組」タブで選手カードの☆をタップして登録してください。</div>`;
+      return;
+    }
+    items = items.filter((item) => itemMentionsFavorite(item));
+  } else if (tab === "scores" && state.scoreFilter !== "all") {
     items = items.filter((item) => scoreCategory(item) === state.scoreFilter);
   }
   if (tab === "transfers" && state.transferFilter !== "all") {
@@ -2143,6 +2235,7 @@ document.getElementById("aboutBtn").addEventListener("click", openAbout);
 document.getElementById("contactBtn").addEventListener("click", openContact);
 
 (async function init() {
+  loadFavorites();
   try {
     const [scores, transfers, players, articles, config] = await Promise.all([
       loadJSON("./data/scores.json"),
