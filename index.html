@@ -267,6 +267,17 @@
     text-transform: uppercase;
   }
   .card-date { font-size: 11px; color: var(--text-faint); flex-shrink: 0; }
+  .card-date-group { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  .save-star {
+    background: none;
+    border: none;
+    padding: 2px;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    filter: grayscale(1) opacity(0.5);
+  }
+  .save-star.is-saved { filter: none; }
   .card h3 {
     font-size: 15px;
     line-height: 1.45;
@@ -1012,6 +1023,9 @@
       <p class="tagline">海外組フォローアプリ</p>
     </div>
     <div class="header-actions">
+      <button class="icon-btn" id="savedBtn" aria-label="保存した記事">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21 12 16l-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      </button>
       <button class="icon-btn" id="glossaryBtn" aria-label="用語集">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
       </button>
@@ -1035,6 +1049,8 @@
   <div id="content"></div>
 
   <div class="app-footer">
+    <button class="footer-link" id="howToBtn">使い方</button>
+    <span class="footer-dot">・</span>
     <button class="footer-link" id="aboutBtn">運営者情報</button>
     <span class="footer-dot">・</span>
     <button class="footer-link" id="contactBtn">お問い合わせ</button>
@@ -1146,6 +1162,8 @@ const state = {
   searchOpen: false,
   searchQuery: "",
   favorites: new Set(),
+  savedArticles: [],
+  savedOpen: false,
 };
 
 const FAVORITES_STORAGE_KEY = "sw_favorite_players";
@@ -1186,6 +1204,44 @@ function itemMentionsFavorite(item) {
     if (title.includes(name.replace(/\s+/g, ""))) return true;
   }
   return false;
+}
+
+/* ---- saved articles (bookmarking individual 速報/移籍 stories) ----
+   Stores the full item (title/link/description/source/pubDate/image),
+   not just the link — the original article can age out of scores.json /
+   transfers.json (5-day / 30-day freshness windows) long before the user
+   is done wanting to revisit it. */
+const SAVED_ARTICLES_KEY = "sw_saved_articles";
+
+function loadSavedArticles() {
+  try {
+    const raw = window.localStorage.getItem(SAVED_ARTICLES_KEY);
+    if (raw) state.savedArticles = JSON.parse(raw);
+  } catch {
+    // localStorage unavailable — saves just won't persist
+  }
+}
+
+function persistSavedArticles() {
+  try {
+    window.localStorage.setItem(SAVED_ARTICLES_KEY, JSON.stringify(state.savedArticles));
+  } catch {
+    // ignore
+  }
+}
+
+function isArticleSaved(link) {
+  return state.savedArticles.some((a) => a.link === link);
+}
+
+function toggleSaveArticle(item, tabLabel, accent) {
+  const idx = state.savedArticles.findIndex((a) => a.link === item.link);
+  if (idx >= 0) {
+    state.savedArticles.splice(idx, 1);
+  } else {
+    state.savedArticles.unshift({ ...item, _tabLabel: tabLabel, _accent: accent, _savedAt: new Date().toISOString() });
+  }
+  persistSavedArticles();
 }
 
 async function loadJSON(url) {
@@ -1352,6 +1408,11 @@ function parseTransfer(item) {
   return { name: namePart, dest, status };
 }
 
+function renderSaveButton(item) {
+  const saved = isArticleSaved(item.link);
+  return `<button class="save-star ${saved ? "is-saved" : ""}" data-save-link="${item.link}" aria-label="保存">🔖</button>`;
+}
+
 function renderTimelineCard(item, accent) {
   const catColor = SCORE_CATEGORY_COLOR[scoreCategory(item)] || accent;
   return `
@@ -1362,7 +1423,10 @@ function renderTimelineCard(item, accent) {
         ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
         <div class="card-top">
           <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
-          <span class="card-date">${timeAgo(item.pubDate)}</span>
+          <span class="card-date-group">
+            <span class="card-date">${timeAgo(item.pubDate)}</span>
+            ${renderSaveButton(item)}
+          </span>
         </div>
         <h3>${item.title}</h3>
         <p>${item.description || ""}</p>
@@ -1382,7 +1446,10 @@ function renderTransferCard(item, accent) {
         ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
         <div class="card-top">
           <span class="card-source" style="color:${accent}">${catIcon ? `${catIcon} ` : ""}${item.source || "ニュース"}</span>
-          <span class="card-date">${timeAgo(item.pubDate)}${newBadge(item)}</span>
+          <span class="card-date-group">
+            <span class="card-date">${timeAgo(item.pubDate)}${newBadge(item)}</span>
+            ${renderSaveButton(item)}
+          </span>
         </div>
         <h3>${item.title}</h3>
         <p>${item.description || ""}</p>
@@ -1395,7 +1462,10 @@ function renderTransferCard(item, accent) {
       ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
       <div class="card-top">
         <span class="card-source" style="color:${accent}">${item.source || "ニュース"}</span>
-        <span class="card-date">${timeAgo(item.pubDate)}${newBadge(item)}</span>
+        <span class="card-date-group">
+          <span class="card-date">${timeAgo(item.pubDate)}${newBadge(item)}</span>
+          ${renderSaveButton(item)}
+        </span>
       </div>
       <div class="transfer-flow">
         <span class="transfer-names">🇯🇵&nbsp;${transfer.name}&nbsp;<span class="transfer-arrow">→</span>&nbsp;<span class="dest">${transfer.dest}</span></span>
@@ -1880,6 +1950,63 @@ function renderSearch() {
 }
 
 /* ---- glossary ---- */
+function renderSavedList() {
+  if (state.savedArticles.length === 0) {
+    return `<div class="empty">保存した記事はまだありません。速報・移籍タブの🔖アイコンをタップすると保存できます。</div>`;
+  }
+  return state.savedArticles.map((item) => `
+    <a class="card" href="${item.link}" target="_blank" rel="noopener noreferrer">
+      ${item.image ? `<img class="card-thumb" src="${item.image}" alt="" loading="lazy" onerror="this.remove()" />` : ""}
+      <div class="card-top">
+        <span class="card-source" style="color:${item._accent || ACCENTS.scores}">${item._tabLabel || ""} ・ ${item.source || ""}</span>
+        <span class="card-date-group">
+          <span class="card-date">${timeAgo(item.pubDate)}</span>
+          <button class="save-star is-saved" data-unsave-link="${item.link}" aria-label="保存を解除">🔖</button>
+        </span>
+      </div>
+      <h3>${item.title}</h3>
+      <p>${item.description || ""}</p>
+      <div class="card-open">開く</div>
+    </a>
+  `).join("");
+}
+
+function openSavedArticles() {
+  const root = document.getElementById("infoRoot");
+  root.innerHTML = `
+    <div class="modal-overlay" id="savedOverlay">
+      <div class="modal-sheet" style="position:relative;">
+        <button class="modal-close" id="savedCloseBtn" aria-label="閉じる">✕</button>
+        <p class="section-eyebrow" style="--accent:${ACCENTS.scores}; margin-bottom:2px;">SAVED</p>
+        <h2 class="section-title" style="margin-bottom:6px;">保存した記事</h2>
+        <div id="savedListBody">${renderSavedList()}</div>
+      </div>
+    </div>
+  `;
+  document.getElementById("savedOverlay").addEventListener("click", (e) => {
+    if (e.target.id === "savedOverlay") closeInfoOverlay();
+  });
+  document.getElementById("savedCloseBtn").addEventListener("click", closeInfoOverlay);
+  wireUnsaveButtons();
+}
+
+function wireUnsaveButtons() {
+  document.querySelectorAll("[data-unsave-link]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const link = btn.dataset.unsaveLink;
+      state.savedArticles = state.savedArticles.filter((a) => a.link !== link);
+      persistSavedArticles();
+      const body = document.getElementById("savedListBody");
+      if (body) {
+        body.innerHTML = renderSavedList();
+        wireUnsaveButtons();
+      }
+    });
+  });
+}
+
 function openGlossary() {
   const root = document.getElementById("infoRoot");
   root.innerHTML = `
@@ -1955,14 +2082,31 @@ function openContact() {
   `);
 }
 
-/* ---- first-time mini guide ---- */
+/* ---- first-time mini guide / 使い方 (reusable from the footer too) ---- */
 const GUIDE_STORAGE_KEY = "sw_guide_seen_v1";
 const GUIDE_STEPS = [
-  { icon: "🔴", title: "速報", desc: "海外組の試合結果・出場情報をタイムラインで確認できます。" },
-  { icon: "🟡", title: "移籍", desc: "誰がどこへ移籍したかを、決定/噂で絞り込んで確認できます。" },
-  { icon: "🟢", title: "選手", desc: "日本代表メンバーを一覧表示。タップで詳細とSNSが見られます。" },
+  { icon: "🔴", title: "速報", desc: "海外組の試合結果・出場情報をタイムラインで確認。FILTERで種類を絞り込んだり、★お気に入り登録した選手の記事だけ表示することもできます。" },
+  { icon: "🟡", title: "移籍", desc: "誰がどこへ移籍したかをカードで一目で確認。「決定」「噂」で絞り込めます。" },
+  { icon: "🟢", title: "海外組", desc: "海外組の選手一覧。タップで詳細・SNS・関連ニュースを表示。カードの☆でお気に入り登録できます。" },
   { icon: "🔵", title: "記事", desc: "サムライウォッチの記事とX投稿をまとめてチェックできます。" },
+  { icon: "🔍", title: "検索・用語集", desc: "ヘッダーの🔍で選手・記事を横断検索、？アイコンでサッカー用語集を確認できます。" },
 ];
+
+function renderGuideSteps() {
+  return GUIDE_STEPS.map((s) => `
+    <div class="guide-step">
+      <span class="guide-step-icon">${s.icon}</span>
+      <div>
+        <p class="guide-step-title">${s.title}</p>
+        <p class="guide-step-desc">${s.desc}</p>
+      </div>
+    </div>
+  `).join("");
+}
+
+function openHowToUse() {
+  renderInfoModal("GUIDE", "使い方", `<div>${renderGuideSteps()}</div>`);
+}
 
 function showGuideIfFirstTime() {
   let seen = null;
@@ -1981,15 +2125,7 @@ function showGuideIfFirstTime() {
         <p class="section-eyebrow" style="--accent:${ACCENTS.scores}; margin-bottom:2px;">WELCOME</p>
         <h2 class="section-title" style="margin-bottom:2px;">SAMURAI WATCHの使い方</h2>
         <div>
-          ${GUIDE_STEPS.map((s) => `
-            <div class="guide-step">
-              <span class="guide-step-icon">${s.icon}</span>
-              <div>
-                <p class="guide-step-title">${s.title}</p>
-                <p class="guide-step-desc">${s.desc}</p>
-              </div>
-            </div>
-          `).join("")}
+          ${renderGuideSteps()}
         </div>
         <button class="guide-start-btn" id="guideStartBtn">はじめる</button>
       </div>
@@ -2110,6 +2246,20 @@ function renderContent() {
   } else {
     content.innerHTML = items.map((item) => renderTransferCard(item, ACCENTS.transfers)).join("");
   }
+
+  const tabLabel = tab === "scores" ? "速報" : "移籍";
+  const tabAccent = tab === "scores" ? ACCENTS.scores : ACCENTS.transfers;
+  content.querySelectorAll(".save-star").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const link = btn.dataset.saveLink;
+      const sourceItem = items.find((i) => i.link === link);
+      if (!sourceItem) return;
+      toggleSaveArticle(sourceItem, tabLabel, tabAccent);
+      btn.classList.toggle("is-saved", isArticleSaved(link));
+    });
+  });
 }
 
 function renderLiveBanner() {
@@ -2229,13 +2379,16 @@ document.querySelectorAll(".tab-btn").forEach((btn) => {
   });
 });
 
+document.getElementById("savedBtn").addEventListener("click", openSavedArticles);
 document.getElementById("searchBtn").addEventListener("click", openSearch);
 document.getElementById("glossaryBtn").addEventListener("click", openGlossary);
+document.getElementById("howToBtn").addEventListener("click", openHowToUse);
 document.getElementById("aboutBtn").addEventListener("click", openAbout);
 document.getElementById("contactBtn").addEventListener("click", openContact);
 
 (async function init() {
   loadFavorites();
+  loadSavedArticles();
   try {
     const [scores, transfers, players, articles, config] = await Promise.all([
       loadJSON("./data/scores.json"),
