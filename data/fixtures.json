@@ -1,21 +1,6 @@
 {
-  "updatedAt": "2026-08-30T13:17:37.838Z",
+  "updatedAt": "2026-08-30T14:26:20.117Z",
   "schedule": [
-    {
-      "competition": "Bundesliga",
-      "homeTeam": "SC Freiburg",
-      "awayTeam": "ヴェルダー・ブレーメン",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-08-30T13:30:00.000Z",
-      "clubJP": "SCフライブルク",
-      "players": [
-        "鈴木 唯人",
-        "山本 理仁",
-        "後藤 啓介"
-      ]
-    },
     {
       "competition": "Premier League",
       "homeTeam": "マンチェスター・ユナイテッド",
@@ -531,6 +516,19 @@
       "clubJP": "アストン・ヴィラ",
       "players": [
         "鈴木 彩艶"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "ボーンマス",
+      "awayTeam": "ブレントフォード",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-12T14:00:00.000Z",
+      "clubJP": "ヴェルダー・ブレーメン",
+      "players": [
+        "菅原 由勢"
       ]
     }
   ],
