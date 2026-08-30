@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   update-news:
@@ -22,12 +23,72 @@ jobs:
           node-version: "20"
 
       - name: Fetch latest news
+        id: fetch
         run: node scripts/fetch-news.mjs
+        continue-on-error: true
 
       - name: Commit and push if changed
+        if: steps.fetch.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/scores.json data/transfers.json data/articles.json
-          git diff --staged --quiet || git commit -m "chore: update news data [skip ci]"
-          git push
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update news data [skip ci]"
+          # The fixtures-update workflow can push to main around the same
+          # time as this one. Rebase onto whatever's newest on the remote
+          # right before pushing so a concurrent push doesn't get this
+          # one rejected — the two workflows touch different data files,
+          # so this always resolves cleanly.
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
+
+      # --- Notifications -----------------------------------------------
+      # Fires when the fetch step failed outright, or when it succeeded
+      # but came back with zero fresh items for scores or transfers
+      # (a sign the query, or Google News itself, might be having issues).
+      - name: Determine if notification is needed
+        id: check
+        run: |
+          if [ "${{ steps.fetch.outcome }}" != "success" ]; then
+            echo "notify=true" >> "$GITHUB_OUTPUT"
+            echo "reason=fetch-news.mjs がエラーで失敗しました: ${{ steps.fetch.outputs.error_message }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ steps.fetch.outputs.scores_count }}" = "0" ] || [ "${{ steps.fetch.outputs.transfers_count }}" = "0" ]; then
+            echo "notify=true" >> "$GITHUB_OUTPUT"
+            echo "reason=取得件数が0でした (scores=${{ steps.fetch.outputs.scores_count }}, transfers=${{ steps.fetch.outputs.transfers_count }}, articles=${{ steps.fetch.outputs.articles_count }})" >> "$GITHUB_OUTPUT"
+          else
+            echo "notify=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub issue
+        if: steps.check.outputs.notify == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "⚠️ SAMURAI WATCH: ニュース取得に問題 ($(date -u +'%Y-%m-%d %H:%M UTC'))" \
+            --body "${{ steps.check.outputs.reason }}
+
+          実行ログ: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+      - name: Send LINE notification
+        if: steps.check.outputs.notify == 'true'
+        env:
+          LINE_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+        run: |
+          if [ -z "$LINE_TOKEN" ] || [ -z "$LINE_USER_ID" ]; then
+            echo "LINE secrets not configured, skipping LINE notification."
+            exit 0
+          fi
+          curl -s -X POST https://api.line.me/v2/bot/message/push \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $LINE_TOKEN" \
+            -d "{\"to\":\"$LINE_USER_ID\",\"messages\":[{\"type\":\"text\",\"text\":\"⚠️ SAMURAI WATCH\n${{ steps.check.outputs.reason }}\"}]}"
+
+      - name: Fail the job if the fetch step failed
+        if: steps.fetch.outcome != 'success'
+        run: exit 1
