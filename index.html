@@ -648,6 +648,55 @@
     padding-top: 8px;
     margin-top: 4px;
   }
+  .fixture-search-row { margin-bottom: 16px; }
+  .fixture-search-input {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: var(--text);
+    font-family: inherit;
+  }
+  .fixture-search-input::placeholder { color: var(--text-fainter); }
+  .fixture-search-input:focus { border-color: var(--border-hover); outline: none; }
+  .fixture-view-toggle {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .fixture-toggle-btn {
+    flex: 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .fixture-toggle-btn.active {
+    background: var(--fixtures-accent, #7FA8D9);
+    border-color: var(--fixtures-accent, #7FA8D9);
+    color: var(--bg);
+  }
+  .show-more-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 4px;
+  }
+  .show-more-btn:hover { border-color: var(--border-hover); color: var(--text); }
   .league-accordion {
     border-top: 1px solid var(--border);
   }
@@ -1226,6 +1275,9 @@ const state = {
   favorites: new Set(),
   savedArticles: [],
   savedOpen: false,
+  fixtureSearchQuery: "",
+  fixtureView: "schedule", // "schedule" | "results"
+  fixtureExpanded: false,
 };
 
 const FAVORITES_STORAGE_KEY = "sw_favorite_players";
@@ -1595,17 +1647,39 @@ function renderMatchCard(m) {
   `;
 }
 
+function matchesFixtureQuery(m, query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return true;
+  const haystack = [m.homeTeam, m.awayTeam, m.competition, m.clubJP, ...(m.players || [])]
+    .join(" ")
+    .toLowerCase();
+  return haystack.includes(q);
+}
+
+const FIXTURE_PAGE_SIZE = 5;
+
 function renderFixturesTab() {
   const feed = state.fixtures;
   if (!feed) return `<div class="empty">読み込み中...</div>`;
 
-  const scheduleHtml = feed.schedule.length
-    ? feed.schedule.map(renderMatchCard).join("")
-    : `<div class="empty">今後の試合予定が見つかりませんでした。</div>`;
+  const query = state.fixtureSearchQuery;
+  const view = state.fixtureView;
+  const allMatches = (view === "schedule" ? feed.schedule : feed.results).filter((m) =>
+    matchesFixtureQuery(m, query)
+  );
+  const visibleMatches = state.fixtureExpanded ? allMatches : allMatches.slice(0, FIXTURE_PAGE_SIZE);
 
-  const resultsHtml = feed.results.length
-    ? feed.results.map(renderMatchCard).join("")
-    : `<div class="empty">直近の試合結果が見つかりませんでした。</div>`;
+  const emptyText = view === "schedule"
+    ? (query ? "一致する試合予定が見つかりませんでした。" : "今後の試合予定が見つかりませんでした。")
+    : (query ? "一致する試合結果が見つかりませんでした。" : "直近の試合結果が見つかりませんでした。");
+
+  const matchesHtml = visibleMatches.length
+    ? visibleMatches.map(renderMatchCard).join("")
+    : `<div class="empty">${emptyText}</div>`;
+
+  const showMoreBtn = !state.fixtureExpanded && allMatches.length > FIXTURE_PAGE_SIZE
+    ? `<button class="show-more-btn" id="fixtureShowMoreBtn">もっと見る(残り${allMatches.length - FIXTURE_PAGE_SIZE}件)</button>`
+    : "";
 
   const note = feed.unsupportedNote
     ? `<p class="players-note">${feed.unsupportedNote}</p>`
@@ -1613,10 +1687,15 @@ function renderFixturesTab() {
 
   return `
     ${note}
-    <p class="leagues-overview-label" style="margin-top:4px;">今後の試合</p>
-    ${scheduleHtml}
-    <p class="leagues-overview-label" style="margin-top:22px;">試合結果</p>
-    ${resultsHtml}
+    <div class="fixture-search-row">
+      <input type="text" class="fixture-search-input" id="fixtureSearchInput" placeholder="チーム名・選手名・大会名で検索" value="${query.replace(/"/g, "&quot;")}" />
+    </div>
+    <div class="fixture-view-toggle">
+      <button class="fixture-toggle-btn ${view === "schedule" ? "active" : ""}" data-view="schedule">今後の試合</button>
+      <button class="fixture-toggle-btn ${view === "results" ? "active" : ""}" data-view="results">試合結果</button>
+    </div>
+    ${matchesHtml}
+    ${showMoreBtn}
   `;
 }
 
@@ -2295,12 +2374,41 @@ function renderFilterBlock() {
   });
 }
 
+let fixtureSearchWired = false;
+
 function renderContent() {
   const content = document.getElementById("content");
   const tab = state.activeTab;
 
   if (tab === "fixtures") {
     content.innerHTML = renderFixturesTab();
+    if (!fixtureSearchWired) {
+      fixtureSearchWired = true;
+      content.addEventListener("input", (e) => {
+        if (e.target.id !== "fixtureSearchInput") return;
+        state.fixtureSearchQuery = e.target.value;
+        content.innerHTML = renderFixturesTab();
+        const newInput = document.getElementById("fixtureSearchInput");
+        if (newInput) {
+          newInput.focus();
+          const len = newInput.value.length;
+          newInput.setSelectionRange(len, len);
+        }
+      });
+      content.addEventListener("click", (e) => {
+        const toggleBtn = e.target.closest(".fixture-toggle-btn");
+        if (toggleBtn) {
+          state.fixtureView = toggleBtn.dataset.view;
+          state.fixtureExpanded = false;
+          content.innerHTML = renderFixturesTab();
+          return;
+        }
+        if (e.target.id === "fixtureShowMoreBtn") {
+          state.fixtureExpanded = true;
+          content.innerHTML = renderFixturesTab();
+        }
+      });
+    }
     return;
   }
 
