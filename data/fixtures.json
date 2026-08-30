@@ -1,32 +1,6 @@
 {
-  "updatedAt": "2026-08-30T14:26:20.117Z",
+  "updatedAt": "2026-08-30T18:36:09.134Z",
   "schedule": [
-    {
-      "competition": "Premier League",
-      "homeTeam": "マンチェスター・ユナイテッド",
-      "awayTeam": "イプスウィッチ・タウン",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-08-30T15:30:00.000Z",
-      "clubJP": "イプスウィッチ・タウン",
-      "players": [
-        "前田 大然"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "RC Deportivo La Coruña",
-      "awayTeam": "バレンシアCF",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-08-30T17:30:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
-      ]
-    },
     {
       "competition": "Serie A",
       "homeTeam": "ラツィオ",
@@ -530,9 +504,144 @@
       "players": [
         "菅原 由勢"
       ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "ハル・シティ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-12T14:00:00.000Z",
+      "clubJP": "ボルシアMG",
+      "players": [
+        "板倉 滉",
+        "町野 修斗"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "ハル・シティ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-12T14:00:00.000Z",
+      "clubJP": "バイエルン・ミュンヘン",
+      "players": [
+        "伊藤 洋輝"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Premier League",
+      "homeTeam": "マンチェスター・ユナイテッド",
+      "awayTeam": "イプスウィッチ・タウン",
+      "homeScore": 5,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T15:30:00.000Z",
+      "clubJP": "イプスウィッチ・タウン",
+      "players": [
+        "前田 大然"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "SC Freiburg",
+      "awayTeam": "ヴェルダー・ブレーメン",
+      "homeScore": 4,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T13:30:00.000Z",
+      "clubJP": "SCフライブルク",
+      "players": [
+        "鈴木 唯人",
+        "山本 理仁",
+        "後藤 啓介"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "リーズ・ユナイテッド",
+      "awayTeam": "ブレントフォード",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T13:00:00.000Z",
+      "clubJP": "ヴェルダー・ブレーメン",
+      "players": [
+        "菅原 由勢"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "ブライトン",
+      "homeScore": 4,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T13:00:00.000Z",
+      "clubJP": "ボルシアMG",
+      "players": [
+        "板倉 滉",
+        "町野 修斗"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "ブライトン",
+      "homeScore": 4,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T13:00:00.000Z",
+      "clubJP": "バイエルン・ミュンヘン",
+      "players": [
+        "伊藤 洋輝"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "リーズ・ユナイテッド",
+      "awayTeam": "ブレントフォード",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T13:00:00.000Z",
+      "clubJP": "リーズ・ユナイテッド",
+      "players": [
+        "田中 碧"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "ブライトン",
+      "homeScore": 4,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T13:00:00.000Z",
+      "clubJP": "ブライトン",
+      "players": [
+        "三笘 薫"
+      ]
+    },
+    {
+      "competition": "Eredivisie",
+      "homeTeam": "フェイエノールト",
+      "awayTeam": "ADO Den Haag",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T12:30:00.000Z",
+      "clubJP": "フェイエノールト",
+      "players": [
+        "渡辺 剛",
+        "上田 綺世"
+      ]
+    },
     {
       "competition": "Ligue 1",
       "homeTeam": "リヨン",
