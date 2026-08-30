@@ -49,6 +49,7 @@ const CLUB_NAME_MAP = {
   "ル・アーヴルAC": "Le Havre",
   "ASモナコ": "Monaco",
   "パルマ・カルチョ": "Parma",
+  "アストン・ヴィラ": "Aston Villa",
   "レアル・ソシエダード": "Real Sociedad",
   "バレンシアCF": "Valencia",
   "アヤックス": "Ajax",
@@ -142,11 +143,82 @@ async function fetchClubMatches(teamId) {
   return data.matches || [];
 }
 
+// Best-effort English -> Japanese katakana team name dictionary, covering
+// the clubs most likely to appear as opponents across the 7 free-tier
+// leagues. Anything not listed here is displayed in English rather than
+// guessed — a wrong translation is worse than none.
+const TEAM_NAME_JA = {
+  // Premier League
+  "Arsenal FC": "アーセナル", "Aston Villa FC": "アストン・ヴィラ", "AFC Bournemouth": "ボーンマス",
+  "Brentford FC": "ブレントフォード", "Brighton & Hove Albion FC": "ブライトン", "Burnley FC": "バーンリー",
+  "Chelsea FC": "チェルシー", "Crystal Palace FC": "クリスタル・パレス", "Everton FC": "エヴァートン",
+  "Fulham FC": "フラム", "Leeds United FC": "リーズ・ユナイテッド", "Liverpool FC": "リヴァプール",
+  "Manchester City FC": "マンチェスター・シティ", "Manchester United FC": "マンチェスター・ユナイテッド",
+  "Newcastle United FC": "ニューカッスル・ユナイテッド", "Nottingham Forest FC": "ノッティンガム・フォレスト",
+  "Sunderland AFC": "サンダーランド", "Tottenham Hotspur FC": "トッテナム・ホットスパー",
+  "West Ham United FC": "ウェストハム・ユナイテッド", "Wolverhampton Wanderers FC": "ウルヴァーハンプトン",
+  "Ipswich Town FC": "イプスウィッチ・タウン",
+  // Bundesliga
+  "FC Bayern München": "バイエルン・ミュンヘン", "Bayer 04 Leverkusen": "バイエル・レヴァークーゼン",
+  "RB Leipzig": "RBライプツィヒ", "Borussia Dortmund": "ボルシア・ドルトムント",
+  "Eintracht Frankfurt": "アイントラハト・フランクフルト", "VfB Stuttgart": "VfBシュトゥットガルト",
+  "Sport-Club Freiburg": "SCフライブルク", "Borussia Mönchengladbach": "ボルシアMG",
+  "1. FC Union Berlin": "ウニオン・ベルリン", "SV Werder Bremen": "ヴェルダー・ブレーメン",
+  "VfL Wolfsburg": "VfLヴォルフスブルク", "1. FSV Mainz 05": "マインツ05",
+  "TSG 1899 Hoffenheim": "ホッフェンハイム", "FC Augsburg": "アウクスブルク",
+  "1. FC Köln": "FCケルン", "FC St. Pauli 1910": "FCザンクトパウリ",
+  "Hamburger SV": "ハンブルガーSV", "1. FC Heidenheim 1846": "ハイデンハイム",
+  // Ligue 1
+  "Paris Saint-Germain FC": "パリ・サンジェルマン", "Olympique de Marseille": "マルセイユ",
+  "AS Monaco FC": "ASモナコ", "LOSC Lille": "リール", "Olympique Lyonnais": "リヨン",
+  "OGC Nice": "ニース", "Stade Rennais FC 1901": "レンヌ", "RC Lens": "ランス",
+  "RC Strasbourg Alsace": "ストラスブール", "Toulouse FC": "トゥールーズ", "FC Nantes": "ナント",
+  "Stade de Reims": "スタッド・ランス", "Le Havre AC": "ル・アーヴルAC", "Angers SCO": "アンジェ",
+  "AJ Auxerre": "オセール", "Stade Brestois 29": "ブレスト", "FC Metz": "メス", "Paris FC": "パリFC",
+  // Serie A
+  "Juventus FC": "ユヴェントス", "FC Internazionale Milano": "インテル", "AC Milan": "ACミラン",
+  "SSC Napoli": "ナポリ", "AS Roma": "ASローマ", "SS Lazio": "ラツィオ", "Atalanta BC": "アタランタ",
+  "ACF Fiorentina": "フィオレンティーナ", "Bologna FC 1909": "ボローニャ", "Torino FC": "トリノ",
+  "Udinese Calcio": "ウディネーゼ", "US Sassuolo Calcio": "サッスオーロ", "Genoa CFC": "ジェノア",
+  "Cagliari Calcio": "カリアリ", "Hellas Verona FC": "エラス・ヴェローナ", "Parma Calcio 1913": "パルマ・カルチョ",
+  "Como 1907": "コモ", "US Cremonese": "クレモネーゼ", "US Lecce": "レッチェ", "AC Pisa 1909": "ピサ",
+  // La Liga
+  "Real Madrid CF": "レアル・マドリード", "FC Barcelona": "バルセロナ", "Club Atlético de Madrid": "アトレティコ・マドリード",
+  "Real Sociedad de Fútbol": "レアル・ソシエダード", "Athletic Club": "アスレティック・ビルバオ",
+  "Villarreal CF": "ビジャレアル", "Real Betis Balompié": "レアル・ベティス", "Sevilla FC": "セビージャ",
+  "Valencia CF": "バレンシアCF", "RC Celta de Vigo": "セルタ・デ・ビーゴ", "Getafe CF": "ヘタフェ",
+  "CA Osasuna": "オサスナ", "Girona FC": "ジローナ", "RCD Mallorca": "マジョルカ",
+  "Rayo Vallecano de Madrid": "ラージョ・バジェカーノ", "RCD Espanyol de Barcelona": "エスパニョール",
+  "Deportivo Alavés": "アラベス", "Levante UD": "レバンテ", "Elche CF": "エルチェ", "Real Oviedo": "レアル・オビエド",
+  // Eredivisie
+  "AFC Ajax": "アヤックス", "PSV": "PSVアイントホーフェン", "Feyenoord Rotterdam": "フェイエノールト",
+  "AZ": "AZアルクマール", "FC Twente '65": "FCトゥエンテ", "FC Utrecht": "FCユトレヒト",
+  "Sparta Rotterdam": "スパルタ・ロッテルダム", "NEC": "NECナイメヘン", "Go Ahead Eagles": "ゴー・アヘッド・イーグルス",
+  "Fortuna Sittard": "フォルトゥナ・シッタルド", "sc Heerenveen": "ヘーレンフェーン",
+  "Willem II Tilburg": "ヴィレムII", "NAC Breda": "NACブレダ", "PEC Zwolle": "PECズウォレ",
+  "Telstar 1963": "テルスター", "FC Volendam": "フォレンダム", "FC Groningen": "フローニンゲン",
+  "SBV Excelsior": "エクセルシオール",
+  // EFL Championship
+  "Leicester City FC": "レスター・シティ", "Sheffield United FC": "シェフィールド・ユナイテッド",
+  "West Bromwich Albion FC": "ウェストブロムウィッチ・アルビオン", "Middlesbrough FC": "ミドルズブラ",
+  "Norwich City FC": "ノリッジ・シティ", "Coventry City FC": "コヴェントリー・シティ",
+  "Hull City AFC": "ハル・シティ", "Swansea City AFC": "スウォンジー・シティ", "Bristol City FC": "ブリストル・シティ",
+  "Preston North End FC": "プレストン・ノースエンド", "Millwall FC": "ミルウォール", "Cardiff City FC": "カーディフ・シティ",
+  "Blackburn Rovers FC": "ブラックバーン・ローヴァーズ", "Watford FC": "ワトフォード",
+  "Queens Park Rangers FC": "QPR", "Stoke City FC": "ストーク・シティ", "Portsmouth FC": "ポーツマス",
+  "Oxford United FC": "オックスフォード・ユナイテッド", "Derby County FC": "ダービー・カウンティ",
+  "Sheffield Wednesday FC": "シェフィールド・ウェンズデー", "Charlton Athletic FC": "チャールトン・アスレティック",
+};
+
+function toJa(englishName) {
+  return TEAM_NAME_JA[englishName] || englishName;
+}
+
 function mapMatch(match, clubNameJP, players) {
   return {
     competition: match.competition?.name || "",
-    homeTeam: match.homeTeam?.name || "",
-    awayTeam: match.awayTeam?.name || "",
+    homeTeam: toJa(match.homeTeam?.name || ""),
+    awayTeam: toJa(match.awayTeam?.name || ""),
     homeScore: match.score?.fullTime?.home ?? null,
     awayScore: match.score?.fullTime?.away ?? null,
     status: match.status,
