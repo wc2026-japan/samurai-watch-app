@@ -1,32 +1,6 @@
 {
-  "updatedAt": "2026-08-30T18:36:09.134Z",
+  "updatedAt": "2026-08-30T23:25:20.702Z",
   "schedule": [
-    {
-      "competition": "Serie A",
-      "homeTeam": "ラツィオ",
-      "awayTeam": "ジェノア",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-08-30T18:45:00.000Z",
-      "clubJP": "NECナイメヘン",
-      "players": [
-        "小川 航基"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "ASモナコ",
-      "awayTeam": "マルセイユ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-08-30T18:45:00.000Z",
-      "clubJP": "ASモナコ",
-      "players": [
-        "南野 拓実"
-      ]
-    },
     {
       "competition": "Premier League",
       "homeTeam": "アストン・ヴィラ",
@@ -413,6 +387,19 @@
       ]
     },
     {
+      "competition": "Primera Division",
+      "homeTeam": "セビージャ",
+      "awayTeam": "バレンシアCF",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-11T19:00:00.000Z",
+      "clubJP": "バレンシアCF",
+      "players": [
+        "佐藤 龍之介"
+      ]
+    },
+    {
       "competition": "Serie A",
       "homeTeam": "ジェノア",
       "awayTeam": "Frosinone Calcio",
@@ -531,9 +518,62 @@
       "players": [
         "伊藤 洋輝"
       ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "クリスタル・パレス",
+      "awayTeam": "イプスウィッチ・タウン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-12T14:00:00.000Z",
+      "clubJP": "クリスタル・パレス",
+      "players": [
+        "冨安 健洋",
+        "鎌田 大地"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Serie A",
+      "homeTeam": "ラツィオ",
+      "awayTeam": "ジェノア",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T18:45:00.000Z",
+      "clubJP": "NECナイメヘン",
+      "players": [
+        "小川 航基"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "ASモナコ",
+      "awayTeam": "マルセイユ",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T18:45:00.000Z",
+      "clubJP": "ASモナコ",
+      "players": [
+        "南野 拓実"
+      ]
+    },
+    {
+      "competition": "Primera Division",
+      "homeTeam": "RC Deportivo La Coruña",
+      "awayTeam": "バレンシアCF",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-08-30T17:30:00.000Z",
+      "clubJP": "バレンシアCF",
+      "players": [
+        "佐藤 龍之介"
+      ]
+    },
     {
       "competition": "Premier League",
       "homeTeam": "マンチェスター・ユナイテッド",
