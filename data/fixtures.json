@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-08-31T13:28:57.553Z",
+  "updatedAt": "2026-08-31T20:48:29.654Z",
   "schedule": [
-    {
-      "competition": "Premier League",
-      "homeTeam": "アストン・ヴィラ",
-      "awayTeam": "アーセナル",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-08-31T19:00:00.000Z",
-      "clubJP": "アストン・ヴィラ",
-      "players": [
-        "鈴木 彩艶"
-      ]
-    },
     {
       "competition": "Championship",
       "homeTeam": "ウェストハム・ユナイテッド",
@@ -347,6 +334,19 @@
       ]
     },
     {
+      "competition": "Championship",
+      "homeTeam": "ウルヴァーハンプトン",
+      "awayTeam": "ポーツマス",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "POSTPONED",
+      "utcDate": "2026-09-09T00:00:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
+    {
       "competition": "UEFA Champions League",
       "homeTeam": "バルセロナ",
       "awayTeam": "フェイエノールト",
@@ -358,19 +358,6 @@
       "players": [
         "渡辺 剛",
         "上田 綺世"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "ウルヴァーハンプトン",
-      "awayTeam": "ポーツマス",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-09T18:45:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
       ]
     },
     {
@@ -531,6 +518,19 @@
       "players": [
         "冨安 健洋",
         "鎌田 大地"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "リヴァプール",
+      "awayTeam": "フラム",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-12T14:00:00.000Z",
+      "clubJP": "リバプールFC",
+      "players": [
+        "遠藤 航"
       ]
     }
   ],
