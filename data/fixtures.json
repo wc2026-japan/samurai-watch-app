@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T23:25:20.702Z",
+  "updatedAt": "2026-08-31T05:15:16.758Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -866,87 +866,6 @@
       "clubJP": "バイエルン・ミュンヘン",
       "players": [
         "伊藤 洋輝"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ニューカッスル・ユナイテッド",
-      "awayTeam": "リヴァプール",
-      "homeScore": 2,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-08-23T15:30:00.000Z",
-      "clubJP": "リバプールFC",
-      "players": [
-        "遠藤 航"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "ル・アーヴルAC",
-      "awayTeam": "ASモナコ",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-08-23T15:15:00.000Z",
-      "clubJP": "ル・アーヴルAC",
-      "players": [
-        "瀬古 歩夢",
-        "水多 海斗",
-        "中村 草太"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "ル・アーヴルAC",
-      "awayTeam": "ASモナコ",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-08-23T15:15:00.000Z",
-      "clubJP": "ASモナコ",
-      "players": [
-        "南野 拓実"
-      ]
-    },
-    {
-      "competition": "Eredivisie",
-      "homeTeam": "SC Cambuur-Leeuwarden",
-      "awayTeam": "フェイエノールト",
-      "homeScore": 2,
-      "awayScore": 5,
-      "status": "FINISHED",
-      "utcDate": "2026-08-23T14:45:00.000Z",
-      "clubJP": "フェイエノールト",
-      "players": [
-        "渡辺 剛",
-        "上田 綺世"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ブライトン",
-      "awayTeam": "アストン・ヴィラ",
-      "homeScore": 4,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-08-23T13:00:00.000Z",
-      "clubJP": "アストン・ヴィラ",
-      "players": [
-        "鈴木 彩艶"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ブライトン",
-      "awayTeam": "アストン・ヴィラ",
-      "homeScore": 4,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-08-23T13:00:00.000Z",
-      "clubJP": "ブライトン",
-      "players": [
-        "三笘 薫"
       ]
     }
   ],
