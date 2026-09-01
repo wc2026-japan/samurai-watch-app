@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T20:48:29.654Z",
+  "updatedAt": "2026-09-01T00:34:21.340Z",
   "schedule": [
     {
       "competition": "Championship",
@@ -536,6 +536,19 @@
   ],
   "results": [
     {
+      "competition": "Premier League",
+      "homeTeam": "アストン・ヴィラ",
+      "awayTeam": "アーセナル",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-08-31T19:00:00.000Z",
+      "clubJP": "アストン・ヴィラ",
+      "players": [
+        "鈴木 彩艶"
+      ]
+    },
+    {
       "competition": "Serie A",
       "homeTeam": "ラツィオ",
       "awayTeam": "ジェノア",
@@ -839,33 +852,6 @@
       "clubJP": "バレンシアCF",
       "players": [
         "佐藤 龍之介"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "フラム",
-      "awayTeam": "チェルシー",
-      "homeScore": 2,
-      "awayScore": 3,
-      "status": "FINISHED",
-      "utcDate": "2026-08-24T19:00:00.000Z",
-      "clubJP": "ボルシアMG",
-      "players": [
-        "板倉 滉",
-        "町野 修斗"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "フラム",
-      "awayTeam": "チェルシー",
-      "homeScore": 2,
-      "awayScore": 3,
-      "status": "FINISHED",
-      "utcDate": "2026-08-24T19:00:00.000Z",
-      "clubJP": "バイエルン・ミュンヘン",
-      "players": [
-        "伊藤 洋輝"
       ]
     }
   ],
