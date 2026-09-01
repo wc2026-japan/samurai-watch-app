@@ -57,6 +57,51 @@ const CLUB_NAME_MAP = {
   "NECナイメヘン": "NEC Nijmegen",
 };
 
+// Japanese player name -> expected romanized name as it's likely to
+// appear in football-data.org's scorers list. Only players who actually
+// rank among their league's top scorers will ever be matched — this
+// dictionary just makes the match possible when they do; it never
+// fabricates a stat for someone who isn't in the list.
+const PLAYER_NAME_EN = {
+  "鈴木 彩艶": "zion suzuki",
+  "菅原 由勢": "yukinari sugawara",
+  "谷口 彰悟": "shogo taniguchi",
+  "板倉 滉": "ko itakura",
+  "長友 佑都": "yuto nagatomo",
+  "渡辺 剛": "go watanabe",
+  "瀬古 歩夢": "ayumu seko",
+  "伊藤 洋輝": "hiroki ito",
+  "冨安 健洋": "takehiro tomiyasu",
+  "鈴木 淳之介": "junnosuke suzuki",
+  "遠藤 航": "wataru endo",
+  "田中 碧": "ao tanaka",
+  "久保 建英": "takefusa kubo",
+  "堂安 律": "ritsu doan",
+  "中村 敬斗": "keito nakamura",
+  "伊東 純也": "junya ito",
+  "鎌田 大地": "daichi kamada",
+  "鈴木 唯人": "yuito suzuki",
+  "佐野 海舟": "kaishu sano",
+  "佐藤 龍之介": "ryunosuke sato",
+  "山本 理仁": "rihito yamamoto",
+  "藤田 譲瑠チマ": "joel chima fujita",
+  "守田 英正": "hidemasa morita",
+  "旗手 怜央": "reo hatate",
+  "町野 修斗": "shuto machino",
+  "後藤 啓介": "keisuke goto",
+  "前田 大然": "daizen maeda",
+  "上田 綺世": "ayase ueda",
+  "小川 航基": "koki ogawa",
+  "塩貝 健人": "kento shiogai",
+  "三笘 薫": "kaoru mitoma",
+  "南野 拓実": "takumi minamino",
+  "水多 海斗": "kaito mizuta",
+  "中村 草太": "sota nakamura",
+  "高井 幸大": "kota takai",
+  "安藤 智哉": "tomoya ando",
+  "町田 浩樹": "hiroki machida",
+};
+
 function readPlayers() {
   try {
     const raw = fs.readFileSync(path.join(dataDir, "players.json"), "utf-8");
@@ -80,6 +125,63 @@ function buildTrackedClubs(playersData) {
   }
   return clubs;
 }
+
+// Flat list of every tracked player name (regardless of club mapping —
+// stats matching only needs the name dictionary above, not the club
+// lookup used for fixtures).
+function listAllPlayerNames(playersData) {
+  const names = [];
+  if (!playersData) return names;
+  for (const group of playersData.positions || []) {
+    for (const p of group.players || []) {
+      if (PLAYER_NAME_EN[p.name]) names.push(p.name);
+    }
+  }
+  return names;
+}
+
+async function fetchScorers(competitionCode) {
+  try {
+    const data = await apiGet(`/competitions/${competitionCode}/scorers?limit=50`);
+    return data.scorers || [];
+  } catch (err) {
+    console.error(`Failed to fetch scorers for ${competitionCode}: ${err.message}`);
+    return [];
+  }
+}
+
+// Matches our tracked players against every free competition's top-scorer
+// list. A player who isn't among their league's leading scorers simply
+// won't appear in the output — never filled in with a guessed/zero stat.
+async function buildPlayerStats(playerNames) {
+  const stats = {};
+  const nameToJP = {};
+  for (const jp of playerNames) {
+    nameToJP[PLAYER_NAME_EN[jp]] = jp;
+  }
+
+  for (const code of FREE_COMPETITIONS) {
+    const scorers = await fetchScorers(code);
+    for (const entry of scorers) {
+      const fullName = (entry.player?.name || "").toLowerCase();
+      const jp = nameToJP[fullName];
+      if (!jp) continue;
+      stats[jp] = {
+        goals: entry.goals ?? 0,
+        assists: entry.assists ?? null,
+        competition: entry.player?.name ? (COMPETITION_LABELS[code] || code) : code,
+        club: entry.team?.name ? toJa(entry.team.name) : "",
+      };
+    }
+    await sleep(6500); // stay under 10 req/min
+  }
+  return stats;
+}
+
+const COMPETITION_LABELS = {
+  PL: "プレミアリーグ", BL1: "ブンデスリーガ", FL1: "リーグ・アン",
+  SA: "セリエA", PD: "ラ・リーガ", DED: "エールディビジ", ELC: "EFLチャンピオンシップ",
+};
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -240,9 +342,13 @@ function readExisting(fileName) {
 async function main() {
   if (!API_KEY) {
     console.log("FOOTBALL_DATA_API_KEY is not set — skipping fixture fetch (this is expected until the secret is configured).");
-    const existing = readExisting("fixtures.json");
-    const out = existing || { updatedAt: new Date().toISOString(), schedule: [], results: [], unsupportedNote: "" };
-    fs.writeFileSync(path.join(dataDir, "fixtures.json"), JSON.stringify(out, null, 2) + "\n");
+    const existingFixtures = readExisting("fixtures.json");
+    const outFixtures = existingFixtures || { updatedAt: new Date().toISOString(), schedule: [], results: [], unsupportedNote: "" };
+    fs.writeFileSync(path.join(dataDir, "fixtures.json"), JSON.stringify(outFixtures, null, 2) + "\n");
+
+    const existingStats = readExisting("stats.json");
+    const outStats = existingStats || { updatedAt: new Date().toISOString(), players: {} };
+    fs.writeFileSync(path.join(dataDir, "stats.json"), JSON.stringify(outStats, null, 2) + "\n");
     return;
   }
 
@@ -288,6 +394,12 @@ async function main() {
 
   fs.writeFileSync(path.join(dataDir, "fixtures.json"), JSON.stringify(out, null, 2) + "\n");
   console.log(`Wrote ${out.schedule.length} upcoming and ${out.results.length} recent matches.`);
+
+  const statsPlayerNames = listAllPlayerNames(playersData);
+  const playerStats = await buildPlayerStats(statsPlayerNames);
+  const statsOut = { updatedAt: new Date().toISOString(), players: playerStats };
+  fs.writeFileSync(path.join(dataDir, "stats.json"), JSON.stringify(statsOut, null, 2) + "\n");
+  console.log(`Wrote stats for ${Object.keys(playerStats).length} player(s) who rank among their league's top scorers.`);
 }
 
 main().catch((err) => {
