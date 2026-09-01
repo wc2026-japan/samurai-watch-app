@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-09-01T18:23:29.224Z",
+  "updatedAt": "2026-09-01T23:16:40.473Z",
   "schedule": [
-    {
-      "competition": "Championship",
-      "homeTeam": "ウェストハム・ユナイテッド",
-      "awayTeam": "ウルヴァーハンプトン",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-01T18:45:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
-      ]
-    },
     {
       "competition": "Primera Division",
       "homeTeam": "レアル・ソシエダード",
@@ -532,9 +519,35 @@
       "players": [
         "遠藤 航"
       ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "ハル・シティ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-12T14:00:00.000Z",
+      "clubJP": "ハル・シティ",
+      "players": [
+        "守田 英正"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Championship",
+      "homeTeam": "ウェストハム・ユナイテッド",
+      "awayTeam": "ウルヴァーハンプトン",
+      "homeScore": 4,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-09-01T18:45:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
     {
       "competition": "Premier League",
       "homeTeam": "アストン・ヴィラ",
