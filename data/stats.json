@@ -1,4 +1,17 @@
 {
-  "updatedAt": "2026-08-30T00:00:00.000Z",
-  "players": {}
+  "updatedAt": "2026-09-01T08:36:15.038Z",
+  "players": {
+    "鈴木 唯人": {
+      "goals": 3,
+      "assists": null,
+      "competition": "ブンデスリーガ",
+      "club": "SC Freiburg"
+    },
+    "上田 綺世": {
+      "goals": 3,
+      "assists": 1,
+      "competition": "エールディビジ",
+      "club": "フェイエノールト"
+    }
+  }
 }
