@@ -1266,6 +1266,7 @@ const state = {
   players: null,
   articles: null,
   fixtures: null,
+  stats: null,
   config: null,
   scoreFilter: "all",
   transferFilter: "all",
@@ -1907,6 +1908,19 @@ function renderProfileSection(p) {
   `;
 }
 
+function renderStatsSection(p) {
+  const stat = state.stats?.players?.[p.name];
+  if (!stat) return "";
+  return `
+    <p class="modal-section-label">今季成績(${stat.competition})</p>
+    <div class="profile-stats-row">
+      <div class="profile-stat"><span class="profile-stat-label">ゴール</span><span class="profile-stat-value">${stat.goals}</span></div>
+      ${stat.assists !== null && stat.assists !== undefined ? `<div class="profile-stat"><span class="profile-stat-label">アシスト</span><span class="profile-stat-value">${stat.assists}</span></div>` : ""}
+    </div>
+    <p class="players-note" style="margin-top:6px;">得点ランキング上位選手のみ表示しています。</p>
+  `;
+}
+
 function renderLeagueSection(p) {
   if (!p.league) return "";
   const info = state.players?.leagues?.[p.league];
@@ -1998,6 +2012,7 @@ function renderModal() {
         </div>
         ${p.status ? `<p class="player-status" style="margin:8px 2px 0;">${p.status}</p>` : ""}
 
+        ${renderStatsSection(p)}
         ${renderProfileSection(p)}
         ${renderLeagueSection(p)}
 
@@ -2673,12 +2688,13 @@ function startAppUpdateWatcher() {
   loadFavorites();
   loadSavedArticles();
   try {
-    const [scores, transfers, players, articles, fixtures, config] = await Promise.all([
+    const [scores, transfers, players, articles, fixtures, stats, config] = await Promise.all([
       loadJSON("./data/scores.json"),
       loadJSON("./data/transfers.json"),
       loadJSON("./data/players.json"),
       loadJSON("./data/articles.json"),
       loadJSON("./data/fixtures.json"),
+      loadJSON("./data/stats.json"),
       loadJSON("./data/config.json"),
     ]);
     state.scores = scores;
@@ -2686,6 +2702,7 @@ function startAppUpdateWatcher() {
     state.players = players;
     state.articles = articles;
     state.fixtures = fixtures;
+    state.stats = stats;
     state.config = config;
   } catch (err) {
     console.error(err);
