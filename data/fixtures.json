@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T23:16:40.473Z",
+  "updatedAt": "2026-09-02T04:12:23.558Z",
   "schedule": [
     {
       "competition": "Primera Division",
@@ -852,19 +852,6 @@
       "clubJP": "レアル・ソシエダード",
       "players": [
         "久保 建英"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "バレンシアCF",
-      "awayTeam": "レアル・ベティス",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-08-25T19:00:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
       ]
     }
   ],
