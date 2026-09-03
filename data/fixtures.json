@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T20:57:24.158Z",
+  "updatedAt": "2026-09-03T23:15:28.201Z",
   "schedule": [
     {
       "competition": "Ligue 1",
@@ -536,6 +536,19 @@
     }
   ],
   "results": [
+    {
+      "competition": "Primera Division",
+      "homeTeam": "レアル・ソシエダード",
+      "awayTeam": "セルタ・デ・ビーゴ",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-03T19:00:00.000Z",
+      "clubJP": "レアル・ソシエダード",
+      "players": [
+        "久保 建英"
+      ]
+    },
     {
       "competition": "Ligue 1",
       "homeTeam": "トゥールーズ",
