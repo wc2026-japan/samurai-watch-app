@@ -508,65 +508,75 @@
   .x-embed-header .card-source { color: var(--blue); }
   .x-embed-body { padding: 0 2px 2px; }
 
-  /* ---- players tab ---- */
+  /* ---- players tab: League -> Club -> Player list ---- */
   .players-note {
     font-size: 11px;
     color: var(--text-faint);
     line-height: 1.5;
     margin: 0 0 18px;
   }
-  .position-group { margin-bottom: 22px; }
-  .position-label {
+  .league-section-block { margin-bottom: 26px; }
+  .league-section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--green);
+    margin-bottom: 14px;
+  }
+  .league-section-flag { font-size: 16px; }
+  .league-section-name {
     font-family: 'Oswald', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    color: var(--green);
-    margin: 0 0 10px;
+    letter-spacing: 0.5px;
+    color: var(--text);
   }
-  .player-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-  .player-card {
-    position: relative;
+  .club-block {
     border-radius: 12px;
     border: 1px solid var(--border);
     background: var(--card);
-    padding: 12px 13px;
-    text-align: left;
-    width: 100%;
-    font-family: inherit;
-    cursor: pointer;
-    color: inherit;
+    padding: 12px 14px;
+    margin-bottom: 12px;
   }
-  .player-card:hover { border-color: var(--border-hover); }
-  .fav-star {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 24px;
-    height: 24px;
-    border: none;
-    background: transparent;
-    color: var(--gold);
-    font-size: 15px;
-    cursor: pointer;
-    line-height: 1;
+  .club-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
-  .player-top {
-    display: flex;
-    align-items: baseline;
     gap: 6px;
-    margin-bottom: 3px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--text);
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
   }
+  .player-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-top: 1px solid var(--border);
+  }
+  .player-row:first-of-type { border-top: none; }
+  .player-row-pos {
+    flex-shrink: 0;
+    width: 28px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green);
+    text-align: center;
+  }
+  .player-row-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .player-row-top { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
   .player-number {
     font-family: 'Oswald', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     color: var(--text-fainter);
   }
@@ -581,6 +591,7 @@
   .modal-name rt { font-size: 10px; }
   .hot-player-name rt { font-size: 7.5px; }
   .player-keyman { color: var(--green); font-size: 11px; margin-right: 1px; }
+  .player-top { display: flex; align-items: baseline; gap: 6px; }
   .player-club {
     font-size: 11.5px;
     color: var(--text-muted);
@@ -588,15 +599,28 @@
     align-items: center;
     gap: 4px;
   }
-  .player-league-tag {
-    display: inline-block;
-    font-size: 9.5px;
-    font-weight: 600;
-    color: var(--green);
-    background: rgba(111,169,138,0.12);
-    border-radius: 4px;
-    padding: 1px 6px;
-    margin-top: 5px;
+  .sns-icon-row { display: flex; gap: 4px; flex-shrink: 0; }
+  .sns-icon-mini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    font-size: 10px;
+    text-decoration: none;
+  }
+  .fav-star {
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    color: var(--gold);
+    font-size: 15px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px;
   }
 
   .leagues-overview {
@@ -780,7 +804,7 @@
     color: #d98a6a;
     margin-top: 2px;
   }
-  .player-card.is-inactive { opacity: 0.55; }
+  .player-row.is-inactive { opacity: 0.55; }
 
   /* ---- player detail modal ---- */
   .modal-overlay {
@@ -1279,6 +1303,7 @@ const state = {
   fixtureSearchQuery: "",
   fixtureView: "schedule", // "schedule" | "results"
   fixtureExpanded: false,
+  playerLeagueFilter: "all",
 };
 
 const FAVORITES_STORAGE_KEY = "sw_favorite_players";
@@ -1755,6 +1780,14 @@ function renderTimelineStyleArticleCard(item) {
 
 const OVERSEAS_EXCLUDE_LEAGUE = "J1リーグ";
 
+// Display order for league sections/chips. Anything not listed falls back
+// to appearing after these, alphabetically.
+const LEAGUE_ORDER = [
+  "プレミアリーグ", "ブンデスリーガ", "ラ・リーガ", "リーグ・アン", "セリエA",
+  "エールディビジ", "EFLチャンピオンシップ", "ベルギー1部リーグ", "スーペルリーガ",
+  "スコティッシュ・プレミアシップ",
+];
+
 function getOverseasPositions(data) {
   return data.positions
     .map((group) => ({
@@ -1762,6 +1795,31 @@ function getOverseasPositions(data) {
       players: group.players.filter((p) => p.league !== OVERSEAS_EXCLUDE_LEAGUE),
     }))
     .filter((group) => group.players.length > 0);
+}
+
+// Flattens the GK/DF/MF/FW groups into League -> Club -> [players],
+// preserving each player's detailed position (p.pos) for display.
+function groupByLeagueAndClub(overseasPositions) {
+  const flat = overseasPositions.flatMap((g) => g.players.map((p) => ({ ...p, _code: g.code })));
+  const byLeague = {};
+  for (const p of flat) {
+    const league = p.league || "その他";
+    if (!byLeague[league]) byLeague[league] = {};
+    if (!byLeague[league][p.club]) byLeague[league][p.club] = [];
+    byLeague[league][p.club].push(p);
+  }
+  const leagueNames = Object.keys(byLeague).sort((a, b) => {
+    const ia = LEAGUE_ORDER.indexOf(a);
+    const ib = LEAGUE_ORDER.indexOf(b);
+    if (ia === -1 && ib === -1) return a.localeCompare(b, "ja");
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+  return leagueNames.map((league) => ({
+    league,
+    clubs: Object.entries(byLeague[league]).map(([club, players]) => ({ club, players })),
+  }));
 }
 
 /* "今週の注目選手": ranks players by how many times their name appears in
@@ -1793,6 +1851,26 @@ function nameWithFurigana(p) {
   return `<ruby>${p.name}<rt>${p.reading}</rt></ruby>`;
 }
 
+const SNS_ICONS = {
+  x: { emoji: "𝕏", urlBase: "https://x.com/" },
+  instagram: { emoji: "📷", urlBase: "https://www.instagram.com/" },
+  tiktok: { emoji: "🎵", urlBase: "https://www.tiktok.com/@" },
+  youtube: { emoji: "▶️", urlBase: "https://www.youtube.com/@" },
+};
+
+// Only ever renders icons for platforms we've actually verified in
+// players.json — never a guessed/fabricated handle.
+function renderSnsIconRow(p) {
+  if (!p.sns) return "";
+  const icons = Object.entries(p.sns)
+    .filter(([platform]) => SNS_ICONS[platform])
+    .map(([platform, handle]) => {
+      const info = SNS_ICONS[platform];
+      return `<a class="sns-icon-mini" href="${info.urlBase}${encodeURIComponent(handle)}" target="_blank" rel="noopener noreferrer" title="${platform}" onclick="event.stopPropagation()">${info.emoji}</a>`;
+    });
+  return icons.length ? `<span class="sns-icon-row">${icons.join("")}</span>` : "";
+}
+
 function renderHotPlayers(hotPlayers) {
   if (hotPlayers.length === 0) return "";
   return `
@@ -1810,34 +1888,81 @@ function renderHotPlayers(hotPlayers) {
   `;
 }
 
+function renderLeagueFilterRow(leagueGroups) {
+  const chips = [{ id: "all", label: "すべて" }, ...leagueGroups.map((g) => ({ id: g.league, label: g.league }))];
+  return `
+    <div class="filter-block">
+      <div class="filter-label" style="--accent:${ACCENTS.players}">
+        <span class="filter-tag">LEAGUE</span>
+      </div>
+      <div class="filter-row">
+        ${chips.map((c) => `
+          <button class="filter-chip ${c.id === state.playerLeagueFilter ? "active" : ""}" data-league-filter="${c.id}" style="--accent:${ACCENTS.players}">${c.label}</button>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderPlayerRow(p) {
+  return `
+    <div class="player-row ${p.status ? "is-inactive" : ""}" data-player-name="${p.name}">
+      <span class="player-row-pos">${p.pos || ""}</span>
+      <span class="player-row-main">
+        <span class="player-row-top">
+          ${p.number != null ? `<span class="player-number">${p.number}</span>` : ""}
+          ${p.keyman ? `<span class="player-keyman">◇</span>` : ""}
+          <span class="player-name">${nameWithFurigana(p)}</span>
+        </span>
+        ${p.status ? `<span class="player-status" style="margin-top:2px;">${p.status}</span>` : ""}
+      </span>
+      ${renderSnsIconRow(p)}
+      <button class="fav-star" style="position:static;" data-fav-name="${p.name}" aria-label="お気に入り">${isFavorite(p.name) ? "★" : "☆"}</button>
+    </div>
+  `;
+}
+
+function renderClubBlock(clubEntry) {
+  const first = clubEntry.players[0];
+  return `
+    <div class="club-block">
+      <div class="club-header">
+        <span class="club-header-flag">${first.country || ""}</span>
+        <span class="club-header-name">${clubEntry.club}</span>
+      </div>
+      ${clubEntry.players.map(renderPlayerRow).join("")}
+    </div>
+  `;
+}
+
+function renderLeagueSectionBlock(leagueGroup, leaguesInfo) {
+  const info = leaguesInfo?.[leagueGroup.league];
+  return `
+    <div class="league-section-block">
+      <div class="league-section-header">
+        <span class="league-section-flag">${info?.country || ""}</span>
+        <span class="league-section-name">${leagueGroup.league}</span>
+      </div>
+      ${leagueGroup.clubs.map(renderClubBlock).join("")}
+    </div>
+  `;
+}
+
 function renderPlayersTab() {
   if (!state.players) return `<div class="empty">読み込み中...</div>`;
   const data = state.players;
   const overseasPositions = getOverseasPositions(data);
   const hotPlayers = computeHotPlayers(overseasPositions);
+  const leagueGroups = groupByLeagueAndClub(overseasPositions);
 
-  const groups = overseasPositions.map((group) => `
-    <div class="position-group">
-      <p class="position-label">${group.label}</p>
-      <div class="player-grid">
-        ${group.players.map((p) => `
-          <div class="player-card ${p.status ? "is-inactive" : ""}" data-player-name="${p.name}">
-            <button class="fav-star" data-fav-name="${p.name}" aria-label="お気に入り">${isFavorite(p.name) ? "★" : "☆"}</button>
-            <div class="player-top">
-              ${p.number != null ? `<span class="player-number">${p.number}</span>` : ""}
-              ${p.keyman ? `<span class="player-keyman">◇</span>` : ""}
-              <span class="player-name">${nameWithFurigana(p)}</span>
-            </div>
-            <div class="player-club">${p.country || ""} ${p.club}</div>
-            ${p.league ? `<div><span class="player-league-tag">${p.league}</span></div>` : ""}
-            ${p.status ? `<div class="player-status">${p.status}</div>` : ""}
-          </div>
-        `).join("")}
-      </div>
-    </div>
-  `).join("");
+  const visibleGroups = state.playerLeagueFilter === "all"
+    ? leagueGroups
+    : leagueGroups.filter((g) => g.league === state.playerLeagueFilter);
+
+  const sections = visibleGroups.map((g) => renderLeagueSectionBlock(g, data.leagues)).join("");
   const note = data.note ? `<p class="players-note">${data.note}</p>` : "";
-  return renderHotPlayers(hotPlayers) + note + groups + renderLeaguesOverview(data.leagues, overseasPositions);
+
+  return renderHotPlayers(hotPlayers) + renderLeagueFilterRow(leagueGroups) + note + sections + renderLeaguesOverview(data.leagues, overseasPositions);
 }
 
 function renderLeaguesOverview(leagues, overseasPositions) {
@@ -2438,7 +2563,7 @@ function renderContent() {
 
   if (tab === "players") {
     content.innerHTML = promoCard() + renderPlayersTab();
-    content.querySelectorAll(".player-card, .hot-player-chip").forEach((btn) => {
+    content.querySelectorAll(".player-row, .hot-player-chip").forEach((btn) => {
       btn.addEventListener("click", () => {
         openPlayerModal(btn.dataset.playerName);
       });
@@ -2448,6 +2573,13 @@ function renderContent() {
         e.stopPropagation();
         toggleFavorite(btn.dataset.favName);
         btn.textContent = isFavorite(btn.dataset.favName) ? "★" : "☆";
+      });
+    });
+    content.querySelectorAll("[data-league-filter]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        state.playerLeagueFilter = btn.dataset.leagueFilter;
+        renderContent();
       });
     });
     return;
