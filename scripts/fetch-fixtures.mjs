@@ -55,6 +55,12 @@ const CLUB_NAME_MAP = {
   "アヤックス": "Ajax",
   "フェイエノールト": "Feyenoord",
   "NECナイメヘン": "NEC Nijmegen",
+  "オリンピック・リヨン": "Lyon",
+  "リール": "Lille",
+  "ボルトン・ワンダラーズ": "Bolton",
+  "バーンリー": "Burnley",
+  "PSVアイントホーフェン": "PSV",
+  "カリアリ": "Cagliari",
 };
 
 // Japanese player name -> expected romanized name as it's likely to
@@ -100,6 +106,13 @@ const PLAYER_NAME_EN = {
   "高井 幸大": "kota takai",
   "安藤 智哉": "tomoya ando",
   "町田 浩樹": "hiroki machida",
+  "伊藤 敦樹": "atsuki ito",
+  "田中 聡": "satoshi tanaka",
+  "荒木 遼太郎": "ryotaro araki",
+  "宇野 禅斗": "zento uno",
+  "橋岡 大樹": "daiki hashioka",
+  "石渡 ネルソン": "nelson ishiwata",
+  "佐野 航大": "kodai sano",
 };
 
 function readPlayers() {
