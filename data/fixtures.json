@@ -1,32 +1,6 @@
 {
-  "updatedAt": "2026-09-03T16:20:43.346Z",
+  "updatedAt": "2026-09-03T20:57:24.158Z",
   "schedule": [
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "トゥールーズ",
-      "awayTeam": "Lille OSC",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-03T18:45:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "レアル・ソシエダード",
-      "awayTeam": "セルタ・デ・ビーゴ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-03T19:00:00.000Z",
-      "clubJP": "レアル・ソシエダード",
-      "players": [
-        "久保 建英"
-      ]
-    },
     {
       "competition": "Ligue 1",
       "homeTeam": "リヨン",
@@ -530,9 +504,51 @@
       "players": [
         "佐野 海舟"
       ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "アストン・ヴィラ",
+      "awayTeam": "ノッティンガム・フォレスト",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-12T14:00:00.000Z",
+      "clubJP": "アストン・ヴィラ",
+      "players": [
+        "鈴木 彩艶"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "ハル・シティ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-12T14:00:00.000Z",
+      "clubJP": "ボルシアMG",
+      "players": [
+        "板倉 滉",
+        "宇野 禅斗",
+        "橋岡 大樹",
+        "町野 修斗"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "トゥールーズ",
+      "awayTeam": "Lille OSC",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-03T18:45:00.000Z",
+      "clubJP": "リール",
+      "players": [
+        "上田 綺世"
+      ]
+    },
     {
       "competition": "Championship",
       "homeTeam": "バーンリー",
