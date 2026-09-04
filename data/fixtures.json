@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T20:43:54.128Z",
+  "updatedAt": "2026-09-04T23:01:05.806Z",
   "schedule": [
     {
       "competition": "Bundesliga",
@@ -537,6 +537,45 @@
     }
   ],
   "results": [
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "パリ・サンジェルマン",
+      "awayTeam": "ASモナコ",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-09-04T19:05:00.000Z",
+      "clubJP": "ASモナコ",
+      "players": [
+        "南野 拓実"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "イプスウィッチ・タウン",
+      "awayTeam": "リヴァプール",
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-09-04T19:00:00.000Z",
+      "clubJP": "リバプールFC",
+      "players": [
+        "遠藤 航"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "イプスウィッチ・タウン",
+      "awayTeam": "リヴァプール",
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-09-04T19:00:00.000Z",
+      "clubJP": "イプスウィッチ・タウン",
+      "players": [
+        "前田 大然"
+      ]
+    },
     {
       "competition": "Serie A",
       "homeTeam": "ジェノア",
