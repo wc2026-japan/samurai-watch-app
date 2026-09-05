@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T23:01:05.806Z",
+  "updatedAt": "2026-09-05T04:11:08.385Z",
   "schedule": [
     {
       "competition": "Bundesliga",
@@ -971,33 +971,6 @@
       "clubJP": "VfLヴォルフスブルク",
       "players": [
         "塩貝 健人"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "クリスタル・パレス",
-      "awayTeam": "マンチェスター・シティ",
-      "homeScore": 1,
-      "awayScore": 4,
-      "status": "FINISHED",
-      "utcDate": "2026-08-28T19:00:00.000Z",
-      "clubJP": "クリスタル・パレス",
-      "players": [
-        "冨安 健洋",
-        "鎌田 大地"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "Lille OSC",
-      "awayTeam": "パリ・サンジェルマン",
-      "homeScore": 2,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-08-28T18:45:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
       ]
     }
   ],
