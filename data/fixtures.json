@@ -1,45 +1,6 @@
 {
-  "updatedAt": "2026-09-06T10:48:28.284Z",
+  "updatedAt": "2026-09-06T15:24:46.413Z",
   "schedule": [
-    {
-      "competition": "Championship",
-      "homeTeam": "Birmingham City FC",
-      "awayTeam": "ウルヴァーハンプトン",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-06T11:00:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
-      ]
-    },
-    {
-      "competition": "Bundesliga",
-      "homeTeam": "ハンブルガーSV",
-      "awayTeam": "マインツ05",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-06T13:30:00.000Z",
-      "clubJP": "マインツ05",
-      "players": [
-        "佐野 海舟"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "バレンシアCF",
-      "awayTeam": "バルセロナ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-06T14:15:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
-      ]
-    },
     {
       "competition": "Premier League",
       "homeTeam": "アーセナル",
@@ -531,9 +492,74 @@
       "players": [
         "佐野 航大"
       ]
+    },
+    {
+      "competition": "Primera Division",
+      "homeTeam": "レアル・ソシエダード",
+      "awayTeam": "アトレティコ・マドリード",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-13T19:00:00.000Z",
+      "clubJP": "レアル・ソシエダード",
+      "players": [
+        "久保 建英"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "リーズ・ユナイテッド",
+      "awayTeam": "ニューカッスル・ユナイテッド",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-14T19:00:00.000Z",
+      "clubJP": "リーズ・ユナイテッド",
+      "players": [
+        "田中 碧"
+      ]
+    },
+    {
+      "competition": "Primera Division",
+      "homeTeam": "アラベス",
+      "awayTeam": "バレンシアCF",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-15T18:00:00.000Z",
+      "clubJP": "バレンシアCF",
+      "players": [
+        "佐藤 龍之介"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "ハンブルガーSV",
+      "awayTeam": "マインツ05",
+      "homeScore": 0,
+      "awayScore": 5,
+      "status": "FINISHED",
+      "utcDate": "2026-09-06T13:30:00.000Z",
+      "clubJP": "マインツ05",
+      "players": [
+        "佐野 海舟"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "Birmingham City FC",
+      "awayTeam": "ウルヴァーハンプトン",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-09-06T11:00:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
     {
       "competition": "Ligue 1",
       "homeTeam": "ル・アーヴルAC",
