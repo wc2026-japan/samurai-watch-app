@@ -550,6 +550,18 @@
     border-bottom: 1px solid var(--border);
     margin-bottom: 4px;
   }
+  .club-crest {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .club-header-flag {
+    display: inline-block;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+  }
   .player-row {
     display: flex;
     align-items: center;
@@ -649,8 +661,17 @@
     gap: 8px;
     margin: 6px 0 8px;
   }
-  .match-team { font-size: 14px; font-weight: 700; color: var(--text); flex: 1; }
-  .match-team:last-child { text-align: right; }
+  .match-team {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .match-team:last-child { justify-content: flex-end; text-align: right; }
+  .match-crest { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
   .match-score {
     font-family: 'Oswald', sans-serif;
     font-size: 17px;
@@ -766,6 +787,25 @@
     border-radius: 999px;
     padding: 1px 8px;
     flex-shrink: 0;
+  }
+  .broadcast-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin: 0 2px 14px;
+  }
+  .broadcast-icon { font-size: 12px; }
+  .broadcast-service { font-size: 12px; font-weight: 700; color: var(--text); }
+  .broadcast-note { font-size: 10.5px; color: var(--text-faint); }
+  .broadcast-unknown {
+    font-size: 11px;
+    color: var(--text-fainter);
+    margin: 0 2px 14px;
   }
 
   .hot-players-card {
@@ -1646,10 +1686,34 @@ function scheduleTwitterFallbackCheck(container) {
   }, 4000);
 }
 
+const WEEKDAY_JA = ["日", "月", "火", "水", "木", "金", "土"];
+
+// Japanese TV-style "30-hour clock": a match at 3am JST is shown as 27:00
+// attributed to the PREVIOUS calendar day, instead of as early morning of
+// the next day. Matches how Japanese broadcast schedules commonly display
+// late-night/overnight European fixtures.
 function fixtureTimeLabel(iso) {
   const d = new Date(iso);
   if (isNaN(d.getTime())) return "";
-  return d.toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" });
+  const hour = d.getHours();
+  const minute = d.getMinutes();
+  let displayDate = d;
+  let displayHour = hour;
+  if (hour < 6) {
+    displayDate = new Date(d.getTime() - 24 * 60 * 60 * 1000);
+    displayHour = hour + 24;
+  }
+  const mm = displayDate.getMonth() + 1;
+  const dd = displayDate.getDate();
+  const weekday = WEEKDAY_JA[displayDate.getDay()];
+  const hh = String(displayHour).padStart(2, "0");
+  const mi = String(minute).padStart(2, "0");
+  return `${mm}/${dd}(${weekday}) ${hh}:${mi}`;
+}
+
+function renderTeamCrest(crest) {
+  if (!crest) return "";
+  return `<img class="match-crest" src="${crest}" alt="" loading="lazy" onerror="this.remove()" />`;
 }
 
 function renderMatchCard(m) {
@@ -1664,9 +1728,9 @@ function renderMatchCard(m) {
         <span class="card-date">${fixtureTimeLabel(m.utcDate)}</span>
       </div>
       <div class="match-teams">
-        <span class="match-team">${m.homeTeam}</span>
+        <span class="match-team">${renderTeamCrest(m.homeCrest)}${m.homeTeam}</span>
         ${scoreLine}
-        <span class="match-team">${m.awayTeam}</span>
+        <span class="match-team">${m.awayTeam}${renderTeamCrest(m.awayCrest)}</span>
       </div>
       <div class="match-players">🇯🇵 ${m.players.join("・")}(${m.clubJP})</div>
     </div>
@@ -1787,6 +1851,19 @@ const LEAGUE_ORDER = [
   "エールディビジ", "EFLチャンピオンシップ", "ベルギー1部リーグ", "スーペルリーガ",
   "スコティッシュ・プレミアシップ",
 ];
+
+// 2026-27シーズンの日本国内配信サービス。契約状況は年によって変わるため
+// 「〜時点」の情報として明示する。確認できていないリーグは無理に埋めない。
+const BROADCAST_GUIDE_AS_OF = "2026年8月";
+const BROADCAST_GUIDE = {
+  "プレミアリーグ": { service: "U-NEXT(サッカーパック)", note: "独占配信(2030-31シーズンまで契約)" },
+  "ラ・リーガ": { service: "DAZN / U-NEXT(サッカーパック)", note: "両サービスで視聴可能" },
+  "セリエA": { service: "DAZN", note: "独占配信" },
+  "ブンデスリーガ": { service: "DAZN", note: "" },
+  "リーグ・アン": { service: "DAZN", note: "独占配信(2028-29シーズンまで契約)" },
+  "エールディビジ": { service: "U-NEXT", note: "独占配信" },
+  "ベルギー1部リーグ": { service: "DAZN", note: "" },
+};
 
 function getOverseasPositions(data) {
   return data.positions
@@ -1924,10 +2001,14 @@ function renderPlayerRow(p) {
 
 function renderClubBlock(clubEntry) {
   const first = clubEntry.players[0];
+  const crest = state.fixtures?.crests?.[clubEntry.club];
+  const badge = crest
+    ? `<img class="club-crest" src="${crest}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'), {className:'club-header-flag', textContent:'${first.country || ""}'}))" />`
+    : `<span class="club-header-flag">${first.country || ""}</span>`;
   return `
     <div class="club-block">
       <div class="club-header">
-        <span class="club-header-flag">${first.country || ""}</span>
+        ${badge}
         <span class="club-header-name">${clubEntry.club}</span>
       </div>
       ${clubEntry.players.map(renderPlayerRow).join("")}
@@ -1977,8 +2058,10 @@ function renderLeaguesOverview(leagues, overseasPositions) {
   return `
     <div class="leagues-overview">
       <p class="leagues-overview-label">LEAGUES</p>
-      <p class="leagues-overview-sub">海外組が所属する${entries.length}つのリーグについて</p>
-      ${entries.map(([name, info]) => `
+      <p class="leagues-overview-sub">海外組が所属する${entries.length}つのリーグについて(配信情報は${BROADCAST_GUIDE_AS_OF}時点)</p>
+      ${entries.map(([name, info]) => {
+        const bc = BROADCAST_GUIDE[name];
+        return `
         <details class="league-accordion">
           <summary>
             <span class="league-summary-left">
@@ -1989,8 +2072,16 @@ function renderLeaguesOverview(leagues, overseasPositions) {
             <span class="league-chevron">›</span>
           </summary>
           <p class="league-overview-desc">${info.desc || ""}</p>
+          ${bc ? `
+            <div class="broadcast-row">
+              <span class="broadcast-icon">📺</span>
+              <span class="broadcast-service">${bc.service}</span>
+              ${bc.note ? `<span class="broadcast-note">${bc.note}</span>` : ""}
+            </div>
+          ` : `<p class="broadcast-unknown">配信情報は未確認です。</p>`}
         </details>
-      `).join("")}
+      `;
+      }).join("")}
     </div>
   `;
 }
