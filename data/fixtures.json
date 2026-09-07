@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T04:19:27.970Z",
+  "updatedAt": "2026-09-07T08:25:59.822Z",
   "schedule": [
     {
       "competition": "Serie A",
@@ -129,19 +129,6 @@
       "clubJP": "バレンシアCF",
       "players": [
         "佐藤 龍之介"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "ジェノア",
-      "awayTeam": "Frosinone Calcio",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-12T13:00:00.000Z",
-      "clubJP": "NECナイメヘン",
-      "players": [
-        "小川 航基"
       ]
     },
     {
@@ -531,6 +518,19 @@
       "players": [
         "鈴木 彩艶"
       ]
+    },
+    {
+      "competition": "Serie A",
+      "homeTeam": "ウディネーゼ",
+      "awayTeam": "カリアリ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-19T13:00:00.000Z",
+      "clubJP": "カリアリ",
+      "players": [
+        "菅原 由勢"
+      ]
     }
   ],
   "results": [
@@ -813,19 +813,6 @@
       "clubJP": "イプスウィッチ・タウン",
       "players": [
         "前田 大然"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "ジェノア",
-      "awayTeam": "コモ",
-      "homeScore": 1,
-      "awayScore": 4,
-      "status": "FINISHED",
-      "utcDate": "2026-09-04T18:45:00.000Z",
-      "clubJP": "NECナイメヘン",
-      "players": [
-        "小川 航基"
       ]
     },
     {
