@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-09-07T12:17:54.056Z",
+  "updatedAt": "2026-09-07T19:08:51.433Z",
   "schedule": [
-    {
-      "competition": "Serie A",
-      "homeTeam": "カリアリ",
-      "awayTeam": "レッチェ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-07T16:30:00.000Z",
-      "clubJP": "カリアリ",
-      "players": [
-        "菅原 由勢"
-      ]
-    },
     {
       "competition": "Primera Division",
       "homeTeam": "エルチェ",
@@ -64,19 +51,6 @@
       "clubJP": "リール",
       "players": [
         "上田 綺世"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "ウルヴァーハンプトン",
-      "awayTeam": "ポーツマス",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "POSTPONED",
-      "utcDate": "2026-09-09T00:00:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
       ]
     },
     {
@@ -531,9 +505,48 @@
       "players": [
         "菅原 由勢"
       ]
+    },
+    {
+      "competition": "Serie A",
+      "homeTeam": "ボローニャ",
+      "awayTeam": "トリノ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-19T13:00:00.000Z",
+      "clubJP": "ボルトン・ワンダラーズ",
+      "players": [
+        "伊藤 敦樹"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "アイントラハト・フランクフルト",
+      "awayTeam": "SC Freiburg",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-19T13:30:00.000Z",
+      "clubJP": "アイントラハト・フランクフルト",
+      "players": [
+        "堂安 律"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Serie A",
+      "homeTeam": "カリアリ",
+      "awayTeam": "レッチェ",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-07T16:30:00.000Z",
+      "clubJP": "カリアリ",
+      "players": [
+        "菅原 由勢"
+      ]
+    },
     {
       "competition": "Serie A",
       "homeTeam": "ボローニャ",
