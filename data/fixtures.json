@@ -1,45 +1,6 @@
 {
-  "updatedAt": "2026-09-08T16:33:12.096Z",
+  "updatedAt": "2026-09-08T21:05:15.482Z",
   "schedule": [
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "Club Brugge KV",
-      "awayTeam": "アストン・ヴィラ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-08T16:45:00.000Z",
-      "clubJP": "アストン・ヴィラ",
-      "players": [
-        "鈴木 彩艶"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "Wrexham AFC",
-      "awayTeam": "バーンリー",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-08T18:45:00.000Z",
-      "clubJP": "バーンリー",
-      "players": [
-        "旗手 怜央"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "Lille OSC",
-      "awayTeam": "レアル・ベティス",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-08T19:00:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
-      ]
-    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "バルセロナ",
@@ -533,9 +494,87 @@
         "山本 理仁",
         "後藤 啓介"
       ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "ボルシアMG",
+      "awayTeam": "マインツ05",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-19T13:30:00.000Z",
+      "clubJP": "マインツ05",
+      "players": [
+        "佐野 海舟"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "ニューカッスル・ユナイテッド",
+      "awayTeam": "ハル・シティ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-19T14:00:00.000Z",
+      "clubJP": "ハル・シティ",
+      "players": [
+        "守田 英正"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "バーンリー",
+      "awayTeam": "ダービー・カウンティ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-19T14:00:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "Lille OSC",
+      "awayTeam": "レアル・ベティス",
+      "homeScore": 2,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-09-08T19:00:00.000Z",
+      "clubJP": "リール",
+      "players": [
+        "上田 綺世"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "Wrexham AFC",
+      "awayTeam": "バーンリー",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-08T18:45:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "Club Brugge KV",
+      "awayTeam": "アストン・ヴィラ",
+      "homeScore": 2,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-09-08T16:45:00.000Z",
+      "clubJP": "アストン・ヴィラ",
+      "players": [
+        "鈴木 彩艶"
+      ]
+    },
     {
       "competition": "Primera Division",
       "homeTeam": "エルチェ",
