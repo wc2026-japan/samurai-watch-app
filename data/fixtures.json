@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T23:28:37.453Z",
+  "updatedAt": "2026-09-08T04:19:07.519Z",
   "schedule": [
     {
       "competition": "UEFA Champions League",
@@ -906,32 +906,6 @@
       "clubJP": "VfLヴォルフスブルク",
       "players": [
         "塩貝 健人"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "アストン・ヴィラ",
-      "awayTeam": "アーセナル",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-08-31T19:00:00.000Z",
-      "clubJP": "アストン・ヴィラ",
-      "players": [
-        "鈴木 彩艶"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "アタランタ",
-      "awayTeam": "ボローニャ",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-08-31T18:45:00.000Z",
-      "clubJP": "ボルトン・ワンダラーズ",
-      "players": [
-        "伊藤 敦樹"
       ]
     }
   ],
