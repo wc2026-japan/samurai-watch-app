@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T20:53:38.223Z",
+  "updatedAt": "2026-09-09T23:11:44.207Z",
   "schedule": [
     {
       "competition": "UEFA Champions League",
@@ -536,6 +536,19 @@
     }
   ],
   "results": [
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "リヴァプール",
+      "awayTeam": "アトレティコ・マドリード",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-09T19:00:00.000Z",
+      "clubJP": "リバプールFC",
+      "players": [
+        "遠藤 航"
+      ]
+    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "バルセロナ",
