@@ -1,32 +1,6 @@
 {
-  "updatedAt": "2026-09-09T16:29:48.118Z",
+  "updatedAt": "2026-09-09T20:53:38.223Z",
   "schedule": [
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "バルセロナ",
-      "awayTeam": "フェイエノールト",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-09T16:45:00.000Z",
-      "clubJP": "フェイエノールト",
-      "players": [
-        "渡辺 剛"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "リヴァプール",
-      "awayTeam": "アトレティコ・マドリード",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-09T19:00:00.000Z",
-      "clubJP": "リバプールFC",
-      "players": [
-        "遠藤 航"
-      ]
-    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "PSVアイントホーフェン",
@@ -533,9 +507,48 @@
       "players": [
         "旗手 怜央"
       ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "エヴァートン",
+      "awayTeam": "イプスウィッチ・タウン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-19T14:00:00.000Z",
+      "clubJP": "イプスウィッチ・タウン",
+      "players": [
+        "前田 大然"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "ブライトン",
+      "awayTeam": "アーセナル",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-19T14:00:00.000Z",
+      "clubJP": "ブライトン",
+      "players": [
+        "三笘 薫"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "バルセロナ",
+      "awayTeam": "フェイエノールト",
+      "homeScore": 5,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-09T16:45:00.000Z",
+      "clubJP": "フェイエノールト",
+      "players": [
+        "渡辺 剛"
+      ]
+    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "Lille OSC",
