@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T23:11:44.207Z",
+  "updatedAt": "2026-09-10T04:22:13.925Z",
   "schedule": [
     {
       "competition": "UEFA Champions League",
@@ -945,19 +945,6 @@
       "clubJP": "リール",
       "players": [
         "上田 綺世"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "バーンリー",
-      "awayTeam": "ミドルズブラ",
-      "homeScore": 1,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-02T19:00:00.000Z",
-      "clubJP": "バーンリー",
-      "players": [
-        "旗手 怜央"
       ]
     }
   ],
