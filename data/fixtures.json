@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-09-10T16:19:14.849Z",
+  "updatedAt": "2026-09-10T20:48:34.039Z",
   "schedule": [
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "PSVアイントホーフェン",
-      "awayTeam": "FK Shakhtar Donetsk",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-10T16:45:00.000Z",
-      "clubJP": "PSVアイントホーフェン",
-      "players": [
-        "佐野 航大"
-      ]
-    },
     {
       "competition": "Primera Division",
       "homeTeam": "セビージャ",
@@ -533,9 +520,37 @@
       "players": [
         "三笘 薫"
       ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "トゥールーズ",
+      "awayTeam": "ル・アーヴルAC",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-19T18:45:00.000Z",
+      "clubJP": "ル・アーヴルAC",
+      "players": [
+        "瀬古 歩夢",
+        "水多 海斗",
+        "中村 草太"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "PSVアイントホーフェン",
+      "awayTeam": "FK Shakhtar Donetsk",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-10T16:45:00.000Z",
+      "clubJP": "PSVアイントホーフェン",
+      "players": [
+        "佐野 航大"
+      ]
+    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "リヴァプール",
