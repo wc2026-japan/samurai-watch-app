@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-09-11T16:23:24.515Z",
+  "updatedAt": "2026-09-11T20:54:38.921Z",
   "schedule": [
-    {
-      "competition": "Primera Division",
-      "homeTeam": "セビージャ",
-      "awayTeam": "バレンシアCF",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-11T19:00:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
-      ]
-    },
     {
       "competition": "Bundesliga",
       "homeTeam": "ホッフェンハイム",
@@ -534,6 +521,19 @@
         "瀬古 歩夢",
         "水多 海斗",
         "中村 草太"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "リヨン",
+      "awayTeam": "レンヌ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-09-19T18:45:00.000Z",
+      "clubJP": "オリンピック・リヨン",
+      "players": [
+        "中村 敬斗"
       ]
     }
   ],
