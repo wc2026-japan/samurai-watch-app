@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T20:54:38.921Z",
+  "updatedAt": "2026-09-11T23:13:09.690Z",
   "schedule": [
     {
       "competition": "Bundesliga",
@@ -538,6 +538,19 @@
     }
   ],
   "results": [
+    {
+      "competition": "Primera Division",
+      "homeTeam": "セビージャ",
+      "awayTeam": "バレンシアCF",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-11T19:00:00.000Z",
+      "clubJP": "バレンシアCF",
+      "players": [
+        "佐藤 龍之介"
+      ]
+    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "PSVアイントホーフェン",
