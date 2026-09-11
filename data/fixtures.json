@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T23:07:15.475Z",
+  "updatedAt": "2026-09-11T04:21:40.666Z",
   "schedule": [
     {
       "competition": "Primera Division",
@@ -934,32 +934,6 @@
       "clubJP": "オリンピック・リヨン",
       "players": [
         "中村 敬斗"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "レアル・ソシエダード",
-      "awayTeam": "セルタ・デ・ビーゴ",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-09-03T19:00:00.000Z",
-      "clubJP": "レアル・ソシエダード",
-      "players": [
-        "久保 建英"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "トゥールーズ",
-      "awayTeam": "Lille OSC",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-03T18:45:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
       ]
     }
   ],
