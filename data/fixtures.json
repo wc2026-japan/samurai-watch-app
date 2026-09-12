@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T20:30:46.516Z",
+  "updatedAt": "2026-09-12T22:59:52.223Z",
   "schedule": [
     {
       "competition": "Championship",
@@ -453,6 +453,47 @@
     }
   ],
   "results": [
+    {
+      "competition": "Serie A",
+      "homeTeam": "アタランタ",
+      "awayTeam": "カリアリ",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-09-12T18:45:00.000Z",
+      "clubJP": "カリアリ",
+      "players": [
+        "菅原 由勢"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "ル・アーヴルAC",
+      "awayTeam": "アンジェ",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-12T18:45:00.000Z",
+      "clubJP": "ル・アーヴルAC",
+      "players": [
+        "瀬古 歩夢",
+        "水多 海斗",
+        "中村 草太"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "パリFC",
+      "awayTeam": "リヨン",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-12T18:45:00.000Z",
+      "clubJP": "オリンピック・リヨン",
+      "players": [
+        "中村 敬斗"
+      ]
+    },
     {
       "competition": "Ligue 1",
       "homeTeam": "ストラスブール",
@@ -944,47 +985,6 @@
       "clubJP": "バーンリー",
       "players": [
         "旗手 怜央"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ブライトン",
-      "awayTeam": "リーズ・ユナイテッド",
-      "homeScore": 1,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-05T14:00:00.000Z",
-      "clubJP": "ブライトン",
-      "players": [
-        "三笘 薫"
-      ]
-    },
-    {
-      "competition": "Bundesliga",
-      "homeTeam": "ホッフェンハイム",
-      "awayTeam": "ボルシア・ドルトムント",
-      "homeScore": 2,
-      "awayScore": 3,
-      "status": "FINISHED",
-      "utcDate": "2026-09-05T13:30:00.000Z",
-      "clubJP": "ホッフェンハイム",
-      "players": [
-        "町田 浩樹"
-      ]
-    },
-    {
-      "competition": "Bundesliga",
-      "homeTeam": "SC Paderborn 07",
-      "awayTeam": "SC Freiburg",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-05T13:30:00.000Z",
-      "clubJP": "SCフライブルク",
-      "players": [
-        "鈴木 唯人",
-        "山本 理仁",
-        "後藤 啓介"
       ]
     }
   ],
