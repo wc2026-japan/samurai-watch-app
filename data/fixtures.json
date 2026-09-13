@@ -1,32 +1,6 @@
 {
-  "updatedAt": "2026-09-13T16:07:43.798Z",
+  "updatedAt": "2026-09-13T20:42:19.326Z",
   "schedule": [
-    {
-      "competition": "Eredivisie",
-      "homeTeam": "PSVアイントホーフェン",
-      "awayTeam": "スパルタ・ロッテルダム",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-13T18:00:00.000Z",
-      "clubJP": "PSVアイントホーフェン",
-      "players": [
-        "佐野 航大"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "レアル・ソシエダード",
-      "awayTeam": "アトレティコ・マドリード",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-13T19:00:00.000Z",
-      "clubJP": "レアル・ソシエダード",
-      "players": [
-        "久保 建英"
-      ]
-    },
     {
       "competition": "Premier League",
       "homeTeam": "リーズ・ユナイテッド",
@@ -388,6 +362,45 @@
     }
   ],
   "results": [
+    {
+      "competition": "Eredivisie",
+      "homeTeam": "PSVアイントホーフェン",
+      "awayTeam": "スパルタ・ロッテルダム",
+      "homeScore": 4,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-13T18:00:00.000Z",
+      "clubJP": "PSVアイントホーフェン",
+      "players": [
+        "佐野 航大"
+      ]
+    },
+    {
+      "competition": "Serie A",
+      "homeTeam": "ナポリ",
+      "awayTeam": "ボローニャ",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-13T16:00:00.000Z",
+      "clubJP": "ボルトン・ワンダラーズ",
+      "players": [
+        "伊藤 敦樹"
+      ]
+    },
+    {
+      "competition": "Eredivisie",
+      "homeTeam": "PECズウォレ",
+      "awayTeam": "フェイエノールト",
+      "homeScore": 0,
+      "awayScore": 7,
+      "status": "FINISHED",
+      "utcDate": "2026-09-13T14:45:00.000Z",
+      "clubJP": "フェイエノールト",
+      "players": [
+        "渡辺 剛"
+      ]
+    },
     {
       "competition": "Ligue 1",
       "homeTeam": "Lille OSC",
