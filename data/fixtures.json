@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T20:42:19.326Z",
+  "updatedAt": "2026-09-13T23:07:53.617Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -362,6 +362,19 @@
     }
   ],
   "results": [
+    {
+      "competition": "Primera Division",
+      "homeTeam": "レアル・ソシエダード",
+      "awayTeam": "アトレティコ・マドリード",
+      "homeScore": 0,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-09-13T19:00:00.000Z",
+      "clubJP": "レアル・ソシエダード",
+      "players": [
+        "久保 建英"
+      ]
+    },
     {
       "competition": "Eredivisie",
       "homeTeam": "PSVアイントホーフェン",
