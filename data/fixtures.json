@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-09-13T05:37:52.763Z",
+  "updatedAt": "2026-09-13T11:39:36.934Z",
   "schedule": [
-    {
-      "competition": "Championship",
-      "homeTeam": "シェフィールド・ユナイテッド",
-      "awayTeam": "ウルヴァーハンプトン",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-13T11:00:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
-      ]
-    },
     {
       "competition": "Ligue 1",
       "homeTeam": "Lille OSC",
