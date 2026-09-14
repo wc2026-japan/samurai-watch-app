@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T19:51:50.963Z",
+  "updatedAt": "2026-09-14T23:52:25.063Z",
   "schedule": [
     {
       "competition": "Primera Division",
@@ -349,6 +349,19 @@
     }
   ],
   "results": [
+    {
+      "competition": "Premier League",
+      "homeTeam": "リーズ・ユナイテッド",
+      "awayTeam": "ニューカッスル・ユナイテッド",
+      "homeScore": 4,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-14T19:00:00.000Z",
+      "clubJP": "リーズ・ユナイテッド",
+      "players": [
+        "田中 碧"
+      ]
+    },
     {
       "competition": "Primera Division",
       "homeTeam": "レアル・ソシエダード",
