@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T23:52:25.063Z",
+  "updatedAt": "2026-09-15T04:40:15.398Z",
   "schedule": [
     {
       "competition": "Primera Division",
@@ -758,32 +758,6 @@
       "clubJP": "アストン・ヴィラ",
       "players": [
         "鈴木 彩艶"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "エルチェ",
-      "awayTeam": "レアル・ソシエダード",
-      "homeScore": 2,
-      "awayScore": 3,
-      "status": "FINISHED",
-      "utcDate": "2026-09-07T19:30:00.000Z",
-      "clubJP": "レアル・ソシエダード",
-      "players": [
-        "久保 建英"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "カリアリ",
-      "awayTeam": "レッチェ",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-09-07T16:30:00.000Z",
-      "clubJP": "カリアリ",
-      "players": [
-        "菅原 由勢"
       ]
     }
   ],
