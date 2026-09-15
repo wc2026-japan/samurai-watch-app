@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-09-15T16:50:49.818Z",
+  "updatedAt": "2026-09-15T21:13:58.726Z",
   "schedule": [
-    {
-      "competition": "Primera Division",
-      "homeTeam": "アラベス",
-      "awayTeam": "バレンシアCF",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-15T18:00:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
-      ]
-    },
     {
       "competition": "Ligue 1",
       "homeTeam": "ASモナコ",
@@ -349,6 +336,19 @@
     }
   ],
   "results": [
+    {
+      "competition": "Primera Division",
+      "homeTeam": "アラベス",
+      "awayTeam": "バレンシアCF",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-15T18:00:00.000Z",
+      "clubJP": "バレンシアCF",
+      "players": [
+        "佐藤 龍之介"
+      ]
+    },
     {
       "competition": "Premier League",
       "homeTeam": "リーズ・ユナイテッド",
