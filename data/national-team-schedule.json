@@ -1,0 +1,14 @@
+{
+  "updatedAt": "2026-09-10",
+  "howToUpdate": "この日程は自動取得できないため手動管理です。日本代表の新しい試合が発表されたらこのファイルに1件追加してください。日時・放送局が未定の間は kickoff と broadcast を空文字のままでOKです。",
+  "matches": [
+    { "date": "2026-09-24", "weekday": "木", "competition": "キリンチャレンジカップ2026", "opponent": "ウルグアイ", "kickoff": "19:05", "broadcast": "フジテレビ系 全国生中継 / TVerライブ配信" },
+    { "date": "2026-09-28", "weekday": "月", "competition": "キリンチャレンジカップ2026", "opponent": "ベネズエラ", "kickoff": "19:25", "broadcast": "日本テレビ系 全国ネット生中継 / TVer" },
+    { "date": "2026-10-01", "weekday": "木", "competition": "キリンカップサッカー2026", "opponent": "エクアドル", "kickoff": "19:10", "broadcast": "TBS系 全国ネット / TVer" },
+    { "date": "2026-10-05", "weekday": "月", "competition": "キリンカップサッカー2026", "opponent": "ニュージーランド or パナマ", "kickoff": "19:30", "broadcast": "テレビ朝日系 全国ネット / TVer / ABEMA" },
+    { "date": "2026-11-14", "weekday": "土", "competition": "MIZUHO BLUE CHALLENGE 2026", "opponent": "ブラジル", "kickoff": "", "broadcast": "" },
+    { "date": "2026-11-17", "weekday": "火", "competition": "MIZUHO BLUE CHALLENGE 2026", "opponent": "パラグアイ", "kickoff": "", "broadcast": "" },
+    { "date": "2027-01-11", "weekday": "月", "competition": "AFCアジアカップ2027", "opponent": "インドネシア", "kickoff": "", "broadcast": "" },
+    { "date": "2027-01-16", "weekday": "土", "competition": "AFCアジアカップ2027", "opponent": "タイ", "kickoff": "", "broadcast": "" }
+  ]
+}
