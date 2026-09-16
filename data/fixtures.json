@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T21:13:58.726Z",
+  "updatedAt": "2026-09-16T04:35:33.250Z",
   "schedule": [
     {
       "competition": "Ligue 1",
@@ -719,45 +719,6 @@
       "clubJP": "フェイエノールト",
       "players": [
         "渡辺 剛"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "Lille OSC",
-      "awayTeam": "レアル・ベティス",
-      "homeScore": 2,
-      "awayScore": 3,
-      "status": "FINISHED",
-      "utcDate": "2026-09-08T19:00:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "Wrexham AFC",
-      "awayTeam": "バーンリー",
-      "homeScore": 1,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-08T18:45:00.000Z",
-      "clubJP": "バーンリー",
-      "players": [
-        "旗手 怜央"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "Club Brugge KV",
-      "awayTeam": "アストン・ヴィラ",
-      "homeScore": 2,
-      "awayScore": 3,
-      "status": "FINISHED",
-      "utcDate": "2026-09-08T16:45:00.000Z",
-      "clubJP": "アストン・ヴィラ",
-      "players": [
-        "鈴木 彩艶"
       ]
     }
   ],
