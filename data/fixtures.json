@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-16T21:15:12.845Z",
+  "updatedAt": "2026-09-17T04:40:57.727Z",
   "schedule": [
     {
       "competition": "Ligue 1",
@@ -92,6 +92,7 @@
       "utcDate": "2026-09-19T13:30:00.000Z",
       "clubJP": "アイントラハト・フランクフルト",
       "players": [
+        "小杉 啓太",
         "堂安 律"
       ]
     },
@@ -120,7 +121,8 @@
       "utcDate": "2026-09-19T13:30:00.000Z",
       "clubJP": "マインツ05",
       "players": [
-        "佐野 海舟"
+        "佐野 海舟",
+        "川崎 颯太"
       ]
     },
     {
@@ -638,6 +640,7 @@
       "utcDate": "2026-09-12T13:30:00.000Z",
       "clubJP": "アイントラハト・フランクフルト",
       "players": [
+        "小杉 啓太",
         "堂安 律"
       ]
     },
@@ -666,7 +669,8 @@
       "utcDate": "2026-09-12T13:30:00.000Z",
       "clubJP": "マインツ05",
       "players": [
-        "佐野 海舟"
+        "佐野 海舟",
+        "川崎 颯太"
       ]
     },
     {
@@ -693,32 +697,6 @@
       "clubJP": "PSVアイントホーフェン",
       "players": [
         "佐野 航大"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "リヴァプール",
-      "awayTeam": "アトレティコ・マドリード",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-09T19:00:00.000Z",
-      "clubJP": "リバプールFC",
-      "players": [
-        "遠藤 航"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "バルセロナ",
-      "awayTeam": "フェイエノールト",
-      "homeScore": 5,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-09T16:45:00.000Z",
-      "clubJP": "フェイエノールト",
-      "players": [
-        "渡辺 剛"
       ]
     }
   ],
