@@ -1,48 +1,6 @@
 {
-  "updatedAt": "2026-09-18T16:19:10.084Z",
+  "updatedAt": "2026-09-18T20:50:46.032Z",
   "schedule": [
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "ASモナコ",
-      "awayTeam": "Racing Club de Lens",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-18T18:45:00.000Z",
-      "clubJP": "ASモナコ",
-      "players": [
-        "南野 拓実"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ブレントフォード",
-      "awayTeam": "チェルシー",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-18T19:00:00.000Z",
-      "clubJP": "ボルシアMG",
-      "players": [
-        "板倉 滉",
-        "宇野 禅斗",
-        "橋岡 大樹",
-        "町野 修斗"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ブレントフォード",
-      "awayTeam": "チェルシー",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-18T19:00:00.000Z",
-      "clubJP": "バイエルン・ミュンヘン",
-      "players": [
-        "伊藤 洋輝"
-      ]
-    },
     {
       "competition": "Premier League",
       "homeTeam": "トッテナム・ホットスパー",
@@ -338,6 +296,19 @@
     }
   ],
   "results": [
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "ASモナコ",
+      "awayTeam": "Racing Club de Lens",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-18T18:45:00.000Z",
+      "clubJP": "ASモナコ",
+      "players": [
+        "南野 拓実"
+      ]
+    },
     {
       "competition": "Primera Division",
       "homeTeam": "アラベス",
