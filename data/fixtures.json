@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-17T21:16:54.151Z",
+  "updatedAt": "2026-09-18T04:26:18.472Z",
   "schedule": [
     {
       "competition": "Ligue 1",
@@ -684,19 +684,6 @@
       "clubJP": "バレンシアCF",
       "players": [
         "佐藤 龍之介"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "PSVアイントホーフェン",
-      "awayTeam": "FK Shakhtar Donetsk",
-      "homeScore": 1,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-10T16:45:00.000Z",
-      "clubJP": "PSVアイントホーフェン",
-      "players": [
-        "佐野 航大"
       ]
     }
   ],
