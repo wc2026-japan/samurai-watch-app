@@ -1,34 +1,6 @@
 {
-  "updatedAt": "2026-09-19T15:49:58.455Z",
+  "updatedAt": "2026-09-19T20:31:30.231Z",
   "schedule": [
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "トゥールーズ",
-      "awayTeam": "ル・アーヴルAC",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-19T18:45:00.000Z",
-      "clubJP": "ル・アーヴルAC",
-      "players": [
-        "瀬古 歩夢",
-        "水多 海斗",
-        "中村 草太"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "リヨン",
-      "awayTeam": "レンヌ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-19T18:45:00.000Z",
-      "clubJP": "オリンピック・リヨン",
-      "players": [
-        "中村 敬斗"
-      ]
-    },
     {
       "competition": "Eredivisie",
       "homeTeam": "フェイエノールト",
@@ -162,6 +134,58 @@
     }
   ],
   "results": [
+    {
+      "competition": "Premier League",
+      "homeTeam": "ニューカッスル・ユナイテッド",
+      "awayTeam": "ハル・シティ",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-19T14:00:00.000Z",
+      "clubJP": "ハル・シティ",
+      "players": [
+        "守田 英正"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "バーンリー",
+      "awayTeam": "ダービー・カウンティ",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-19T14:00:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "エヴァートン",
+      "awayTeam": "イプスウィッチ・タウン",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-19T14:00:00.000Z",
+      "clubJP": "イプスウィッチ・タウン",
+      "players": [
+        "前田 大然"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "ブライトン",
+      "awayTeam": "アーセナル",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-19T14:00:00.000Z",
+      "clubJP": "ブライトン",
+      "players": [
+        "三笘 薫"
+      ]
+    },
     {
       "competition": "Bundesliga",
       "homeTeam": "アイントラハト・フランクフルト",
