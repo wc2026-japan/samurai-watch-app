@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T23:14:11.963Z",
+  "updatedAt": "2026-09-19T04:23:03.497Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -671,19 +671,6 @@
       "players": [
         "佐野 海舟",
         "川崎 颯太"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "セビージャ",
-      "awayTeam": "バレンシアCF",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-09-11T19:00:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
       ]
     }
   ],
