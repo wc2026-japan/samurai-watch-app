@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-19T20:31:30.231Z",
+  "updatedAt": "2026-09-19T22:54:57.205Z",
   "schedule": [
     {
       "competition": "Eredivisie",
@@ -134,6 +134,34 @@
     }
   ],
   "results": [
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "トゥールーズ",
+      "awayTeam": "ル・アーヴルAC",
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-09-19T18:45:00.000Z",
+      "clubJP": "ル・アーヴルAC",
+      "players": [
+        "瀬古 歩夢",
+        "水多 海斗",
+        "中村 草太"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "リヨン",
+      "awayTeam": "レンヌ",
+      "homeScore": 4,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-19T18:45:00.000Z",
+      "clubJP": "オリンピック・リヨン",
+      "players": [
+        "中村 敬斗"
+      ]
+    },
     {
       "competition": "Premier League",
       "homeTeam": "ニューカッスル・ユナイテッド",
