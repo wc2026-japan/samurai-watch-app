@@ -1,32 +1,6 @@
 {
-  "updatedAt": "2026-09-20T04:41:48.896Z",
+  "updatedAt": "2026-09-20T11:11:05.041Z",
   "schedule": [
-    {
-      "competition": "Eredivisie",
-      "homeTeam": "フェイエノールト",
-      "awayTeam": "FCユトレヒト",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-20T10:15:00.000Z",
-      "clubJP": "フェイエノールト",
-      "players": [
-        "渡辺 剛"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "ウルヴァーハンプトン",
-      "awayTeam": "ウェストブロムウィッチ・アルビオン",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-20T11:00:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
-      ]
-    },
     {
       "competition": "Eredivisie",
       "homeTeam": "FCトゥエンテ",
