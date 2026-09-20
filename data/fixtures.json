@@ -1,7 +1,33 @@
 {
-  "updatedAt": "2026-09-20T20:43:44.444Z",
+  "updatedAt": "2026-09-20T23:11:55.753Z",
   "schedule": [],
   "results": [
+    {
+      "competition": "Primera Division",
+      "homeTeam": "バレンシアCF",
+      "awayTeam": "レアル・ソシエダード",
+      "homeScore": 2,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-09-20T19:00:00.000Z",
+      "clubJP": "レアル・ソシエダード",
+      "players": [
+        "久保 建英"
+      ]
+    },
+    {
+      "competition": "Primera Division",
+      "homeTeam": "バレンシアCF",
+      "awayTeam": "レアル・ソシエダード",
+      "homeScore": 2,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-09-20T19:00:00.000Z",
+      "clubJP": "バレンシアCF",
+      "players": [
+        "佐藤 龍之介"
+      ]
+    },
     {
       "competition": "Bundesliga",
       "homeTeam": "SC Paderborn 07",
