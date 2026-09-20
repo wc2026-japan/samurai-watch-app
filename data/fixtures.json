@@ -1,13 +1,14 @@
 {
-  "updatedAt": "2026-09-20T15:58:13.930Z",
-  "schedule": [
+  "updatedAt": "2026-09-20T20:43:44.444Z",
+  "schedule": [],
+  "results": [
     {
       "competition": "Bundesliga",
       "homeTeam": "SC Paderborn 07",
       "awayTeam": "ホッフェンハイム",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FINISHED",
       "utcDate": "2026-09-20T17:30:00.000Z",
       "clubJP": "ホッフェンハイム",
       "players": [
@@ -15,33 +16,18 @@
       ]
     },
     {
-      "competition": "Primera Division",
-      "homeTeam": "バレンシアCF",
-      "awayTeam": "レアル・ソシエダード",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-20T19:00:00.000Z",
-      "clubJP": "レアル・ソシエダード",
+      "competition": "Ligue 1",
+      "homeTeam": "ニース",
+      "awayTeam": "Lille OSC",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-20T15:15:00.000Z",
+      "clubJP": "リール",
       "players": [
-        "久保 建英"
+        "上田 綺世"
       ]
     },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "バレンシアCF",
-      "awayTeam": "レアル・ソシエダード",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-20T19:00:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
-      ]
-    }
-  ],
-  "results": [
     {
       "competition": "Premier League",
       "homeTeam": "リーズ・ユナイテッド",
