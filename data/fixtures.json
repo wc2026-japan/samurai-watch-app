@@ -1,72 +1,6 @@
 {
-  "updatedAt": "2026-09-20T11:11:05.041Z",
+  "updatedAt": "2026-09-20T15:58:13.930Z",
   "schedule": [
-    {
-      "competition": "Eredivisie",
-      "homeTeam": "FCトゥエンテ",
-      "awayTeam": "PSVアイントホーフェン",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-20T12:30:00.000Z",
-      "clubJP": "PSVアイントホーフェン",
-      "players": [
-        "佐野 航大"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "リーズ・ユナイテッド",
-      "awayTeam": "クリスタル・パレス",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-20T13:00:00.000Z",
-      "clubJP": "クリスタル・パレス",
-      "players": [
-        "冨安 健洋",
-        "鎌田 大地"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ボーンマス",
-      "awayTeam": "リヴァプール",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-20T13:00:00.000Z",
-      "clubJP": "リバプールFC",
-      "players": [
-        "遠藤 航"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "リーズ・ユナイテッド",
-      "awayTeam": "クリスタル・パレス",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-20T13:00:00.000Z",
-      "clubJP": "リーズ・ユナイテッド",
-      "players": [
-        "田中 碧"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "ニース",
-      "awayTeam": "Lille OSC",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-09-20T15:15:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
-      ]
-    },
     {
       "competition": "Bundesliga",
       "homeTeam": "SC Paderborn 07",
@@ -108,6 +42,85 @@
     }
   ],
   "results": [
+    {
+      "competition": "Premier League",
+      "homeTeam": "リーズ・ユナイテッド",
+      "awayTeam": "クリスタル・パレス",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-20T13:00:00.000Z",
+      "clubJP": "クリスタル・パレス",
+      "players": [
+        "冨安 健洋",
+        "鎌田 大地"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "ボーンマス",
+      "awayTeam": "リヴァプール",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-09-20T13:00:00.000Z",
+      "clubJP": "リバプールFC",
+      "players": [
+        "遠藤 航"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "リーズ・ユナイテッド",
+      "awayTeam": "クリスタル・パレス",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-20T13:00:00.000Z",
+      "clubJP": "リーズ・ユナイテッド",
+      "players": [
+        "田中 碧"
+      ]
+    },
+    {
+      "competition": "Eredivisie",
+      "homeTeam": "FCトゥエンテ",
+      "awayTeam": "PSVアイントホーフェン",
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-09-20T12:30:00.000Z",
+      "clubJP": "PSVアイントホーフェン",
+      "players": [
+        "佐野 航大"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "ウルヴァーハンプトン",
+      "awayTeam": "ウェストブロムウィッチ・アルビオン",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-20T11:00:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
+    {
+      "competition": "Eredivisie",
+      "homeTeam": "フェイエノールト",
+      "awayTeam": "FCユトレヒト",
+      "homeScore": 5,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-09-20T10:15:00.000Z",
+      "clubJP": "フェイエノールト",
+      "players": [
+        "渡辺 剛"
+      ]
+    },
     {
       "competition": "Ligue 1",
       "homeTeam": "トゥールーズ",
