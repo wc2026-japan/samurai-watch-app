@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T23:11:55.753Z",
+  "updatedAt": "2026-09-21T04:40:11.999Z",
   "schedule": [],
   "results": [
     {
@@ -361,97 +361,6 @@
       "clubJP": "リーズ・ユナイテッド",
       "players": [
         "田中 碧"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "レアル・ソシエダード",
-      "awayTeam": "アトレティコ・マドリード",
-      "homeScore": 0,
-      "awayScore": 3,
-      "status": "FINISHED",
-      "utcDate": "2026-09-13T19:00:00.000Z",
-      "clubJP": "レアル・ソシエダード",
-      "players": [
-        "久保 建英"
-      ]
-    },
-    {
-      "competition": "Eredivisie",
-      "homeTeam": "PSVアイントホーフェン",
-      "awayTeam": "スパルタ・ロッテルダム",
-      "homeScore": 4,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-13T18:00:00.000Z",
-      "clubJP": "PSVアイントホーフェン",
-      "players": [
-        "佐野 航大"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "ナポリ",
-      "awayTeam": "ボローニャ",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-09-13T16:00:00.000Z",
-      "clubJP": "ボルトン・ワンダラーズ",
-      "players": [
-        "伊藤 敦樹"
-      ]
-    },
-    {
-      "competition": "Eredivisie",
-      "homeTeam": "PECズウォレ",
-      "awayTeam": "フェイエノールト",
-      "homeScore": 0,
-      "awayScore": 7,
-      "status": "FINISHED",
-      "utcDate": "2026-09-13T14:45:00.000Z",
-      "clubJP": "フェイエノールト",
-      "players": [
-        "渡辺 剛"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "Lille OSC",
-      "awayTeam": "ES Troyes AC",
-      "homeScore": 2,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-09-13T13:00:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "コヴェントリー・シティ",
-      "awayTeam": "ブライトン",
-      "homeScore": 0,
-      "awayScore": 5,
-      "status": "FINISHED",
-      "utcDate": "2026-09-13T13:00:00.000Z",
-      "clubJP": "ブライトン",
-      "players": [
-        "三笘 薫"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "シェフィールド・ユナイテッド",
-      "awayTeam": "ウルヴァーハンプトン",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-13T11:00:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
       ]
     }
   ],
