@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-21T19:59:41.391Z",
+  "updatedAt": "2026-09-22T00:02:52.355Z",
   "schedule": [],
   "results": [
     {
@@ -348,19 +348,6 @@
       "clubJP": "バレンシアCF",
       "players": [
         "佐藤 龍之介"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "リーズ・ユナイテッド",
-      "awayTeam": "ニューカッスル・ユナイテッド",
-      "homeScore": 4,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-14T19:00:00.000Z",
-      "clubJP": "リーズ・ユナイテッド",
-      "players": [
-        "田中 碧"
       ]
     }
   ],
