@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T21:14:12.546Z",
+  "updatedAt": "2026-09-23T04:32:52.006Z",
   "schedule": [],
   "results": [
     {
@@ -335,19 +335,6 @@
       "clubJP": "ASモナコ",
       "players": [
         "南野 拓実"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "アラベス",
-      "awayTeam": "バレンシアCF",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-09-15T18:00:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
       ]
     }
   ],
