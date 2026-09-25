@@ -1,6 +1,33 @@
 {
-  "updatedAt": "2026-09-24T21:28:40.888Z",
-  "schedule": [],
+  "updatedAt": "2026-09-25T04:41:02.009Z",
+  "schedule": [
+    {
+      "competition": "Eredivisie",
+      "homeTeam": "PSVアイントホーフェン",
+      "awayTeam": "SC Heerenveen",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-09T18:00:00.000Z",
+      "clubJP": "PSVアイントホーフェン",
+      "players": [
+        "佐野 航大"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "Racing Club de Lens",
+      "awayTeam": "リヨン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-09T18:45:00.000Z",
+      "clubJP": "オリンピック・リヨン",
+      "players": [
+        "中村 敬斗"
+      ]
+    }
+  ],
   "results": [
     {
       "competition": "Primera Division",
