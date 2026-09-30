@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-29T19:59:25.209Z",
+  "updatedAt": "2026-09-30T00:20:48.622Z",
   "schedule": [
     {
       "competition": "Eredivisie",
@@ -386,6 +386,45 @@
       "clubJP": "PSVアイントホーフェン",
       "players": [
         "佐野 航大"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "フェイエノールト",
+      "awayTeam": "コモ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-14T16:45:00.000Z",
+      "clubJP": "フェイエノールト",
+      "players": [
+        "渡辺 剛"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "LASK Linz",
+      "awayTeam": "リヴァプール",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-14T16:45:00.000Z",
+      "clubJP": "リバプールFC",
+      "players": [
+        "遠藤 航"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "アストン・ヴィラ",
+      "awayTeam": "Fenerbahçe SK",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-14T19:00:00.000Z",
+      "clubJP": "アストン・ヴィラ",
+      "players": [
+        "鈴木 彩艶"
       ]
     }
   ],
