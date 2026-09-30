@@ -816,6 +816,29 @@
     transition: transform 0.15s ease;
   }
   .league-accordion[open] .league-chevron { transform: rotate(90deg); color: var(--green); }
+  .note-accordion {
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    padding: 2px 12px;
+    margin-bottom: 16px;
+  }
+  .note-accordion summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 0;
+    cursor: pointer;
+    list-style: none;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  .note-accordion summary::-webkit-details-marker { display: none; }
+  .note-accordion summary::marker { content: ""; }
+  .note-accordion[open] .league-chevron { transform: rotate(90deg); color: var(--green); }
+  .note-accordion .players-note { padding-bottom: 12px; margin: 0; }
   .league-overview-desc {
     font-size: 12px;
     color: var(--text-muted);
@@ -1196,7 +1219,7 @@
     font-family: inherit;
   }
   .tab-btn svg { width: 20px; height: 20px; }
-  .tab-icon-wrap { position: relative; display: inline-flex; }
+  .tab-icon-wrap { position: relative; display: inline-flex; line-height: 0; }
   .tab-badge {
     position: absolute;
     top: -4px;
@@ -2162,7 +2185,15 @@ function renderPlayersTab() {
     : leagueGroups.filter((g) => g.league === state.playerLeagueFilter);
 
   const sections = visibleGroups.map((g) => renderLeagueSectionBlock(g, data.leagues)).join("");
-  const note = data.note ? `<p class="players-note">${data.note}</p>` : "";
+  const note = data.note ? `
+    <details class="note-accordion">
+      <summary>
+        <span>更新履歴・注記</span>
+        <span class="league-chevron">›</span>
+      </summary>
+      <p class="players-note" style="margin-top:8px;">${data.note}</p>
+    </details>
+  ` : "";
 
   return renderHotPlayers(hotPlayers) + renderPlayersSummary(overseasPositions, leagueGroups) + renderLeagueFilterRow(leagueGroups) + note + sections + renderLeaguesOverview(data.leagues, overseasPositions);
 }
