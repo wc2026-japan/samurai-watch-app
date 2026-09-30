@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30T09:38:09.512Z",
+  "updatedAt": "2026-09-30T18:00:29.121Z",
   "players": {
     "鈴木 唯人": {
       "goals": 4,
@@ -8,10 +8,10 @@
       "club": "SC Freiburg"
     },
     "上田 綺世": {
-      "goals": 3,
-      "assists": 1,
-      "competition": "エールディビジ",
-      "club": "フェイエノールト"
+      "goals": 2,
+      "assists": null,
+      "competition": "リーグ・アン",
+      "club": "Lille OSC"
     }
   }
 }
