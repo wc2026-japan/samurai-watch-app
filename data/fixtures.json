@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-01T20:20:42.436Z",
+  "updatedAt": "2026-10-02T00:42:03.824Z",
   "schedule": [
     {
       "competition": "Eredivisie",
@@ -425,6 +425,46 @@
       "clubJP": "アストン・ヴィラ",
       "players": [
         "鈴木 彩艶"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "アイントラハト・フランクフルト",
+      "awayTeam": "FCケルン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-16T18:30:00.000Z",
+      "clubJP": "アイントラハト・フランクフルト",
+      "players": [
+        "小杉 啓太",
+        "堂安 律"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "バーンリー",
+      "awayTeam": "ウルヴァーハンプトン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-16T19:00:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "バーンリー",
+      "awayTeam": "ウルヴァーハンプトン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-16T19:00:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
       ]
     }
   ],
