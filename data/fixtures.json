@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-10-10T17:19:02.171Z",
+  "updatedAt": "2026-10-10T21:33:11.262Z",
   "schedule": [
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "ASモナコ",
-      "awayTeam": "トゥールーズ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-10T18:45:00.000Z",
-      "clubJP": "ASモナコ",
-      "players": [
-        "南野 拓実"
-      ]
-    },
     {
       "competition": "Premier League",
       "homeTeam": "クリスタル・パレス",
@@ -533,9 +520,62 @@
       "players": [
         "中村 敬斗"
       ]
+    },
+    {
+      "competition": "Serie A",
+      "homeTeam": "AC Monza",
+      "awayTeam": "カリアリ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-19T16:30:00.000Z",
+      "clubJP": "カリアリ",
+      "players": [
+        "菅原 由勢"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "ASモナコ",
+      "awayTeam": "トゥールーズ",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-10-10T18:45:00.000Z",
+      "clubJP": "ASモナコ",
+      "players": [
+        "南野 拓実"
+      ]
+    },
+    {
+      "competition": "Eredivisie",
+      "homeTeam": "フェイエノールト",
+      "awayTeam": "AZアルクマール",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-10-10T16:45:00.000Z",
+      "clubJP": "フェイエノールト",
+      "players": [
+        "渡辺 剛"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "RBライプツィヒ",
+      "awayTeam": "アイントラハト・フランクフルト",
+      "homeScore": 6,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-10-10T16:30:00.000Z",
+      "clubJP": "アイントラハト・フランクフルト",
+      "players": [
+        "小杉 啓太",
+        "堂安 律"
+      ]
+    },
     {
       "competition": "Ligue 1",
       "homeTeam": "Lille OSC",
