@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T19:30:43.466Z",
+  "updatedAt": "2026-10-12T00:27:51.694Z",
   "schedule": [
     {
       "competition": "Championship",
@@ -533,6 +533,32 @@
     }
   ],
   "results": [
+    {
+      "competition": "Primera Division",
+      "homeTeam": "Real Racing Club de Santander",
+      "awayTeam": "バレンシアCF",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-10-11T19:00:00.000Z",
+      "clubJP": "バレンシアCF",
+      "players": [
+        "佐藤 龍之介"
+      ]
+    },
+    {
+      "competition": "Serie A",
+      "homeTeam": "カリアリ",
+      "awayTeam": "ユヴェントス",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-10-11T18:45:00.000Z",
+      "clubJP": "カリアリ",
+      "players": [
+        "菅原 由勢"
+      ]
+    },
     {
       "competition": "Premier League",
       "homeTeam": "リヴァプール",
