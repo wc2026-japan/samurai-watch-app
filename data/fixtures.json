@@ -1,32 +1,6 @@
 {
-  "updatedAt": "2026-10-14T11:41:15.396Z",
+  "updatedAt": "2026-10-14T17:03:12.707Z",
   "schedule": [
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "フェイエノールト",
-      "awayTeam": "コモ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-14T16:45:00.000Z",
-      "clubJP": "フェイエノールト",
-      "players": [
-        "渡辺 剛"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "LASK Linz",
-      "awayTeam": "リヴァプール",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-14T16:45:00.000Z",
-      "clubJP": "リバプールFC",
-      "players": [
-        "遠藤 航"
-      ]
-    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "アストン・ヴィラ",
@@ -530,6 +504,35 @@
       "clubJP": "バーンリー",
       "players": [
         "旗手 怜央"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "ウルヴァーハンプトン",
+      "awayTeam": "ワトフォード",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-24T14:00:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "トッテナム・ホットスパー",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-24T16:30:00.000Z",
+      "clubJP": "ボルシアMG",
+      "players": [
+        "板倉 滉",
+        "宇野 禅斗",
+        "橋岡 大樹",
+        "町野 修斗"
       ]
     }
   ],
