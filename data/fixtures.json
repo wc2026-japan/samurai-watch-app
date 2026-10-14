@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-10-14T17:03:12.707Z",
+  "updatedAt": "2026-10-14T21:35:36.598Z",
   "schedule": [
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "アストン・ヴィラ",
-      "awayTeam": "Fenerbahçe SK",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-14T19:00:00.000Z",
-      "clubJP": "アストン・ヴィラ",
-      "players": [
-        "鈴木 彩艶"
-      ]
-    },
     {
       "competition": "Bundesliga",
       "homeTeam": "アイントラハト・フランクフルト",
@@ -534,9 +521,61 @@
         "橋岡 大樹",
         "町野 修斗"
       ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "トッテナム・ホットスパー",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-24T16:30:00.000Z",
+      "clubJP": "バイエルン・ミュンヘン",
+      "players": [
+        "伊藤 洋輝"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "アストン・ヴィラ",
+      "awayTeam": "Fenerbahçe SK",
+      "homeScore": 6,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-10-14T19:00:00.000Z",
+      "clubJP": "アストン・ヴィラ",
+      "players": [
+        "鈴木 彩艶"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "フェイエノールト",
+      "awayTeam": "コモ",
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-10-14T16:45:00.000Z",
+      "clubJP": "フェイエノールト",
+      "players": [
+        "渡辺 剛"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "LASK Linz",
+      "awayTeam": "リヴァプール",
+      "homeScore": 3,
+      "awayScore": 6,
+      "status": "FINISHED",
+      "utcDate": "2026-10-14T16:45:00.000Z",
+      "clubJP": "リバプールFC",
+      "players": [
+        "遠藤 航"
+      ]
+    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "アーセナル",
