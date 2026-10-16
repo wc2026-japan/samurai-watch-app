@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T20:55:57.019Z",
+  "updatedAt": "2026-10-16T23:28:48.269Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -537,6 +537,32 @@
     }
   ],
   "results": [
+    {
+      "competition": "Championship",
+      "homeTeam": "バーンリー",
+      "awayTeam": "ウルヴァーハンプトン",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-10-16T19:00:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "バーンリー",
+      "awayTeam": "ウルヴァーハンプトン",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-10-16T19:00:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
     {
       "competition": "Bundesliga",
       "homeTeam": "アイントラハト・フランクフルト",
