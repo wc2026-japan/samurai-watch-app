@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T20:29:52.592Z",
+  "updatedAt": "2026-10-17T23:03:18.578Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -539,6 +539,32 @@
   ],
   "results": [
     {
+      "competition": "Primera Division",
+      "homeTeam": "バレンシアCF",
+      "awayTeam": "アスレティック・ビルバオ",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-10-17T19:00:00.000Z",
+      "clubJP": "バレンシアCF",
+      "players": [
+        "佐藤 龍之介"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "Lille OSC",
+      "awayTeam": "ブレスト",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-10-17T18:45:00.000Z",
+      "clubJP": "リール",
+      "players": [
+        "上田 綺世"
+      ]
+    },
+    {
       "competition": "Eredivisie",
       "homeTeam": "テルスター",
       "awayTeam": "フェイエノールト",
@@ -1044,32 +1070,6 @@
       "clubJP": "イプスウィッチ・タウン",
       "players": [
         "前田 大然"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "ミドルズブラ",
-      "awayTeam": "ウルヴァーハンプトン",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-10T14:00:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "サンダーランド",
-      "awayTeam": "ブライトン",
-      "homeScore": 0,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-10T14:00:00.000Z",
-      "clubJP": "ブライトン",
-      "players": [
-        "三笘 薫"
       ]
     }
   ],
