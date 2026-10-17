@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T23:28:48.269Z",
+  "updatedAt": "2026-10-17T04:07:11.488Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -975,32 +975,6 @@
       "clubJP": "リーズ・ユナイテッド",
       "players": [
         "田中 碧"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "Racing Club de Lens",
-      "awayTeam": "リヨン",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-10-09T18:45:00.000Z",
-      "clubJP": "オリンピック・リヨン",
-      "players": [
-        "中村 敬斗"
-      ]
-    },
-    {
-      "competition": "Eredivisie",
-      "homeTeam": "PSVアイントホーフェン",
-      "awayTeam": "SC Heerenveen",
-      "homeScore": 2,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-09T18:00:00.000Z",
-      "clubJP": "PSVアイントホーフェン",
-      "players": [
-        "佐野 航大"
       ]
     }
   ],
