@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T20:30:50.361Z",
+  "updatedAt": "2026-10-18T23:01:25.812Z",
   "schedule": [
     {
       "competition": "Serie A",
@@ -539,6 +539,19 @@
     }
   ],
   "results": [
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "リヨン",
+      "awayTeam": "ニース",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-10-18T18:45:00.000Z",
+      "clubJP": "オリンピック・リヨン",
+      "players": [
+        "中村 敬斗"
+      ]
+    },
     {
       "competition": "Primera Division",
       "homeTeam": "Málaga CF",
