@@ -1,32 +1,6 @@
 {
-  "updatedAt": "2026-10-18T15:47:56.330Z",
+  "updatedAt": "2026-10-18T20:30:50.361Z",
   "schedule": [
-    {
-      "competition": "Primera Division",
-      "homeTeam": "Málaga CF",
-      "awayTeam": "レアル・ソシエダード",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-18T16:30:00.000Z",
-      "clubJP": "レアル・ソシエダード",
-      "players": [
-        "久保 建英"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "リヨン",
-      "awayTeam": "ニース",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-18T18:45:00.000Z",
-      "clubJP": "オリンピック・リヨン",
-      "players": [
-        "中村 敬斗"
-      ]
-    },
     {
       "competition": "Serie A",
       "homeTeam": "AC Monza",
@@ -536,9 +510,89 @@
         "橋岡 大樹",
         "町野 修斗"
       ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "マンチェスター・ユナイテッド",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-31T12:30:00.000Z",
+      "clubJP": "バイエルン・ミュンヘン",
+      "players": [
+        "伊藤 洋輝"
+      ]
+    },
+    {
+      "competition": "Serie A",
+      "homeTeam": "ボローニャ",
+      "awayTeam": "AC Monza",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-31T14:00:00.000Z",
+      "clubJP": "ボルトン・ワンダラーズ",
+      "players": [
+        "伊藤 敦樹"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Primera Division",
+      "homeTeam": "Málaga CF",
+      "awayTeam": "レアル・ソシエダード",
+      "homeScore": 2,
+      "awayScore": 5,
+      "status": "FINISHED",
+      "utcDate": "2026-10-18T16:30:00.000Z",
+      "clubJP": "レアル・ソシエダード",
+      "players": [
+        "久保 建英"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "ボルシアMG",
+      "awayTeam": "ホッフェンハイム",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-10-18T15:30:00.000Z",
+      "clubJP": "ホッフェンハイム",
+      "players": [
+        "町田 浩樹"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "ル・アーヴルAC",
+      "awayTeam": "オセール",
+      "homeScore": 1,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-10-18T15:15:00.000Z",
+      "clubJP": "ル・アーヴルAC",
+      "players": [
+        "瀬古 歩夢",
+        "水多 海斗",
+        "中村 草太"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "FC Lorient",
+      "awayTeam": "ASモナコ",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-10-18T15:15:00.000Z",
+      "clubJP": "ASモナコ",
+      "players": [
+        "南野 拓実"
+      ]
+    },
     {
       "competition": "Bundesliga",
       "homeTeam": "バイエル・レヴァークーゼン",
