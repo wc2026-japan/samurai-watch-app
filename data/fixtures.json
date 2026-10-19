@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T23:01:25.812Z",
+  "updatedAt": "2026-10-19T04:24:04.064Z",
   "schedule": [
     {
       "competition": "Serie A",
@@ -950,113 +950,6 @@
       "clubJP": "VfLヴォルフスブルク",
       "players": [
         "塩貝 健人"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "Real Racing Club de Santander",
-      "awayTeam": "バレンシアCF",
-      "homeScore": 2,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-11T19:00:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "カリアリ",
-      "awayTeam": "ユヴェントス",
-      "homeScore": 1,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-10-11T18:45:00.000Z",
-      "clubJP": "カリアリ",
-      "players": [
-        "菅原 由勢"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "リヴァプール",
-      "awayTeam": "マンチェスター・シティ",
-      "homeScore": 0,
-      "awayScore": 3,
-      "status": "FINISHED",
-      "utcDate": "2026-10-11T15:30:00.000Z",
-      "clubJP": "リバプールFC",
-      "players": [
-        "遠藤 航"
-      ]
-    },
-    {
-      "competition": "Bundesliga",
-      "homeTeam": "SC Freiburg",
-      "awayTeam": "FC Schalke 04",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-10-11T15:30:00.000Z",
-      "clubJP": "SCフライブルク",
-      "players": [
-        "鈴木 唯人",
-        "山本 理仁",
-        "後藤 啓介"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "レアル・ソシエダード",
-      "awayTeam": "RC Deportivo La Coruña",
-      "homeScore": 3,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-11T14:15:00.000Z",
-      "clubJP": "レアル・ソシエダード",
-      "players": [
-        "久保 建英"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "クリスタル・パレス",
-      "awayTeam": "ノッティンガム・フォレスト",
-      "homeScore": 3,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-10-11T13:00:00.000Z",
-      "clubJP": "クリスタル・パレス",
-      "players": [
-        "冨安 健洋",
-        "鎌田 大地"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ハル・シティ",
-      "awayTeam": "エヴァートン",
-      "homeScore": 2,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-11T13:00:00.000Z",
-      "clubJP": "ハル・シティ",
-      "players": [
-        "守田 英正"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "レッチェ",
-      "awayTeam": "ボローニャ",
-      "homeScore": 1,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-11T13:00:00.000Z",
-      "clubJP": "ボルトン・ワンダラーズ",
-      "players": [
-        "伊藤 敦樹"
       ]
     }
   ],
