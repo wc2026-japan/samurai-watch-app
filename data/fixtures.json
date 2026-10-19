@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-10-19T12:54:46.143Z",
+  "updatedAt": "2026-10-19T20:34:03.885Z",
   "schedule": [
-    {
-      "competition": "Serie A",
-      "homeTeam": "AC Monza",
-      "awayTeam": "カリアリ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-19T16:30:00.000Z",
-      "clubJP": "カリアリ",
-      "players": [
-        "菅原 由勢"
-      ]
-    },
     {
       "competition": "Championship",
       "homeTeam": "ウルヴァーハンプトン",
@@ -536,9 +523,35 @@
       "players": [
         "伊藤 敦樹"
       ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "ヴェルダー・ブレーメン",
+      "awayTeam": "ホッフェンハイム",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-31T14:30:00.000Z",
+      "clubJP": "ホッフェンハイム",
+      "players": [
+        "町田 浩樹"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Serie A",
+      "homeTeam": "AC Monza",
+      "awayTeam": "カリアリ",
+      "homeScore": 4,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-10-19T16:30:00.000Z",
+      "clubJP": "カリアリ",
+      "players": [
+        "菅原 由勢"
+      ]
+    },
     {
       "competition": "Ligue 1",
       "homeTeam": "リヨン",
