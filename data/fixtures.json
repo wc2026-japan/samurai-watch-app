@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T19:10:55.763Z",
+  "updatedAt": "2026-10-20T23:48:51.005Z",
   "schedule": [
     {
       "competition": "UEFA Champions League",
@@ -541,6 +541,45 @@
     }
   ],
   "results": [
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "リヴァプール",
+      "awayTeam": "ビジャレアル",
+      "homeScore": 4,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-10-20T19:00:00.000Z",
+      "clubJP": "リバプールFC",
+      "players": [
+        "遠藤 航"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "FC Porto",
+      "awayTeam": "PSVアイントホーフェン",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-10-20T19:00:00.000Z",
+      "clubJP": "PSVアイントホーフェン",
+      "players": [
+        "佐野 航大"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "ウルヴァーハンプトン",
+      "awayTeam": "ポーツマス",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-10-20T18:45:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
     {
       "competition": "Serie A",
       "homeTeam": "AC Monza",
