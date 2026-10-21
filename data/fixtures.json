@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T23:48:51.005Z",
+  "updatedAt": "2026-10-21T04:26:42.041Z",
   "schedule": [
     {
       "competition": "UEFA Champions League",
@@ -952,58 +952,6 @@
       "clubJP": "リバプールFC",
       "players": [
         "遠藤 航"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "アーセナル",
-      "awayTeam": "Lille OSC",
-      "homeScore": 3,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-13T19:00:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "RBライプツィヒ",
-      "awayTeam": "PSVアイントホーフェン",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-13T19:00:00.000Z",
-      "clubJP": "PSVアイントホーフェン",
-      "players": [
-        "佐野 航大"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "バーンリー",
-      "awayTeam": "チャールトン・アスレティック",
-      "homeScore": 2,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-13T18:45:00.000Z",
-      "clubJP": "バーンリー",
-      "players": [
-        "旗手 怜央"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "ウルヴァーハンプトン",
-      "awayTeam": "Bolton Wanderers FC",
-      "homeScore": 1,
-      "awayScore": 3,
-      "status": "FINISHED",
-      "utcDate": "2026-10-13T18:45:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
       ]
     }
   ],
