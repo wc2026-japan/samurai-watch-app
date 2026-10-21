@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-10-21T11:39:33.729Z",
+  "updatedAt": "2026-10-21T17:05:37.774Z",
   "schedule": [
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "Lille OSC",
-      "awayTeam": "Galatasaray SK",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-21T16:45:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
-      ]
-    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "アストン・ヴィラ",
@@ -537,6 +524,19 @@
       "clubJP": "ハル・シティ",
       "players": [
         "守田 英正"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "バーンリー",
+      "awayTeam": "ポーツマス",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-31T15:00:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
       ]
     }
   ],
