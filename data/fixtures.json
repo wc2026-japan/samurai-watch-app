@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T21:34:31.917Z",
+  "updatedAt": "2026-10-22T04:25:45.317Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -952,45 +952,6 @@
       "players": [
         "小杉 啓太",
         "堂安 律"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "アストン・ヴィラ",
-      "awayTeam": "Fenerbahçe SK",
-      "homeScore": 6,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-14T19:00:00.000Z",
-      "clubJP": "アストン・ヴィラ",
-      "players": [
-        "鈴木 彩艶"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "フェイエノールト",
-      "awayTeam": "コモ",
-      "homeScore": 3,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-14T16:45:00.000Z",
-      "clubJP": "フェイエノールト",
-      "players": [
-        "渡辺 剛"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "LASK Linz",
-      "awayTeam": "リヴァプール",
-      "homeScore": 3,
-      "awayScore": 6,
-      "status": "FINISHED",
-      "utcDate": "2026-10-14T16:45:00.000Z",
-      "clubJP": "リバプールFC",
-      "players": [
-        "遠藤 航"
       ]
     }
   ],
