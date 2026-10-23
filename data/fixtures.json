@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T11:28:43.977Z",
+  "updatedAt": "2026-10-23T16:57:26.374Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -330,7 +330,7 @@
       "homeScore": null,
       "awayScore": null,
       "status": "TIMED",
-      "utcDate": "2026-10-25T19:45:00.000Z",
+      "utcDate": "2026-10-26T19:30:00.000Z",
       "clubJP": "オリンピック・リヨン",
       "players": [
         "中村 敬斗"
