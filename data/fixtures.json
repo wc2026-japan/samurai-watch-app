@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-10-23T16:57:26.374Z",
+  "updatedAt": "2026-10-23T21:21:07.531Z",
   "schedule": [
-    {
-      "competition": "Premier League",
-      "homeTeam": "イプスウィッチ・タウン",
-      "awayTeam": "ノッティンガム・フォレスト",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-23T19:00:00.000Z",
-      "clubJP": "イプスウィッチ・タウン",
-      "players": [
-        "前田 大然"
-      ]
-    },
     {
       "competition": "Premier League",
       "homeTeam": "アストン・ヴィラ",
@@ -538,9 +525,35 @@
       "players": [
         "塩貝 健人"
       ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "マンチェスター・シティ",
+      "awayTeam": "ブライトン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-31T15:00:00.000Z",
+      "clubJP": "ブライトン",
+      "players": [
+        "三笘 薫"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Premier League",
+      "homeTeam": "イプスウィッチ・タウン",
+      "awayTeam": "ノッティンガム・フォレスト",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-10-23T19:00:00.000Z",
+      "clubJP": "イプスウィッチ・タウン",
+      "players": [
+        "前田 大然"
+      ]
+    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "アストン・ヴィラ",
