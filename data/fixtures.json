@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:50:13.154Z",
+  "updatedAt": "2026-10-24T20:38:27.868Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -22,9 +22,9 @@
       "awayScore": null,
       "status": "TIMED",
       "utcDate": "2026-10-24T13:00:00.000Z",
-      "clubJP": "ボルトン・ワンダラーズ",
+      "clubJP": "カリアリ",
       "players": [
-        "伊藤 敦樹"
+        "菅原 由勢"
       ]
     },
     {
@@ -39,6 +39,19 @@
       "players": [
         "佐野 海舟",
         "川崎 颯太"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "Lincoln City FC",
+      "awayTeam": "バーンリー",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-24T14:00:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
       ]
     },
     {
@@ -68,20 +81,6 @@
       "clubJP": "バイエルン・ミュンヘン",
       "players": [
         "伊藤 洋輝"
-      ]
-    },
-    {
-      "competition": "Bundesliga",
-      "homeTeam": "ボルシア・ドルトムント",
-      "awayTeam": "アイントラハト・フランクフルト",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-24T16:30:00.000Z",
-      "clubJP": "アイントラハト・フランクフルト",
-      "players": [
-        "小杉 啓太",
-        "堂安 律"
       ]
     },
     {
@@ -543,6 +542,33 @@
   ],
   "results": [
     {
+      "competition": "Bundesliga",
+      "homeTeam": "ボルシア・ドルトムント",
+      "awayTeam": "アイントラハト・フランクフルト",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-10-24T16:30:00.000Z",
+      "clubJP": "アイントラハト・フランクフルト",
+      "players": [
+        "小杉 啓太",
+        "堂安 律"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "ウルヴァーハンプトン",
+      "awayTeam": "ワトフォード",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-10-24T14:00:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
+    {
       "competition": "Serie A",
       "homeTeam": "カリアリ",
       "awayTeam": "ボローニャ",
@@ -550,9 +576,9 @@
       "awayScore": 2,
       "status": "FINISHED",
       "utcDate": "2026-10-24T13:00:00.000Z",
-      "clubJP": "カリアリ",
+      "clubJP": "ボルトン・ワンダラーズ",
       "players": [
-        "菅原 由勢"
+        "伊藤 敦樹"
       ]
     },
     {
