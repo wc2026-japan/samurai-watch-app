@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T20:38:27.868Z",
+  "updatedAt": "2026-10-24T23:07:15.634Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -28,6 +28,19 @@
       ]
     },
     {
+      "competition": "Serie A",
+      "homeTeam": "カリアリ",
+      "awayTeam": "ボローニャ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-24T13:00:00.000Z",
+      "clubJP": "ボルトン・ワンダラーズ",
+      "players": [
+        "伊藤 敦樹"
+      ]
+    },
+    {
       "competition": "Bundesliga",
       "homeTeam": "マインツ05",
       "awayTeam": "ヴェルダー・ブレーメン",
@@ -52,6 +65,19 @@
       "clubJP": "バーンリー",
       "players": [
         "旗手 怜央"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "ウルヴァーハンプトン",
+      "awayTeam": "ワトフォード",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-10-24T14:00:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
       ]
     },
     {
@@ -511,33 +537,6 @@
       "players": [
         "渡辺 剛"
       ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "トッテナム・ホットスパー",
-      "awayTeam": "クリスタル・パレス",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-31T17:30:00.000Z",
-      "clubJP": "クリスタル・パレス",
-      "players": [
-        "冨安 健洋",
-        "鎌田 大地"
-      ]
-    },
-    {
-      "competition": "Eredivisie",
-      "homeTeam": "PSVアイントホーフェン",
-      "awayTeam": "ヴィレムII",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-31T17:45:00.000Z",
-      "clubJP": "PSVアイントホーフェン",
-      "players": [
-        "佐野 航大"
-      ]
     }
   ],
   "results": [
@@ -553,32 +552,6 @@
       "players": [
         "小杉 啓太",
         "堂安 律"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "ウルヴァーハンプトン",
-      "awayTeam": "ワトフォード",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-24T14:00:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "カリアリ",
-      "awayTeam": "ボローニャ",
-      "homeScore": 0,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-24T13:00:00.000Z",
-      "clubJP": "ボルトン・ワンダラーズ",
-      "players": [
-        "伊藤 敦樹"
       ]
     },
     {
