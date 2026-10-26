@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-10-26T12:47:05.014Z",
+  "updatedAt": "2026-10-26T20:27:35.492Z",
   "schedule": [
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "パリ・サンジェルマン",
-      "awayTeam": "リヨン",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-26T19:30:00.000Z",
-      "clubJP": "オリンピック・リヨン",
-      "players": [
-        "中村 敬斗"
-      ]
-    },
     {
       "competition": "Serie A",
       "homeTeam": "ASローマ",
@@ -531,6 +518,19 @@
       "players": [
         "佐野 海舟",
         "川崎 颯太"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "アーセナル",
+      "awayTeam": "ハル・シティ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-07T15:00:00.000Z",
+      "clubJP": "ハル・シティ",
+      "players": [
+        "守田 英正"
       ]
     }
   ],
