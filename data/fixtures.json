@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T20:27:35.492Z",
+  "updatedAt": "2026-10-27T00:23:29.723Z",
   "schedule": [
     {
       "competition": "Serie A",
@@ -536,6 +536,19 @@
   ],
   "results": [
     {
+      "competition": "Ligue 1",
+      "homeTeam": "パリ・サンジェルマン",
+      "awayTeam": "リヨン",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-10-26T19:30:00.000Z",
+      "clubJP": "オリンピック・リヨン",
+      "players": [
+        "中村 敬斗"
+      ]
+    },
+    {
       "competition": "Primera Division",
       "homeTeam": "レアル・ソシエダード",
       "awayTeam": "レバンテ",
@@ -933,19 +946,6 @@
       "clubJP": "VfLヴォルフスブルク",
       "players": [
         "塩貝 健人"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "AC Monza",
-      "awayTeam": "カリアリ",
-      "homeScore": 4,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-19T16:30:00.000Z",
-      "clubJP": "カリアリ",
-      "players": [
-        "菅原 由勢"
       ]
     }
   ],
