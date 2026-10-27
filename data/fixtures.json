@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T08:54:37.186Z",
+  "updatedAt": "2026-10-27T15:19:53.975Z",
   "schedule": [
     {
       "competition": "Serie A",
@@ -258,19 +258,6 @@
       ]
     },
     {
-      "competition": "Ligue 1",
-      "homeTeam": "リヨン",
-      "awayTeam": "アンジェ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-31T19:45:00.000Z",
-      "clubJP": "オリンピック・リヨン",
-      "players": [
-        "中村 敬斗"
-      ]
-    },
-    {
       "competition": "Premier League",
       "homeTeam": "アストン・ヴィラ",
       "awayTeam": "フラム",
@@ -294,6 +281,19 @@
       "clubJP": "カリアリ",
       "players": [
         "菅原 由勢"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "リヨン",
+      "awayTeam": "アンジェ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-01T16:15:00.000Z",
+      "clubJP": "オリンピック・リヨン",
+      "players": [
+        "中村 敬斗"
       ]
     },
     {
