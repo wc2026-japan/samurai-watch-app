@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-10-27T15:19:53.975Z",
+  "updatedAt": "2026-10-27T22:07:27.141Z",
   "schedule": [
-    {
-      "competition": "Serie A",
-      "homeTeam": "ASローマ",
-      "awayTeam": "カリアリ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-27T19:45:00.000Z",
-      "clubJP": "カリアリ",
-      "players": [
-        "菅原 由勢"
-      ]
-    },
     {
       "competition": "Serie A",
       "homeTeam": "ACミラン",
@@ -532,9 +519,35 @@
       "players": [
         "守田 英正"
       ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "カーディフ・シティ",
+      "awayTeam": "バーンリー",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-07T15:00:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Serie A",
+      "homeTeam": "ASローマ",
+      "awayTeam": "カリアリ",
+      "homeScore": 4,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-10-27T19:45:00.000Z",
+      "clubJP": "カリアリ",
+      "players": [
+        "菅原 由勢"
+      ]
+    },
     {
       "competition": "Ligue 1",
       "homeTeam": "パリ・サンジェルマン",
