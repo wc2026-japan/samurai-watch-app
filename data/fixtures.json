@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-10-28T12:40:03.922Z",
+  "updatedAt": "2026-10-28T20:14:57.405Z",
   "schedule": [
-    {
-      "competition": "Serie A",
-      "homeTeam": "ACミラン",
-      "awayTeam": "ボローニャ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-10-28T17:30:00.000Z",
-      "clubJP": "ボルトン・ワンダラーズ",
-      "players": [
-        "伊藤 敦樹"
-      ]
-    },
     {
       "competition": "Ligue 1",
       "homeTeam": "ル・アーヴルAC",
@@ -532,9 +519,35 @@
       "players": [
         "旗手 怜央"
       ]
+    },
+    {
+      "competition": "Serie A",
+      "homeTeam": "パルマ・カルチョ",
+      "awayTeam": "ボローニャ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-07T17:00:00.000Z",
+      "clubJP": "ボルトン・ワンダラーズ",
+      "players": [
+        "伊藤 敦樹"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Serie A",
+      "homeTeam": "ACミラン",
+      "awayTeam": "ボローニャ",
+      "homeScore": 2,
+      "awayScore": 4,
+      "status": "FINISHED",
+      "utcDate": "2026-10-28T17:30:00.000Z",
+      "clubJP": "ボルトン・ワンダラーズ",
+      "players": [
+        "伊藤 敦樹"
+      ]
+    },
     {
       "competition": "Serie A",
       "homeTeam": "ASローマ",
