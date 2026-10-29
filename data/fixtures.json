@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T20:14:57.405Z",
+  "updatedAt": "2026-10-29T00:48:15.277Z",
   "schedule": [
     {
       "competition": "Ligue 1",
@@ -894,45 +894,6 @@
       "clubJP": "イプスウィッチ・タウン",
       "players": [
         "前田 大然"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "アストン・ヴィラ",
-      "awayTeam": "Viking FK",
-      "homeScore": 3,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-10-21T19:00:00.000Z",
-      "clubJP": "アストン・ヴィラ",
-      "players": [
-        "鈴木 彩艶"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "レアル・ベティス",
-      "awayTeam": "フェイエノールト",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-21T19:00:00.000Z",
-      "clubJP": "フェイエノールト",
-      "players": [
-        "渡辺 剛"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "Lille OSC",
-      "awayTeam": "Galatasaray SK",
-      "homeScore": 2,
-      "awayScore": 4,
-      "status": "FINISHED",
-      "utcDate": "2026-10-21T16:45:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
       ]
     }
   ],
