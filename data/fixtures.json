@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T22:15:16.020Z",
+  "updatedAt": "2026-10-31T05:17:25.467Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -923,19 +923,6 @@
       "clubJP": "アストン・ヴィラ",
       "players": [
         "鈴木 彩艶"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "イプスウィッチ・タウン",
-      "awayTeam": "ノッティンガム・フォレスト",
-      "homeScore": 1,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-10-23T19:00:00.000Z",
-      "clubJP": "イプスウィッチ・タウン",
-      "players": [
-        "前田 大然"
       ]
     }
   ],
