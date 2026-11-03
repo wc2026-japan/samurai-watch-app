@@ -1,58 +1,6 @@
 {
-  "updatedAt": "2026-11-03T17:00:43.315Z",
+  "updatedAt": "2026-11-03T23:12:39.865Z",
   "schedule": [
-    {
-      "competition": "Championship",
-      "homeTeam": "QPR",
-      "awayTeam": "バーンリー",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-03T19:45:00.000Z",
-      "clubJP": "バーンリー",
-      "players": [
-        "旗手 怜央"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "バルセロナ",
-      "awayTeam": "アストン・ヴィラ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-03T20:00:00.000Z",
-      "clubJP": "アストン・ヴィラ",
-      "players": [
-        "鈴木 彩艶"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "フェイエノールト",
-      "awayTeam": "インテル",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-03T20:00:00.000Z",
-      "clubJP": "フェイエノールト",
-      "players": [
-        "渡辺 剛"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "FK Bodø/Glimt",
-      "awayTeam": "Lille OSC",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-03T20:00:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
-      ]
-    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "Fenerbahçe SK",
@@ -429,6 +377,58 @@
     }
   ],
   "results": [
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "バルセロナ",
+      "awayTeam": "アストン・ヴィラ",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-11-03T20:00:00.000Z",
+      "clubJP": "アストン・ヴィラ",
+      "players": [
+        "鈴木 彩艶"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "フェイエノールト",
+      "awayTeam": "インテル",
+      "homeScore": 0,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-11-03T20:00:00.000Z",
+      "clubJP": "フェイエノールト",
+      "players": [
+        "渡辺 剛"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "FK Bodø/Glimt",
+      "awayTeam": "Lille OSC",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-11-03T20:00:00.000Z",
+      "clubJP": "リール",
+      "players": [
+        "上田 綺世"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "QPR",
+      "awayTeam": "バーンリー",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-11-03T19:45:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
+      ]
+    },
     {
       "competition": "Primera Division",
       "homeTeam": "アスレティック・ビルバオ",
