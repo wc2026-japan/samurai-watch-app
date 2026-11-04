@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T23:12:39.865Z",
+  "updatedAt": "2026-11-04T05:59:04.997Z",
   "schedule": [
     {
       "competition": "UEFA Champions League",
@@ -775,19 +775,6 @@
       "clubJP": "ボルトン・ワンダラーズ",
       "players": [
         "伊藤 敦樹"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "ASローマ",
-      "awayTeam": "カリアリ",
-      "homeScore": 4,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-27T19:45:00.000Z",
-      "clubJP": "カリアリ",
-      "players": [
-        "菅原 由勢"
       ]
     }
   ],
