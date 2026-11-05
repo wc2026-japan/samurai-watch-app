@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T21:16:24.664Z",
+  "updatedAt": "2026-11-05T06:22:28.279Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -338,6 +338,32 @@
     }
   ],
   "results": [
+    {
+      "competition": "Championship",
+      "homeTeam": "ブリストル・シティ",
+      "awayTeam": "ウルヴァーハンプトン",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-11-04T20:00:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "PSVアイントホーフェン",
+      "awayTeam": "Club Brugge KV",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-11-04T20:00:00.000Z",
+      "clubJP": "PSVアイントホーフェン",
+      "players": [
+        "佐野 航大"
+      ]
+    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "Fenerbahçe SK",
@@ -736,19 +762,6 @@
         "瀬古 歩夢",
         "水多 海斗",
         "中村 草太"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "ACミラン",
-      "awayTeam": "ボローニャ",
-      "homeScore": 2,
-      "awayScore": 4,
-      "status": "FINISHED",
-      "utcDate": "2026-10-28T17:30:00.000Z",
-      "clubJP": "ボルトン・ワンダラーズ",
-      "players": [
-        "伊藤 敦樹"
       ]
     }
   ],
