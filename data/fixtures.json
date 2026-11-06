@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T23:34:41.244Z",
+  "updatedAt": "2026-11-06T06:17:11.302Z",
   "schedule": [
     {
       "competition": "Premier League",
@@ -20,7 +20,7 @@
       "awayTeam": "ウルヴァーハンプトン",
       "homeScore": null,
       "awayScore": null,
-      "status": "TIMED",
+      "status": "SCHEDULED",
       "utcDate": "2026-11-07T12:30:00.000Z",
       "clubJP": "VfLヴォルフスブルク",
       "players": [
@@ -87,7 +87,7 @@
       "awayTeam": "バーンリー",
       "homeScore": null,
       "awayScore": null,
-      "status": "TIMED",
+      "status": "SCHEDULED",
       "utcDate": "2026-11-07T15:00:00.000Z",
       "clubJP": "バーンリー",
       "players": [
@@ -334,6 +334,21 @@
       "clubJP": "ホッフェンハイム",
       "players": [
         "町田 浩樹"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "ES Troyes AC",
+      "awayTeam": "ル・アーヴルAC",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-20T19:45:00.000Z",
+      "clubJP": "ル・アーヴルAC",
+      "players": [
+        "瀬古 歩夢",
+        "水多 海斗",
+        "中村 草太"
       ]
     }
   ],
