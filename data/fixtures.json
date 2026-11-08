@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-11-07T19:23:28.559Z",
+  "updatedAt": "2026-11-08T00:25:40.181Z",
   "schedule": [
-    {
-      "competition": "Primera Division",
-      "homeTeam": "バレンシアCF",
-      "awayTeam": "レアル・マドリード",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-07T20:00:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
-      ]
-    },
     {
       "competition": "Eredivisie",
       "homeTeam": "SC Heerenveen",
@@ -472,9 +459,101 @@
       "players": [
         "南野 拓実"
       ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "バーンリー",
+      "awayTeam": "ブラックバーン・ローヴァーズ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "utcDate": "2026-11-22T12:00:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "ハル・シティ",
+      "awayTeam": "ブライトン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-22T14:00:00.000Z",
+      "clubJP": "ハル・シティ",
+      "players": [
+        "守田 英正"
+      ]
+    },
+    {
+      "competition": "Serie A",
+      "homeTeam": "ボローニャ",
+      "awayTeam": "ウディネーゼ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-22T14:00:00.000Z",
+      "clubJP": "ボルトン・ワンダラーズ",
+      "players": [
+        "伊藤 敦樹"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "ハル・シティ",
+      "awayTeam": "ブライトン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-22T14:00:00.000Z",
+      "clubJP": "ブライトン",
+      "players": [
+        "三笘 薫"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "アウクスブルク",
+      "awayTeam": "マインツ05",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-22T14:30:00.000Z",
+      "clubJP": "マインツ05",
+      "players": [
+        "佐野 海舟",
+        "川崎 颯太"
+      ]
+    },
+    {
+      "competition": "Primera Division",
+      "homeTeam": "Real Racing Club de Santander",
+      "awayTeam": "レアル・ソシエダード",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-22T15:15:00.000Z",
+      "clubJP": "レアル・ソシエダード",
+      "players": [
+        "久保 建英"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "Primera Division",
+      "homeTeam": "バレンシアCF",
+      "awayTeam": "レアル・マドリード",
+      "homeScore": 0,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-11-07T20:00:00.000Z",
+      "clubJP": "バレンシアCF",
+      "players": [
+        "佐藤 龍之介"
+      ]
+    },
     {
       "competition": "Serie A",
       "homeTeam": "パルマ・カルチョ",
@@ -762,207 +841,6 @@
       "clubJP": "カリアリ",
       "players": [
         "菅原 由勢"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "アストン・ヴィラ",
-      "awayTeam": "フラム",
-      "homeScore": 1,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T20:00:00.000Z",
-      "clubJP": "アストン・ヴィラ",
-      "players": [
-        "鈴木 彩艶"
-      ]
-    },
-    {
-      "competition": "Eredivisie",
-      "homeTeam": "PSVアイントホーフェン",
-      "awayTeam": "ヴィレムII",
-      "homeScore": 7,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T17:45:00.000Z",
-      "clubJP": "PSVアイントホーフェン",
-      "players": [
-        "佐野 航大"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "トッテナム・ホットスパー",
-      "awayTeam": "クリスタル・パレス",
-      "homeScore": 2,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T17:30:00.000Z",
-      "clubJP": "クリスタル・パレス",
-      "players": [
-        "冨安 健洋",
-        "鎌田 大地"
-      ]
-    },
-    {
-      "competition": "Eredivisie",
-      "homeTeam": "フェイエノールト",
-      "awayTeam": "フォルトゥナ・シッタルド",
-      "homeScore": 1,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T15:30:00.000Z",
-      "clubJP": "フェイエノールト",
-      "players": [
-        "渡辺 剛"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ボーンマス",
-      "awayTeam": "リーズ・ユナイテッド",
-      "homeScore": 2,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T15:00:00.000Z",
-      "clubJP": "リーズ・ユナイテッド",
-      "players": [
-        "田中 碧"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ハル・シティ",
-      "awayTeam": "イプスウィッチ・タウン",
-      "homeScore": 2,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T15:00:00.000Z",
-      "clubJP": "ハル・シティ",
-      "players": [
-        "守田 英正"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "バーンリー",
-      "awayTeam": "ポーツマス",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T15:00:00.000Z",
-      "clubJP": "バーンリー",
-      "players": [
-        "旗手 怜央"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ハル・シティ",
-      "awayTeam": "イプスウィッチ・タウン",
-      "homeScore": 2,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T15:00:00.000Z",
-      "clubJP": "イプスウィッチ・タウン",
-      "players": [
-        "前田 大然"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "ウルヴァーハンプトン",
-      "awayTeam": "カーディフ・シティ",
-      "homeScore": 3,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T15:00:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "マンチェスター・シティ",
-      "awayTeam": "ブライトン",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T15:00:00.000Z",
-      "clubJP": "ブライトン",
-      "players": [
-        "三笘 薫"
-      ]
-    },
-    {
-      "competition": "Bundesliga",
-      "homeTeam": "ヴェルダー・ブレーメン",
-      "awayTeam": "ホッフェンハイム",
-      "homeScore": 2,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T14:30:00.000Z",
-      "clubJP": "ホッフェンハイム",
-      "players": [
-        "町田 浩樹"
-      ]
-    },
-    {
-      "competition": "Bundesliga",
-      "homeTeam": "アウクスブルク",
-      "awayTeam": "SC Freiburg",
-      "homeScore": 1,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T14:30:00.000Z",
-      "clubJP": "SCフライブルク",
-      "players": [
-        "鈴木 唯人",
-        "山本 理仁",
-        "後藤 啓介"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "ボローニャ",
-      "awayTeam": "AC Monza",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T14:00:00.000Z",
-      "clubJP": "ボルトン・ワンダラーズ",
-      "players": [
-        "伊藤 敦樹"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "チェルシー",
-      "awayTeam": "マンチェスター・ユナイテッド",
-      "homeScore": 2,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T12:30:00.000Z",
-      "clubJP": "ボルシアMG",
-      "players": [
-        "板倉 滉",
-        "宇野 禅斗",
-        "橋岡 大樹",
-        "町野 修斗"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "チェルシー",
-      "awayTeam": "マンチェスター・ユナイテッド",
-      "homeScore": 2,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-10-31T12:30:00.000Z",
-      "clubJP": "バイエルン・ミュンヘン",
-      "players": [
-        "伊藤 洋輝"
       ]
     }
   ],
