@@ -1,19 +1,6 @@
 {
-  "updatedAt": "2026-11-08T17:55:20.018Z",
+  "updatedAt": "2026-11-08T21:59:26.143Z",
   "schedule": [
-    {
-      "competition": "Bundesliga",
-      "homeTeam": "ホッフェンハイム",
-      "awayTeam": "FC Schalke 04",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-08T18:30:00.000Z",
-      "clubJP": "ホッフェンハイム",
-      "players": [
-        "町田 浩樹"
-      ]
-    },
     {
       "competition": "Ligue 1",
       "homeTeam": "ES Troyes AC",
@@ -351,6 +338,88 @@
     }
   ],
   "results": [
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "ホッフェンハイム",
+      "awayTeam": "FC Schalke 04",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-11-08T18:30:00.000Z",
+      "clubJP": "ホッフェンハイム",
+      "players": [
+        "町田 浩樹"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "マンチェスター・ユナイテッド",
+      "awayTeam": "アストン・ヴィラ",
+      "homeScore": 4,
+      "awayScore": 4,
+      "status": "FINISHED",
+      "utcDate": "2026-11-08T16:30:00.000Z",
+      "clubJP": "アストン・ヴィラ",
+      "players": [
+        "鈴木 彩艶"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "SC Freiburg",
+      "awayTeam": "ウニオン・ベルリン",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-11-08T16:30:00.000Z",
+      "clubJP": "SCフライブルク",
+      "players": [
+        "鈴木 唯人",
+        "山本 理仁",
+        "後藤 啓介"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "ル・アーヴルAC",
+      "awayTeam": "FC Lorient",
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-11-08T16:15:00.000Z",
+      "clubJP": "ル・アーヴルAC",
+      "players": [
+        "瀬古 歩夢",
+        "水多 海斗",
+        "中村 草太"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "ブレスト",
+      "awayTeam": "リヨン",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "utcDate": "2026-11-08T16:15:00.000Z",
+      "clubJP": "オリンピック・リヨン",
+      "players": [
+        "中村 敬斗"
+      ]
+    },
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "Le Mans FC",
+      "awayTeam": "ASモナコ",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-11-08T16:15:00.000Z",
+      "clubJP": "ASモナコ",
+      "players": [
+        "南野 拓実"
+      ]
+    },
     {
       "competition": "Eredivisie",
       "homeTeam": "SC Cambuur-Leeuwarden",
