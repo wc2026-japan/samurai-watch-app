@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T21:59:26.143Z",
+  "updatedAt": "2026-11-09T05:57:20.084Z",
   "schedule": [
     {
       "competition": "Ligue 1",
@@ -762,98 +762,6 @@
       "clubJP": "バーンリー",
       "players": [
         "旗手 怜央"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "アスレティック・ビルバオ",
-      "awayTeam": "レアル・ソシエダード",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-11-01T20:00:00.000Z",
-      "clubJP": "レアル・ソシエダード",
-      "players": [
-        "久保 建英"
-      ]
-    },
-    {
-      "competition": "Primera Division",
-      "homeTeam": "エルチェ",
-      "awayTeam": "バレンシアCF",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-11-01T17:30:00.000Z",
-      "clubJP": "バレンシアCF",
-      "players": [
-        "佐藤 龍之介"
-      ]
-    },
-    {
-      "competition": "Bundesliga",
-      "homeTeam": "アイントラハト・フランクフルト",
-      "awayTeam": "ハンブルガーSV",
-      "homeScore": 3,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-11-01T16:30:00.000Z",
-      "clubJP": "アイントラハト・フランクフルト",
-      "players": [
-        "小杉 啓太",
-        "堂安 律"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "リヴァプール",
-      "awayTeam": "アーセナル",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-11-01T16:30:00.000Z",
-      "clubJP": "リバプールFC",
-      "players": [
-        "遠藤 航"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "リヨン",
-      "awayTeam": "アンジェ",
-      "homeScore": 2,
-      "awayScore": 0,
-      "status": "FINISHED",
-      "utcDate": "2026-11-01T16:15:00.000Z",
-      "clubJP": "オリンピック・リヨン",
-      "players": [
-        "中村 敬斗"
-      ]
-    },
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "パリFC",
-      "awayTeam": "ASモナコ",
-      "homeScore": 3,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-11-01T16:15:00.000Z",
-      "clubJP": "ASモナコ",
-      "players": [
-        "南野 拓実"
-      ]
-    },
-    {
-      "competition": "Serie A",
-      "homeTeam": "ラツィオ",
-      "awayTeam": "カリアリ",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "utcDate": "2026-11-01T14:00:00.000Z",
-      "clubJP": "カリアリ",
-      "players": [
-        "菅原 由勢"
       ]
     }
   ],
