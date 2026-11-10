@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T15:59:16.181Z",
+  "updatedAt": "2026-11-10T01:28:30.498Z",
   "schedule": [
     {
       "competition": "Ligue 1",
@@ -334,6 +334,58 @@
       "clubJP": "リバプールFC",
       "players": [
         "遠藤 航"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "Galatasaray SK",
+      "awayTeam": "アストン・ヴィラ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-24T17:45:00.000Z",
+      "clubJP": "アストン・ヴィラ",
+      "players": [
+        "鈴木 彩艶"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "フェイエノールト",
+      "awayTeam": "FC Porto",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-24T20:00:00.000Z",
+      "clubJP": "フェイエノールト",
+      "players": [
+        "渡辺 剛"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "ウルヴァーハンプトン",
+      "awayTeam": "ダービー・カウンティ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "utcDate": "2026-11-24T20:00:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "レアル・マドリード",
+      "awayTeam": "PSVアイントホーフェン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-24T20:00:00.000Z",
+      "clubJP": "PSVアイントホーフェン",
+      "players": [
+        "佐野 航大"
       ]
     }
   ],
