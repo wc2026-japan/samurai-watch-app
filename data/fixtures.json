@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T19:32:45.308Z",
+  "updatedAt": "2026-11-12T02:15:36.664Z",
   "schedule": [
     {
       "competition": "Ligue 1",
@@ -762,45 +762,6 @@
       "clubJP": "VfLヴォルフスブルク",
       "players": [
         "塩貝 健人"
-      ]
-    },
-    {
-      "competition": "Championship",
-      "homeTeam": "ブリストル・シティ",
-      "awayTeam": "ウルヴァーハンプトン",
-      "homeScore": 1,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-11-04T20:00:00.000Z",
-      "clubJP": "VfLヴォルフスブルク",
-      "players": [
-        "塩貝 健人"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "PSVアイントホーフェン",
-      "awayTeam": "Club Brugge KV",
-      "homeScore": 1,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-11-04T20:00:00.000Z",
-      "clubJP": "PSVアイントホーフェン",
-      "players": [
-        "佐野 航大"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "Fenerbahçe SK",
-      "awayTeam": "リヴァプール",
-      "homeScore": 3,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "utcDate": "2026-11-04T17:45:00.000Z",
-      "clubJP": "リバプールFC",
-      "players": [
-        "遠藤 航"
       ]
     }
   ],
