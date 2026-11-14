@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T19:33:46.137Z",
+  "updatedAt": "2026-11-14T01:26:13.164Z",
   "schedule": [
     {
       "competition": "Ligue 1",
@@ -467,6 +467,72 @@
       "clubJP": "バイエルン・ミュンヘン",
       "players": [
         "伊藤 洋輝"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "Lincoln City FC",
+      "awayTeam": "ウルヴァーハンプトン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "utcDate": "2026-11-28T12:30:00.000Z",
+      "clubJP": "VfLヴォルフスブルク",
+      "players": [
+        "塩貝 健人"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "マインツ05",
+      "awayTeam": "ウニオン・ベルリン",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-28T14:30:00.000Z",
+      "clubJP": "マインツ05",
+      "players": [
+        "佐野 海舟",
+        "川崎 颯太"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "リーズ・ユナイテッド",
+      "awayTeam": "コヴェントリー・シティ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-28T15:00:00.000Z",
+      "clubJP": "リーズ・ユナイテッド",
+      "players": [
+        "田中 碧"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "ミルウォール",
+      "awayTeam": "バーンリー",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "utcDate": "2026-11-28T15:00:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "イプスウィッチ・タウン",
+      "awayTeam": "アストン・ヴィラ",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-28T17:30:00.000Z",
+      "clubJP": "アストン・ヴィラ",
+      "players": [
+        "鈴木 彩艶"
       ]
     }
   ],
