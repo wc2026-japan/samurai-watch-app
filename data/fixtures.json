@@ -1,21 +1,6 @@
 {
-  "updatedAt": "2026-11-20T11:19:00.761Z",
+  "updatedAt": "2026-11-20T19:58:58.813Z",
   "schedule": [
-    {
-      "competition": "Ligue 1",
-      "homeTeam": "ES Troyes AC",
-      "awayTeam": "ル・アーヴルAC",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-20T19:45:00.000Z",
-      "clubJP": "ル・アーヴルAC",
-      "players": [
-        "瀬古 歩夢",
-        "水多 海斗",
-        "中村 草太"
-      ]
-    },
     {
       "competition": "Serie A",
       "homeTeam": "コモ",
@@ -533,6 +518,20 @@
       "clubJP": "アストン・ヴィラ",
       "players": [
         "鈴木 彩艶"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "VfBシュトゥットガルト",
+      "awayTeam": "アイントラハト・フランクフルト",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-11-28T17:30:00.000Z",
+      "clubJP": "アイントラハト・フランクフルト",
+      "players": [
+        "小杉 啓太",
+        "堂安 律"
       ]
     }
   ],
