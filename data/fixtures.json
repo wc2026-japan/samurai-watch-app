@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T19:58:58.813Z",
+  "updatedAt": "2026-11-21T02:07:50.761Z",
   "schedule": [
     {
       "competition": "Serie A",
@@ -535,6 +535,22 @@
       ]
     }
   ],
-  "results": [],
+  "results": [
+    {
+      "competition": "Ligue 1",
+      "homeTeam": "ES Troyes AC",
+      "awayTeam": "ル・アーヴルAC",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-11-20T19:45:00.000Z",
+      "clubJP": "ル・アーヴルAC",
+      "players": [
+        "瀬古 歩夢",
+        "水多 海斗",
+        "中村 草太"
+      ]
+    }
+  ],
   "unsupportedNote": "ベルギー1部リーグ・デンマークスーペルリーガ・スコティッシュプレミアシップ所属選手の試合は、現在のデータソースでは対応していません。"
 }
