@@ -1,45 +1,6 @@
 {
-  "updatedAt": "2026-11-25T19:09:29.505Z",
+  "updatedAt": "2026-11-26T03:31:07.368Z",
   "schedule": [
-    {
-      "competition": "Championship",
-      "homeTeam": "バーンリー",
-      "awayTeam": "Birmingham City FC",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "utcDate": "2026-11-25T19:45:00.000Z",
-      "clubJP": "バーンリー",
-      "players": [
-        "旗手 怜央"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "Club Brugge KV",
-      "awayTeam": "リヴァプール",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-25T20:00:00.000Z",
-      "clubJP": "リバプールFC",
-      "players": [
-        "遠藤 航"
-      ]
-    },
-    {
-      "competition": "UEFA Champions League",
-      "homeTeam": "Lille OSC",
-      "awayTeam": "バイエルン・ミュンヘン",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-25T20:00:00.000Z",
-      "clubJP": "リール",
-      "players": [
-        "上田 綺世"
-      ]
-    },
     {
       "competition": "Serie A",
       "homeTeam": "Venezia FC",
@@ -537,9 +498,87 @@
         "橋岡 大樹",
         "町野 修斗"
       ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "リヴァプール",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-12-05T12:30:00.000Z",
+      "clubJP": "バイエルン・ミュンヘン",
+      "players": [
+        "伊藤 洋輝"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "チェルシー",
+      "awayTeam": "リヴァプール",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-12-05T12:30:00.000Z",
+      "clubJP": "リバプールFC",
+      "players": [
+        "遠藤 航"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "SC Freiburg",
+      "awayTeam": "ホッフェンハイム",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-12-05T14:30:00.000Z",
+      "clubJP": "ホッフェンハイム",
+      "players": [
+        "町田 浩樹"
+      ]
     }
   ],
   "results": [
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "Club Brugge KV",
+      "awayTeam": "リヴァプール",
+      "homeScore": 0,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "utcDate": "2026-11-25T20:00:00.000Z",
+      "clubJP": "リバプールFC",
+      "players": [
+        "遠藤 航"
+      ]
+    },
+    {
+      "competition": "UEFA Champions League",
+      "homeTeam": "Lille OSC",
+      "awayTeam": "バイエルン・ミュンヘン",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "utcDate": "2026-11-25T20:00:00.000Z",
+      "clubJP": "リール",
+      "players": [
+        "上田 綺世"
+      ]
+    },
+    {
+      "competition": "Championship",
+      "homeTeam": "バーンリー",
+      "awayTeam": "Birmingham City FC",
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "utcDate": "2026-11-25T19:45:00.000Z",
+      "clubJP": "バーンリー",
+      "players": [
+        "旗手 怜央"
+      ]
+    },
     {
       "competition": "UEFA Champions League",
       "homeTeam": "フェイエノールト",
