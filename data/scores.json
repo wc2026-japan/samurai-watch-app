@@ -1,50 +1,106 @@
 {
-  "updatedAt": "2026-11-26T03:53:27.311Z",
+  "updatedAt": "2026-11-26T13:27:32.275Z",
   "items": [
     {
-      "title": "上田綺世が復帰後初ゴールと躍動!! リールがバイエルンに逆転勝ちで今季CL初白星(17枚) - ゲキサカ",
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5SNEkyTkE4bzJjN3IzQjBZb1ZSZk1XYy1fdjF2cDh5VDNpd1hvLXM1U0NRcUdyZHFGbmRES3NnSENqR3lkazFqWkg1UDBNM3lrenZuSGlvMzVpSXJVY2paZ0QyRWR5ZWNQcl80Q1VWaw?oc=5",
-      "pubDate": "Thu, 26 Nov 2026 03:25:00 GMT",
-      "description": "上田綺世が復帰後初ゴールと躍動!! リールがバイエルンに逆転勝ちで今季CL初白星(17枚)&nbsp;&nbsp;ゲキサカ",
-      "source": "ゲキサカ",
+      "title": "FIFAがサイバー被害「内部データが盗まれた」 情報漏洩を英報道…手口は「職員へのなりすまし」 - FOOTBALL ZONE",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAwSUpmczNudXgwZFdRdmlwWUJNWGViM2s0bzNLbVZILVB0dWIwQ0JvUjRkWDBGTmtrTlhyOEQ4VXN0TFN5VnJ0YU1NN1R3S1dYTlZlQ3JhTzQ?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 12:36:33 GMT",
+      "description": "FIFAがサイバー被害「内部データが盗まれた」 情報漏洩を英報道…手口は「職員へのなりすまし」&nbsp;&nbsp;FOOTBALL ZONE",
+      "source": "FOOTBALL ZONE",
+      "image": null
+    },
+    {
+      "title": "長谷部誠氏がUEFA A級ライセンス取得を報告「今後の指導者としてのキャリアに活かしていきたい」 - フットボールチャンネル",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5aVkJ6czJFeGlzaUJyazhPMmlBTFZXU0lIVTl2bHYxYlVEVjJnNXJyUzhablFaNWxVOE5ZR011T25FcWxJYzhNV1pFZ0x0Sk9vNkM2d0E2MFVkZlM0bFNFcmFnVjk?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 08:12:30 GMT",
+      "description": "長谷部誠氏がUEFA A級ライセンス取得を報告「今後の指導者としてのキャリアに活かしていきたい」&nbsp;&nbsp;フットボールチャンネル",
+      "source": "フットボールチャンネル",
+      "image": null
+    },
+    {
+      "title": "【遠藤航】リヴァプールの2026年試合日程・テレビ放送/ネット配信予定 - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQYmVUa1gxVXNlUWFkVTBiUF9WYkFrN3k3THg1d1pLQUpHRUJXQllJNUlZa0E1Q2hic090aTJmeVZZaDhxNE5LaGtJM0tubEZITXRHUzdWZzJhRDhHbG1KTVFVUU1QZ0hrOEtMTWpLS3JIVzBPTzdtTHVGSkdrQ2w4T0pCcGFTd2Q3TW8wM1FnM181Q19KVnBEVkEtR3p4ajYtTVRTbUhDSHdVQV9ZQXROaWQ3Rk96VXk1Wk5wVGJIX3FIUQ?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 08:02:48 GMT",
+      "description": "【遠藤航】リヴァプールの2026年試合日程・テレビ放送/ネット配信予定&nbsp;&nbsp;Goal.com",
+      "source": "Goal.com",
+      "image": null
+    },
+    {
+      "title": "長谷部誠コーチ、UEFA A級ライセンス取得を報告 約11か月の講習「これからの指導者人生に活かしていきたい」 - FOOTBALL ZONE",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB5QldSTktpcXJpbGlwSUEyX2dDZHRmR05ZN2I0X3d1dGFiVkozZGxpMzNmZWhhRUlwLWJXTFYzSnVSMFEzU0dLWVNwS3RMMUVrdGExZnNhLUY?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 07:36:24 GMT",
+      "description": "長谷部誠コーチ、UEFA A級ライセンス取得を報告 約11か月の講習「これからの指導者人生に活かしていきたい」&nbsp;&nbsp;FOOTBALL ZONE",
+      "source": "FOOTBALL ZONE",
+      "image": null
+    },
+    {
+      "title": "堂安律、今夏のサウジ移籍報道時に家族へ相談したと明かす「妻は僕がトップリーグで長くプレーし続けることを望んでいた」 - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPOXlzSEZBSDh6dXpXbnZocWxTMV9ReURTbkRUanc1aXNpbkphMmFCTzh0UFFTcjdKOG9iWmZlblRNV093cEVMZTV1VWpIZGpIWFdvbXkyMU9vOHpBWS01M3MwTTZKVzVjSS1pRFZVeXhuZE9KT1hValJOU0lqMTBLOGRzMVZxY1dVN01wMXlnZzF3NUFNV25oSHM4Zi00OThPeUIzUTQ5ZkhFRDM0QS1zbXJOSQ?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 06:50:43 GMT",
+      "description": "堂安律、今夏のサウジ移籍報道時に家族へ相談したと明かす「妻は僕がトップリーグで長くプレーし続けることを望んでいた」&nbsp;&nbsp;Goal.com",
+      "source": "Goal.com",
+      "image": null
+    },
+    {
+      "title": "「俳優やん」中村敬斗が米ファッション誌の『ブレイクスルー・アスリート賞』を受賞！披露したワイン色のトレンチコート姿にファン釘付け「きまってますねぇ」「えぐい」 - サッカーダイジェストWeb",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE13dUpaSHhxZGdQNjB4Z0hjeHltOW5JNUVad3V6bHpWaU5yOFZRcnNmaFl0dVoyUUotZVBVaUFTSkQwb2szVGxONkpuRkhLbUFmV0FtUU9UbzZKZG9Cb1pVb3A2VlY?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 05:44:53 GMT",
+      "description": "「俳優やん」中村敬斗が米ファッション誌の『ブレイクスルー・アスリート賞』を受賞！披露したワイン色のトレンチコート姿にファン釘付け「きまってますねぇ」「えぐい」&nbsp;&nbsp;サッカーダイジェストWeb",
+      "source": "サッカーダイジェストWeb",
+      "image": null
+    },
+    {
+      "title": "旗手怜央が所属のバーンリー、ホームで1年以上未勝利で不名誉なイングランド記録「苛立っているのは理解できる」 - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOaC01YmFUczFmT0dQTkcwanIxUlhidDd2Z195WWdzbDdabFViVlpXX1NVVGNidmptdy1pMHdhTF8zd1VZNTRzTHZVSndKdnJlYzVrNElSVFBYQ25iMHNrUlZzdFd5c25CcWFFU1FwWWlHWno4VUF6cUhMZ0RTQTlXbkhwZE9kYzg5Smh6cktEc2NJOUxhM1l3Mm9LUzZrVFRmbHpqSER3ZE40NXZkQnc?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 05:22:59 GMT",
+      "description": "旗手怜央が所属のバーンリー、ホームで1年以上未勝利で不名誉なイングランド記録「苛立っているのは理解できる」&nbsp;&nbsp;Goal.com",
+      "source": "Goal.com",
+      "image": null
+    },
+    {
+      "title": "今季CL初先発も逆転負け…伊藤洋輝に現地メディアは「バイエルンが最も苦しい時、安定感をもたらせなかった」 - サッカーキング",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5tRlY0R3pkcnBwdEZEZ2pfZ25FWmlUbTg5S3BBejdxSEVXamI2aHBoWFFTYVJnN28ycGViY0oyQXd3MGx0S2plcFRQeFZKc043RFRZemhtb3UycXlqQnQ0cWh5QVowM19VeU9FTnB6RGE?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 04:30:17 GMT",
+      "description": "今季CL初先発も逆転負け…伊藤洋輝に現地メディアは「バイエルンが最も苦しい時、安定感をもたらせなかった」&nbsp;&nbsp;サッカーキング",
+      "source": "サッカーキング",
       "image": null
     },
     {
       "title": "レアル・ソシエダのマタラッツォ監督、出番限られる久保建英への思い語る「タケは素晴らしい姿勢を見せてくれている」 - Goal.com",
       "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOERpbHFyRGZxOVBiNzJsMDBwR21weFFQd3liVi1iZXpwSGstR09mM0t6R1NJT0UxdzNjVnBmLTFSSlNBWDk5Q2h2ck0xRGNTSnNPSVY0VGZiSjZXVEZ3YlU2Qllpd3I2ZThzRzlBa1JlU3RfSHVqbkpyVC1zbmJza19Zakp6a0dpejYwYmZTQU1ZRGFsLTk4UFIzSXV3N1VaZHBxMEFxUDc1NEhLQzNtTjJUX3gtUkpGVGpvSG9jS2xzTkxo?oc=5",
-      "pubDate": "Thu, 26 Nov 2026 03:21:58 GMT",
+      "pubDate": "Thu, 26 Nov 2026 04:02:28 GMT",
       "description": "レアル・ソシエダのマタラッツォ監督、出番限られる久保建英への思い語る「タケは素晴らしい姿勢を見せてくれている」&nbsp;&nbsp;Goal.com",
       "source": "Goal.com",
       "image": null
     },
     {
-      "title": "Jファン驚愕「再現不可能すぎる」 右足→1秒後に左足…衝撃ゴラッソが「なんやこれ」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5JSUtQRHhDeXJleVhLN044NXN3MElOOUZieFhUM1ZIMU50amhhRUxrZnFLY2stYVdxSU4zSHZwVmhGR0ItbnN6b0dSMzdCNllGb3lobW9WVk0?oc=5",
-      "pubDate": "Thu, 26 Nov 2026 03:01:00 GMT",
-      "description": "Jファン驚愕「再現不可能すぎる」 右足→1秒後に左足…衝撃ゴラッソが「なんやこれ」&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
+      "title": "上田綺世がバイエルン相手に同点弾！リール指揮官は労う「彼にとっては難しい試合だった」 - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOdmVDMGhZMFhaaGZvVGkwRjZpTnJYaDNwUWd6YWxnM1pFYnhnbkJVcXQxdWdDS04zWXZBYkNWUzB4cWx2c2l3VUtVaDE0a3A4dVd2RGxSS192Uk5fRGp2WnVmUVpaLWl0bm9FYWJwSnJDdXNGb3pwc3E3UUtrVlhsNGthS0lIQUdYaFNTQWVFMGlqbTlOSWdvSmFudWQ1NFFzZE02SDJzX2FlbU5mWVhqNFIyR0R5RW9hYmVv?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 04:02:28 GMT",
+      "description": "上田綺世がバイエルン相手に同点弾！リール指揮官は労う「彼にとっては難しい試合だった」&nbsp;&nbsp;Goal.com",
+      "source": "Goal.com",
       "image": null
     },
     {
-      "title": "JFL参入をかけた地域CL決勝R開幕「死闘で怖い」 関東勢が初日から苦戦…九州王者が白星「早くも王手」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5SR29CaGthR19HaEhKeUZnTmFlU3loYXRjNEEyNmxpeVJmMi1sQUsyZHFxalJaZWVkUjZ5WWZIUVVxcnF4VDhiWDVkQzRLNjZHeUpGWDk4S2M?oc=5",
-      "pubDate": "Thu, 26 Nov 2026 02:50:00 GMT",
-      "description": "JFL参入をかけた地域CL決勝R開幕「死闘で怖い」 関東勢が初日から苦戦…九州王者が白星「早くも王手」&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
+      "title": "ケイン不在で“日本代表のエース”に羨望の眼差し…バイエルン専門メディア「ウエダのような選手の必要性を浮き彫りにする結果」 - サッカーキング",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9DUXd2c1ItMVhibXlickw1VWdYR0x3S0xPNUxKOW9WZTN3WkpLWFMyajJ5dlNydXNobzBDRzNSNnpOM3BlSGZQckZsYUUyQXhqNkxvWkt1RHlXcEFyck9nVHF2MGlTMGNfbUU4cXYtTmdpc3M?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 03:39:59 GMT",
+      "description": "ケイン不在で“日本代表のエース”に羨望の眼差し…バイエルン専門メディア「ウエダのような選手の必要性を浮き彫りにする結果」&nbsp;&nbsp;サッカーキング",
+      "source": "サッカーキング",
       "image": null
     },
     {
-      "title": "上田綺世が復活の同点弾！リールは独王者バイエルンを２－１撃破、伊藤洋輝との日本人対決に勝利【CL】 - サッカーダイジェストWeb",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9KMHpUS1NnbnpjR2pCd2ROZFJZQndQdndqR3NZVi1Cam1kcUx0cVNGcEhidHNCaUpxZkNoTXhTQzVpcHJ1bWxRWkhzbkxDV3F3Y01aV3RFaEpxWUdWblhTcDJ2aUE?oc=5",
-      "pubDate": "Thu, 26 Nov 2026 02:09:49 GMT",
-      "description": "上田綺世が復活の同点弾！リールは独王者バイエルンを２－１撃破、伊藤洋輝との日本人対決に勝利【CL】&nbsp;&nbsp;サッカーダイジェストWeb",
-      "source": "サッカーダイジェストWeb",
+      "title": "本拠地で1年以上勝利なし…旗手怜央所属のバーンリーがホーム24戦未勝利のイングランド史上ワースト記録 - ゲキサカ",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBpdzFqUDlZWm1PZUd5UG12TVEwdkVsMGl4MkxpU2lENHFSRXJWdUtZSFJUN2w5Z2VsRHVVUlRsekdjdXZPaVR6N1hUUFl6X3ljOTFjSjFTVlhlMV9uYk1rMlFJcVVnSXJMa0Jj?oc=5",
+      "pubDate": "Thu, 26 Nov 2026 03:03:00 GMT",
+      "description": "本拠地で1年以上勝利なし…旗手怜央所属のバーンリーがホーム24戦未勝利のイングランド史上ワースト記録&nbsp;&nbsp;ゲキサカ",
+      "source": "ゲキサカ",
       "image": null
     },
     {
       "title": "「落ち着きを欠き、苦戦を強いられた」今季CL初先発のバイエルン伊藤洋輝、独メディアの評価は厳しめ「守備に安定感をもたらすことはできなかった」 - サッカーダイジェストWeb",
       "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5GRXFFS2UwVW9hVUwxSWNWd2VCTFJiY1RBSXQtREllWS1PbjZ0V3Z6MzBIS1c2VHNHVVhHWFlzUVNPMlJVZXlkVE4tQkxKcFoxc19ScHVxY3ZCZFlDQmV5QXpzMNIBc0FVX3lxTE9iYUV0NE1QSWVBakstcGtRT3M1ZEI0cExKQkZyZ2VkMWpoWTJ5WTFuZUNRajRJTndqc3IwSnlNaEdpZ1lzUnUyUFFZN1hZLS13b0RhQjE1emlzNmxOb3hiRHk3U1lPa1A1MGd0UUFSLVRlSjQ?oc=5",
-      "pubDate": "Thu, 26 Nov 2026 02:03:45 GMT",
+      "pubDate": "Thu, 26 Nov 2026 02:21:23 GMT",
       "description": "「落ち着きを欠き、苦戦を強いられた」今季CL初先発のバイエルン伊藤洋輝、独メディアの評価は厳しめ「守備に安定感をもたらすことはできなかった」&nbsp;&nbsp;サッカーダイジェストWeb",
       "source": "サッカーダイジェストWeb",
       "image": null
@@ -58,34 +114,10 @@
       "image": null
     },
     {
-      "title": "「バイエルン相手に挙げた価値ある勝利の立役者」 同点弾の上田綺世に現地メディアが絶賛「反撃の口火を切った」 - サッカーキング",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE91eWRQenJOSDlwRC00Yk1YejQ0UzY2d01udzVxNmltQjRUV1RfQ2gtaGdlVGtrWVBhX2N6NFlWeVZoSE4yTGRfSGI0QWpIdjlNWjZQaV9WR2VWNEZqZ1VMOGZCY01JYlZoQkRiVHU2WGE?oc=5",
-      "pubDate": "Thu, 26 Nov 2026 01:56:33 GMT",
-      "description": "「バイエルン相手に挙げた価値ある勝利の立役者」 同点弾の上田綺世に現地メディアが絶賛「反撃の口火を切った」&nbsp;&nbsp;サッカーキング",
-      "source": "サッカーキング",
-      "image": null
-    },
-    {
       "title": "地域CL決勝ラウンドが開幕 JFL参入をかけた社会人サッカー最終章…関東勢苦戦、波乱の幕開け - FOOTBALL ZONE",
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE82M19lcDNzYmpPSGJkTXA2VGFaajFnNDJteURhT2RPQl9yYUtTV3htaW90dWdKVmduclp0TEExRzdzZUpxQ2pobnh5SXJBNFJRUXhKUHZISC0?oc=5",
       "pubDate": "Thu, 26 Nov 2026 00:23:44 GMT",
       "description": "地域CL決勝ラウンドが開幕 JFL参入をかけた社会人サッカー最終章…関東勢苦戦、波乱の幕開け&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
-      "image": null
-    },
-    {
-      "title": "欧州初弾の独日本人「闘莉王さんのよう」 神出鬼没の攻撃的DF…代表OBが絶賛「なんでそこにいんの？」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBuZWhoSnZzSkVCdlk4QW50YjlCa2ltTGZuMWxCdkNfd0c0SFBSaHRCdktwelVydmN4TzJIVFpmZ2NfMzh5Y2dxaV9Eakl5aW5uay11LU10V0xMU28?oc=5",
-      "pubDate": "Wed, 25 Nov 2026 21:10:00 GMT",
-      "description": "欧州初弾の独日本人「闘莉王さんのよう」 神出鬼没の攻撃的DF…代表OBが絶賛「なんでそこにいんの？」&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
-      "image": null
-    },
-    {
-      "title": "欧州初弾の独日本人「闘莉王さんのよう」 神出鬼没の攻撃的DF…代表OBが絶賛「なんでそこにいんの？」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE56VTFnYnFlWlhsY05tUDdQYVZ5T25IYmk2eWpFZ0ZxdVFkRjJ5NE1VT2J3aUk2SjRvTE1senFpRldBZ2hQci0ySTRkdHRicENzS2Q3Z0ROSno?oc=5",
-      "pubDate": "Wed, 25 Nov 2026 21:10:00 GMT",
-      "description": "欧州初弾の独日本人「闘莉王さんのよう」 神出鬼没の攻撃的DF…代表OBが絶賛「なんでそこにいんの？」&nbsp;&nbsp;FOOTBALL ZONE",
       "source": "FOOTBALL ZONE",
       "image": null
     },
@@ -114,43 +146,11 @@
       "image": null
     },
     {
-      "title": "欧州日本人DFの豪快ボレー「レベルが相当高い」 攻撃面で見せた強み…代表返り咲きへ「勝負のシーズン」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4xeWhwNkFIYzVpSGFDVkxSVk1FV1VzOFc0MGtSaS1lMTdEaTE0by05SExhRW5DZGp5cUNBRGU4VUFQRFMwcnJTQXVCVWV2cG5KLWhyZUdsNTQ?oc=5",
-      "pubDate": "Wed, 25 Nov 2026 20:10:00 GMT",
-      "description": "欧州日本人DFの豪快ボレー「レベルが相当高い」 攻撃面で見せた強み…代表返り咲きへ「勝負のシーズン」&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
-      "image": null
-    },
-    {
-      "title": "欧州日本人DFの豪快ボレー「レベルが相当高い」 攻撃面で見せた強み…代表返り咲きへ「勝負のシーズン」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNVNDQkZReEJwU2J3cnBfeFRMdk5YTlAyNEJCdlJ1eUlvY1VneFBDb3BTRFlxenMtd2ZvaV9ubExPWFJGSzMtYjFYRVVMcExpYTJwUV9aNEJRTjdxMW5rMkRuN1BVVEdjNHJtQ1pKbnpka1VtY3Q5UEtzRmNEWWdRWXhBYnZLUzJGX281bXFBTzJNRV9hdU01R3NLYXo1TVlxeFFlYlhkUXY?oc=5",
-      "pubDate": "Wed, 25 Nov 2026 20:10:00 GMT",
-      "description": "欧州日本人DFの豪快ボレー「レベルが相当高い」 攻撃面で見せた強み…代表返り咲きへ「勝負のシーズン」&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
-      "image": null
-    },
-    {
-      "title": "ボルトン・ワンダラーズ 概要 - Goal.com",
-      "link": "https://news.google.com/rss/articles/CBMiogJBVV95cUxOcjY2bzFoeFFZbjBEcUpRcHFtbzBCZGVPVGlQWUNUaEUtNWVmTVFqUFdobGJ4bnVkUUdSenFLS29MZ0NtMm41R0ZQZmxHaGUtODNDX043ZFMtLXpyVnhtaDZFTG1TeDJFOWh3U2ZFVHl0MmVpcnd1bFI4eFdOYUdzdTJCSmE2VzItY2lnd25MWmJJQkJEdkxnN29VbTE4SFlxbmxEUElKVXFTczF1Y05RdThROTNDQ3l5OG1kbndKM0F1dXFFYVdSbm5ZQnB6dERIWklGTi1xRmMxNGlLUl9TdWFlQTktaXhib1J3ellfWnNDbVhrWHZaY3RoeGJBdzBXVTVLN2Y5OTFRbVZQd25vX0xDSm52b2ZQSXZUNjJ2ek1zdw?oc=5",
-      "pubDate": "Wed, 25 Nov 2026 19:45:00 GMT",
-      "description": "ボルトン・ワンダラーズ 概要&nbsp;&nbsp;Goal.com",
-      "source": "Goal.com",
-      "image": null
-    },
-    {
       "title": "【写真・4枚目】【写真ギャラリー】2026.11.25 なでしこジャパン トレーニング - サッカーキング",
       "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMFJrd0RuQUtZUEU2dkxvalZTWmdveVhLY2FFYUlPWGVKSDNEN3pmQU1ucWpxZzF1SFVNUndwNHJLZHo0a2x1cWNHQU9fQThMQm5vNHYtM0g5N2plNlBGVUxfSkYwY2NnbXRXRHJnWG0yTjhBRXFPV0xCcHpEQ0x4bThpc1lBdG1oUmhtNF9XTS0tNGM1N0ZDVXVocURJSW5rVFR2cThBOXQyT0lJbnJRZkRB?oc=5",
       "pubDate": "Wed, 25 Nov 2026 14:27:45 GMT",
       "description": "【写真・4枚目】【写真ギャラリー】2026.11.25 なでしこジャパン トレーニング&nbsp;&nbsp;サッカーキング",
       "source": "サッカーキング",
-      "image": null
-    },
-    {
-      "title": "まさかの最下位に沈むドイツ古豪で存在感を高める日本代表FW。一時は出場機会が少なく苦しむも…「練習から自分と向き合ってやっていくしかない状況だった」【現地発】 - サッカーダイジェストWeb",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1jeEI1NWl3cEJCTkdveElkamJhdFA2UllmM2FSVUVLR1JXUnJ0MWFtaFhWUG4wbXFZQW5hWFlWVkpjSFNWcXVLYm5MSzNMYk5RY2VoQnM4MWp5ZF9iUmJpaUU1WdIBc0FVX3lxTE5Dc010ajlYNGt4ZkVIb1VGRlJ5UlM3d0xEZlhCdkU1SzVFZ0FMY1BieVNYd0NKdHhwaDNqQUpqM2VZaDBWQ2FrdEZpamt6SHlxamt2VDlnM3Z5aWpYclZGQ01oQW0xX2pERDN4X1R4UzBPUlU?oc=5",
-      "pubDate": "Wed, 25 Nov 2026 10:53:00 GMT",
-      "description": "まさかの最下位に沈むドイツ古豪で存在感を高める日本代表FW。一時は出場機会が少なく苦しむも…「練習から自分と向き合ってやっていくしかない状況だった」【現地発】&nbsp;&nbsp;サッカーダイジェストWeb",
-      "source": "サッカーダイジェストWeb",
       "image": null
     },
     {
@@ -194,14 +194,6 @@
       "image": null
     },
     {
-      "title": "復帰近づく三笘薫の近影に「これそろそろ来るな」 クラブ動画に突如登場も「怪我人とは思えないくらい軽快」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1xOVV5UHFjYVhUNzJ3U2NBaDNtdTR6aFUxMzI0RE8zZkVOcFpITHFEb1pzUmxHdUJudnNnNzdYNVBwWkduMUN4VlMyV09MeVptekZ3NmlscmlSMG9Q?oc=5",
-      "pubDate": "Wed, 25 Nov 2026 07:10:00 GMT",
-      "description": "復帰近づく三笘薫の近影に「これそろそろ来るな」 クラブ動画に突如登場も「怪我人とは思えないくらい軽快」&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
-      "image": null
-    },
-    {
       "title": "「どんな内容でもいいから…」悪夢の連敗で募った悔しさ。川崎フロンターレ・三浦颯太が取り戻した「余裕」【コラム】 - フットボールチャンネル",
       "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1fbU9iMGZENkQyaU5veTRvWFpNd1RiOUp2NGZRLVBfT0FMbkJxQ1UycENvM2xzWmtUVkdJQjluS0NTSFM2aTRyM3RHVkNDM080TlBVTGF3MVVqYWpESGdFN1EtV3o?oc=5",
       "pubDate": "Wed, 25 Nov 2026 06:40:36 GMT",
@@ -234,24 +226,8 @@
       "image": null
     },
     {
-      "title": "J復帰→欧州再挑戦で躍動「生き生きしている」 35歳日本人が強烈な一撃…代表OB期待「長谷部さんのように」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBoWnBXcHc4RWZpam14UjBfM3pXOFJuSS0yV0szWU5Oc3lTZV9fZmpkUmpMc1lqcTRjLVB0a0QwejZETmg4U182MkF3NlhmbmJKSmpnSEp6a0w?oc=5",
-      "pubDate": "Wed, 25 Nov 2026 02:41:19 GMT",
-      "description": "J復帰→欧州再挑戦で躍動「生き生きしている」 35歳日本人が強烈な一撃…代表OB期待「長谷部さんのように」&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
-      "image": null
-    },
-    {
-      "title": "J復帰→欧州再挑戦で躍動「生き生きしている」 35歳日本人が強烈な一撃…代表OB期待「長谷部さんのように」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQa3pDS3l6YnFzRjctRDVsV0ZvcXFhSW5URHhTaFpwdjlwSXNrYWJVdGEzOC1PR3FDc1lvTHpBWVRybGloa3otclR0dHVZbEdiMVBOU2kwUUxqV1k0a0Z1MmJjRW1fc05nNGYwMGZMdllVS2N5QzVSRlVqTHFZeVR1Y3RJdGt2ZlNfOFVfakp3aE9SM0RDb3l1ZUdhWWtFOHExYmNENWxqQzA?oc=5",
-      "pubDate": "Wed, 25 Nov 2026 02:41:19 GMT",
-      "description": "J復帰→欧州再挑戦で躍動「生き生きしている」 35歳日本人が強烈な一撃…代表OB期待「長谷部さんのように」&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
-      "image": null
-    },
-    {
       "title": "堂安律のボール奪取「専用動画が必要だ」 クラブ公式が異例の注目…ファン称賛「魂のディフェンス」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNLVgzeGV4NDRPWVpCRkFYNkhRNDhpM2tJaXNHRDJ0RW5HZjhMdW9IWktUNUo0dHJyRGQ3OEFrRGpIWFRNUFNMaklUX2t4R291a0pfUzJxc3ByMzQ0YXZ3Z3lUdUZhVUtSc2FRd2RNVXhfMHF6VVMtVUJsUjM4YzBZcWJqMU5hakVqeXhiQnY0QTk4el9Da0RVMTIxbTAtODAyTnhDQ2tCSlU?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVHRSS1RDOFNhb1B0d1hrNXdadUlyS3NMQXRxeXdrZU5rR2hteEotSlJVM0ZVNTI1UjVTN2ZEa2kzUzduNmxSSVRXdmNKN2hLbERQUktLM2FTOG1KRUhLaFNkZU5VbnVyM05qWHZ2MzIydzlFb3FGQ1ZtUnU2VGJfMVZuV0tIVkhnQmpxQWJHYkdpWXI3dmJBSXB1cWlidkt2YURNbnByLVI?oc=5",
       "pubDate": "Wed, 25 Nov 2026 02:30:00 GMT",
       "description": "堂安律のボール奪取「専用動画が必要だ」 クラブ公式が異例の注目…ファン称賛「魂のディフェンス」&nbsp;&nbsp;FOOTBALL ZONE",
       "source": "FOOTBALL ZONE",
@@ -274,19 +250,19 @@
       "image": null
     },
     {
+      "title": "「クソ、マジで痛い」「大損失だ」日本代表戦士の“悲報”に現地も衝撃「これはつらい」「バイエルンにとってのケインの負傷より深刻だ」 - サッカーダイジェストWeb",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBTLWoydHZwV2JGSUxSMzNnakdKMUZsaXlmeF9JTG94N0pneGZ5cWRNaDd0R01IMGU4UlB5c1JCMzVxcDZlaXVmQW95T2MzcWc4c3VCbWt3bHRCT21HZXNSUWZLWVFHeHUtQ0g3b0lzX3JZQmfSAXNBVV95cUxQUy1qMnR2cFdiRklMUjMzZ2pHSjFGbGl5ZnhfSUxveDdKZ3hmeXFkTWg3dEdNSDBlOFJQeXNSQjM1cXA2ZWl1ZkFveU9jM3FnOHN1Qm1rd2x0Qk9tR2VzUlFmS1lRR3h1LUNIN29Jc19yWUJn?oc=5",
+      "pubDate": "Wed, 25 Nov 2026 01:44:00 GMT",
+      "description": "「クソ、マジで痛い」「大損失だ」日本代表戦士の“悲報”に現地も衝撃「これはつらい」「バイエルンにとってのケインの負傷より深刻だ」&nbsp;&nbsp;サッカーダイジェストWeb",
+      "source": "サッカーダイジェストWeb",
+      "image": null
+    },
+    {
       "title": "松岡大起がCLデビュー！ 26年2月にスロヴァン・ブラチスラヴァ加入、リーグフェーズ5戦目で初出場 - サッカーキング",
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1hSFYwNXc2Wm8zMkNzRTBJeXY2UW1aSERJWHcwdk1kQk9sNEtKUUQxNjNCMUc3Rkd0M2dreDZIQVJVVEhicU5nV1BiVzZXQUtlOUlaTGcweTVhVjY4dmlhVUcwbUU4V3JUVWZ4NTlHcw?oc=5",
       "pubDate": "Wed, 25 Nov 2026 00:39:10 GMT",
       "description": "松岡大起がCLデビュー！ 26年2月にスロヴァン・ブラチスラヴァ加入、リーグフェーズ5戦目で初出場&nbsp;&nbsp;サッカーキング",
       "source": "サッカーキング",
-      "image": null
-    },
-    {
-      "title": "中村敬斗が「GQ MEN OF THE YEAR 2026」を受賞 サッカー界から唯一の選出…全8組が発表 | フットボールゾーン - (2) - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1Qc3VPQnRFejFRMWpzMUszc3BQUHNCbm1SN3YxMk9lLWg5bE1IU0x2VV9BMDBHSGluTkVNTDloUjl5YmhuVGRYTkxiTnQ4SFdqVXZxTjZkMnJUaE8w?oc=5",
-      "pubDate": "Wed, 25 Nov 2026 00:09:00 GMT",
-      "description": "中村敬斗が「GQ MEN OF THE YEAR 2026」を受賞 サッカー界から唯一の選出…全8組が発表 | フットボールゾーン - (2)&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
       "image": null
     },
     {
@@ -298,27 +274,51 @@
       "image": null
     },
     {
-      "title": "バレンシアが元ラ・リーガ得点王獲得目指す…イタリアでの2年半は苦戦続く - サッカーキング",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1xRWdRMnhDbDE3N1VoMlJWcHJ6cWVHaTZ1anl5WkFyOGFTOVFQeXIta19WZ1A4R0tHcTNxS3ZEazdkNElOc2dZS2lGUWVPa2M3YlhPakpIVGZzOUVZTkp6OVktSXhabnh6d3RRVGlZakQ?oc=5",
-      "pubDate": "Tue, 24 Nov 2026 06:00:35 GMT",
-      "description": "バレンシアが元ラ・リーガ得点王獲得目指す…イタリアでの2年半は苦戦続く&nbsp;&nbsp;サッカーキング",
+      "title": "シントトロイデンの日本代表GK小久保玲央ブライアンが契約延長「自分のプレーでチームに勝ち点を」 - ゲキサカ",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBrZUdlaW13ZVk5QXBiQTFzSkVEWlk1bkNuMF8yQjVrM1J4QUdGR0VuYjZYcWo0Z2hCVTVlSDFGWEtNTV90dHR3dmFkSE5qbjR6NGhCZ3FNTTd5ektLT25WVjRVMkI0TjZJUFRv?oc=5",
+      "pubDate": "Tue, 24 Nov 2026 02:32:00 GMT",
+      "description": "シントトロイデンの日本代表GK小久保玲央ブライアンが契約延長「自分のプレーでチームに勝ち点を」&nbsp;&nbsp;ゲキサカ",
+      "source": "ゲキサカ",
+      "image": null
+    },
+    {
+      "title": "ガンバ大阪｜順位・順位推移・試合日程・結果【2026/27】 - フットボールチャンネル",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9CVk9LaUdiX0dkSlllZUh4cGtuNjdJbGVPX0ZYZklxbkJPdFg2akp2VjFFMjlnVjN1WDREVVBsZ3NmSmNFYjBpYlpXRDY3S0dLeXhSSzc2Ujd2M1FvNW5aakwxWQ?oc=5",
+      "pubDate": "Tue, 24 Nov 2026 01:49:00 GMT",
+      "description": "ガンバ大阪｜順位・順位推移・試合日程・結果【2026/27】&nbsp;&nbsp;フットボールチャンネル",
+      "source": "フットボールチャンネル",
+      "image": null
+    },
+    {
+      "title": "小久保玲央ブライアンがシント・トロイデンと契約延長！…9月に日本代表デビューの25歳GK - サッカーキング",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE16cFlEZFVpal9jZUxsRDdFQ2VLNmpCYW8xZjdIUWtHTGhoNkQwUUJ5eFpweXoxV0htVUFiNDF4M0lFTGQ0amdmLU9vcEthaVA0ZHBxRlNsdmJrTWlydmxUb0p3TW1SbXphU2VyNHB4Z2NaM3FGWDFDZm5SSQ?oc=5",
+      "pubDate": "Mon, 23 Nov 2026 23:51:53 GMT",
+      "description": "小久保玲央ブライアンがシント・トロイデンと契約延長！…9月に日本代表デビューの25歳GK&nbsp;&nbsp;サッカーキング",
       "source": "サッカーキング",
       "image": null
     },
     {
-      "title": "日本代表FWに「もっと期待していた」 攻撃で見せ場なし…現地ワースト評価「シュート1本も打てず」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9IUm9nSFhlYVpOM2NtN3RXbnlBZTk3VjNETWhfM2VWQUNyX3dJWEZPQnhKNUFqc3haNDNiS3hrWkNqbkNKUlNXbWRmTUZFekhKNVplS3hzNTA?oc=5",
-      "pubDate": "Tue, 24 Nov 2026 04:10:00 GMT",
-      "description": "日本代表FWに「もっと期待していた」 攻撃で見せ場なし…現地ワースト評価「シュート1本も打てず」&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
+      "title": "理由はさまざま？森保ジャパンに定着できなかった5人 - フットボールチャンネル",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5wcDFKa1FDRVkteVlkUzJtQldrWndWc0h0RGhwUFU3dGpkUzUzRkNRYlNGYWFXSDVWalQzb0JRS2FpU0h3WC1fdndVN3lXY0JrR05XSUs4Z25KZmRDWDNYM01uaHg?oc=5",
+      "pubDate": "Mon, 23 Nov 2026 21:00:15 GMT",
+      "description": "理由はさまざま？森保ジャパンに定着できなかった5人&nbsp;&nbsp;フットボールチャンネル",
+      "source": "フットボールチャンネル",
       "image": null
     },
     {
-      "title": "21歳日本人が「深刻な筋肉の負傷」 わずか20分で途中交代…現地指摘「重要なジョーカーを失う」 - FOOTBALL ZONE",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4zREpqbmlDUmRsZUlJd191bUw0dF9EMDVSX0hKQ0FKUUpTV1BIT3lHZjlXbkYxUDFrQmdhdEk2cjNYNHhRMUstOUtHbEdkWEJKRXNMQVFPOVU?oc=5",
-      "pubDate": "Tue, 24 Nov 2026 03:54:34 GMT",
-      "description": "21歳日本人が「深刻な筋肉の負傷」 わずか20分で途中交代…現地指摘「重要なジョーカーを失う」&nbsp;&nbsp;FOOTBALL ZONE",
-      "source": "FOOTBALL ZONE",
+      "title": "【守田英正】ハル・シティの2026年試合日程・テレビ放送/ネット配信予定 - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNVHRuaTVxaDM5bFhDTFIxR28tanpIVkhwRkYwaE44aGdtSU03U0FUVTNIWXdrQmRpdTg0eWVMU0hZZkd1UnZKUVJrQnVYbWJiUGpoRmhDZWwzQXJyQW9fQWRrdkx6bmlJdjdEa0NwY0h5UVdEVDAtVkdHSmQ2THFPdmExR2xSV1g0cFZOcW95ZXh4cWdqeHoycDB5cXJ1bWlzMjVfZEJnWVpvbllzbDctdmg3RE90VjVZNkNuaVh6M3dTZw?oc=5",
+      "pubDate": "Mon, 23 Nov 2026 08:02:38 GMT",
+      "description": "【守田英正】ハル・シティの2026年試合日程・テレビ放送/ネット配信予定&nbsp;&nbsp;Goal.com",
+      "source": "Goal.com",
+      "image": null
+    },
+    {
+      "title": "坂元達裕が圧巻のスーパーゴール!! コベントリーが鎌田大地擁するパレスとの残留争い直接対決を制す(22枚) - ゲキサカ",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOMTlkdGpQZUtjTkJacXNWQmtWdU5xbVJ3ZW1maVgtd1dYVFpCdlFzcFpEWmNoUFdwR0pwcUxONDZET2ZHVXdVQWRlWVl4OFBYbUV5aUJjei1zVjdKdWVOWWU0TWhfMG5DUEwzOFJqRXQwM2RIZkktYXpCZUVWRDd6bQ?oc=5",
+      "pubDate": "Mon, 23 Nov 2026 07:17:00 GMT",
+      "description": "坂元達裕が圧巻のスーパーゴール!! コベントリーが鎌田大地擁するパレスとの残留争い直接対決を制す(22枚)&nbsp;&nbsp;ゲキサカ",
+      "source": "ゲキサカ",
       "image": null
     }
   ]
