@@ -1,48 +1,6 @@
 {
-  "updatedAt": "2026-11-27T12:02:00.141Z",
+  "updatedAt": "2026-11-27T21:07:37.642Z",
   "schedule": [
-    {
-      "competition": "Serie A",
-      "homeTeam": "Venezia FC",
-      "awayTeam": "ボローニャ",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-27T19:45:00.000Z",
-      "clubJP": "ボルトン・ワンダラーズ",
-      "players": [
-        "伊藤 敦樹"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ノッティンガム・フォレスト",
-      "awayTeam": "チェルシー",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-27T20:00:00.000Z",
-      "clubJP": "ボルシアMG",
-      "players": [
-        "板倉 滉",
-        "宇野 禅斗",
-        "橋岡 大樹",
-        "町野 修斗"
-      ]
-    },
-    {
-      "competition": "Premier League",
-      "homeTeam": "ノッティンガム・フォレスト",
-      "awayTeam": "チェルシー",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "TIMED",
-      "utcDate": "2026-11-27T20:00:00.000Z",
-      "clubJP": "バイエルン・ミュンヘン",
-      "players": [
-        "伊藤 洋輝"
-      ]
-    },
     {
       "competition": "Championship",
       "homeTeam": "Lincoln City FC",
@@ -536,6 +494,48 @@
       "clubJP": "ホッフェンハイム",
       "players": [
         "町田 浩樹"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "SC Freiburg",
+      "awayTeam": "ホッフェンハイム",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-12-05T14:30:00.000Z",
+      "clubJP": "SCフライブルク",
+      "players": [
+        "鈴木 唯人",
+        "山本 理仁",
+        "後藤 啓介"
+      ]
+    },
+    {
+      "competition": "Bundesliga",
+      "homeTeam": "RBライプツィヒ",
+      "awayTeam": "マインツ05",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-12-05T14:30:00.000Z",
+      "clubJP": "マインツ05",
+      "players": [
+        "佐野 海舟",
+        "川崎 颯太"
+      ]
+    },
+    {
+      "competition": "Premier League",
+      "homeTeam": "アストン・ヴィラ",
+      "awayTeam": "クリスタル・パレス",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "TIMED",
+      "utcDate": "2026-12-05T15:00:00.000Z",
+      "clubJP": "アストン・ヴィラ",
+      "players": [
+        "鈴木 彩艶"
       ]
     }
   ],
